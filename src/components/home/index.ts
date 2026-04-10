@@ -1,0 +1,11 @@
+export { HomeSections } from "./HomeSections";
+export { HomeHeroSection } from "./HomeHeroSection";
+export { HomeProblemShowcaseSection } from "./HomeProblemShowcaseSection";
+export { HomeHowItWorksSection } from "./HomeHowItWorksSection";
+export { HomePromiseSection } from "./HomePromiseSection";
+export { HomeWhySection } from "./HomeWhySection";
+export { HomeForSection } from "./HomeForSection";
+export { HomeCredibilitySection } from "./HomeCredibilitySection";
+export { HomeSampleReportsSection } from "./HomeSampleReportsSection";
+export { HomeCtaSection } from "./HomeCtaSection";
+export * from "./data";

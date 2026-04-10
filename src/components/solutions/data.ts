@@ -1,0 +1,5 @@
+export const useCases = [
+  { num: "Use Case 01", title: "Talent Decisions and Succession", body: "Get the leadership signal you need to make smarter promotion, succession, and placement decisions — based on real feedback, not anecdotes or politics.", who: ["CHRO / VP Talent", "CEO / COO", "HR Ops"], href: "/solutions/talent-decisions", accent: "var(--navy)" },
+  { num: "Use Case 02", title: "Leadership Development Programs", body: "Build a repeatable feedback cadence into your leadership development work — without the overhead, cost, or participant fatigue of traditional 360 programs.", who: ["L&D Leaders", "HR / Talent", "Coaches"], href: "/solutions/leadership-development", accent: "var(--teal)" },
+  { num: "Use Case 03", title: "Team Launches and Role Transitions", body: "Support leaders stepping into new roles — first-time managers, promotions, executive transitions — with a clear baseline of how they are starting and where to focus first.", who: ["New Managers", "HR Partners", "Coaches"], href: "/solutions/team-launches", accent: "#1565c0" },
+];

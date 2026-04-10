@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const riskItems = [
@@ -36,7 +34,6 @@ const whenItems = [
 export default function TalentDecisionsPage() {
   return (
     <>
-      <Nav />
       <PageHero
         eyebrow=""
         tag="Use Case — Talent Decisions"
@@ -51,103 +48,101 @@ export default function TalentDecisionsPage() {
       />
 
       {/* PROBLEM */}
-      <section className="py-24 page-gutter" style={{ background: "#fff" }}>
-        <div className="grid lg:grid-cols-[5fr_7fr] gap-24 items-start">
-          <div>
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>The Problem</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-              Talent decisions made without enough signal are high-stakes guesses.
-            </h2>
-          </div>
-          <div className="flex flex-col gap-5">
-            <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              Promotion and succession decisions are among the most consequential things an organization does. A leader placed incorrectly — or not given the role they were ready for — has compounding costs that extend well beyond that individual.
-            </p>
-            <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              Yet most organizations make these decisions with limited, one-dimensional information. Performance reviews capture what a manager observed. Interviews capture how someone presents. Neither captures how a leader is experienced by peers, direct reports, and cross-functional partners — which is often what determines whether they succeed in a bigger role.
-            </p>
-            <p className="text-[0.92rem] font-medium mb-2" style={{ color: "var(--charcoal)" }}>The result is a familiar set of failure modes:</p>
-            <div className="flex flex-col gap-3">
-              {riskItems.map((item, i) => (
-                <div key={i} className="flex items-start gap-4">
-                  <span className="font-bold shrink-0 mt-0.5" style={{ color: "var(--slate)" }}>—</span>
-                  <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>{item}</p>
-                </div>
-              ))}
+      <section style={{ background: "#fff" }}>
+        <div className="content-wrap page-gutter py-24">
+          <div className="grid lg:grid-cols-[5fr_7fr] gap-24 items-start">
+            <div>
+              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>The Problem</p>
+              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
+                Talent decisions made without enough signal are high-stakes guesses.
+              </h2>
+            </div>
+            <div className="flex flex-col gap-5">
+              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
+                Promotion and succession decisions are among the most consequential things an organization does. A leader placed incorrectly — or not given the role they were ready for — has compounding costs that extend well beyond that individual.
+              </p>
+              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
+                Yet most organizations make these decisions with limited, one-dimensional information. Performance reviews capture what a manager observed. Interviews capture how someone presents. Neither captures how a leader is experienced by peers, direct reports, and cross-functional partners — which is often what determines whether they succeed in a bigger role.
+              </p>
+              <p className="text-[0.92rem] font-medium mb-2" style={{ color: "var(--charcoal)" }}>The result is a familiar set of failure modes:</p>
+              <div className="flex flex-col gap-3">
+                {riskItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <span className="font-bold shrink-0 mt-0.5" style={{ color: "var(--slate)" }}>—</span>
+                    <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* WHAT IT REVEALS */}
-      <section className="py-24 page-gutter" style={{ background: "var(--light-bg)" }}>
-        <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
-          <div>
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>What Interval 360 Reveals</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-              The two dimensions that matter most for talent decisions.
-            </h2>
-          </div>
-          <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-            Interval 360 assesses both performance against expectations and how leadership is experienced by others. Combined, they give decision-makers a complete picture — not just what a leader delivers, but whether they can lead at the next level.
-          </p>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-6">
-          {revealCards.map((card) => (
-            <div
-              key={card.label}
-              className="p-8 rounded-lg"
-              style={{ background: "#fff", border: "1px solid var(--rule)", borderTop: `3px solid ${card.color}` }}
-            >
-              <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-4" style={{ color: card.color }}>
-                {card.label}
-              </p>
-              <h4 className="text-[1.1rem] font-semibold mb-4" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-                {card.title}
-              </h4>
-              <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>
-                {card.body}
-              </p>
+      <section style={{ background: "var(--light-bg)" }}>
+        <div className="content-wrap page-gutter py-24">
+          <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
+            <div>
+              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>What Interval 360 Reveals</p>
+              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
+                The two dimensions that matter most for talent decisions.
+              </h2>
             </div>
-          ))}
+            <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
+              Interval 360 assesses both performance against expectations and how leadership is experienced by others. Combined, they give decision-makers a complete picture — not just what a leader delivers, but whether they can lead at the next level.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-6">
+            {revealCards.map((card) => (
+              <div key={card.label} className="p-8 rounded-lg" style={{ background: "#fff", border: "1px solid var(--rule)", borderTop: `3px solid ${card.color}` }}>
+                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-4" style={{ color: card.color }}>
+                  {card.label}
+                </p>
+                <h4 className="text-[1.1rem] font-semibold mb-4" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
+                  {card.title}
+                </h4>
+                <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>
+                  {card.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* WHEN TO USE */}
-      <section className="py-24 page-gutter" style={{ background: "#fff" }}>
-        <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
-          <div>
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>When to Use It</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-              Five moments where it makes the biggest difference.
-            </h2>
-          </div>
-          <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-            Interval 360 is not a replacement for all talent assessment. It is the tool you use when you need structured multi-perspective feedback and do not have the time or budget for a full assessment center.
-          </p>
-        </div>
-        <div className="grid lg:grid-cols-3 gap-6">
-          {whenItems.map((item, i) => (
-            <div
-              key={i}
-              className="p-7 rounded-lg"
-              style={{ background: "var(--light-bg)" }}
-            >
-              <h4 className="text-[0.95rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-                {item.title}
-              </h4>
-              <p className="text-[0.88rem] leading-[1.65]" style={{ color: "var(--slate)" }}>
-                {item.body}
-              </p>
+      <section style={{ background: "#fff" }}>
+        <div className="content-wrap page-gutter py-24">
+          <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
+            <div>
+              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>When to Use It</p>
+              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
+                Five moments where it makes the biggest difference.
+              </h2>
             </div>
-          ))}
+            <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
+              Interval 360 is not a replacement for all talent assessment. It is the tool you use when you need structured multi-perspective feedback and do not have the time or budget for a full assessment center.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-6">
+            {whenItems.map((item, i) => (
+              <div key={i} className="p-7 rounded-lg" style={{ background: "var(--light-bg)" }}>
+                <h4 className="text-[0.95rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
+                  {item.title}
+                </h4>
+                <p className="text-[0.88rem] leading-[1.65]" style={{ color: "var(--slate)" }}>
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-28 page-gutter text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
+      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
         <div className="absolute inset-0 pointer-events-none grid-pattern" />
-        <div className="relative z-10">
+        <div className="relative z-10 content-wrap page-gutter py-28 text-center">
           <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] mb-5 mx-auto max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>
             Make your next talent decision with real signal.
           </h2>
@@ -165,7 +160,6 @@ export default function TalentDecisionsPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

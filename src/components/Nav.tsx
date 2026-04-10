@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const solutionsMenu = [
@@ -37,7 +38,10 @@ function Dropdown({ items }: { items: (DropdownItem | null)[] }) {
       className="absolute top-full left-0 z-50 min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
       style={{
         background: "#fff",
-        border: "1px solid var(--rule)",
+        mixBlendMode: "normal",
+        borderLeft: "1px solid var(--rule)",
+        borderRight: "1px solid var(--rule)",
+        borderBottom: "1px solid var(--rule)",
         borderTop: "2px solid var(--navy)",
         borderRadius: "0 0 8px 8px",
         boxShadow: "0 12px 40px rgba(5,79,154,0.12)",
@@ -74,31 +78,94 @@ function Dropdown({ items }: { items: (DropdownItem | null)[] }) {
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
+    const detectTheme = () => {
+      const elements = document.elementsFromPoint(window.innerWidth / 2, 80);
+      for (const el of elements) {
+        if (el.closest("nav")) continue;
+
+        const themed = (el as HTMLElement).closest("[data-nav-theme]");
+        if (themed) {
+          setIsDark(themed.getAttribute("data-nav-theme") === "dark");
+          return;
+        }
+
+        const bg = window.getComputedStyle(el as HTMLElement).backgroundColor;
+        if (bg && bg !== "transparent" && bg !== "rgba(0, 0, 0, 0)") {
+          const nums = bg.match(/[\d.]+/g);
+          if (nums && nums.length >= 3) {
+            const [r, g, b] = nums.map(Number);
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+            setIsDark(luminance < 0.5);
+          }
+          return;
+        }
+      }
+      setIsDark(false);
+    };
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 8);
+      detectTheme();
+    };
+
+    detectTheme();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", detectTheme);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", detectTheme);
+    };
   }, []);
+
+  const shellBg = isDark ? "rgba(12,12,12,0.88)" : "rgba(255,255,255,0.96)";
+  const shellBorder = isDark ? "rgba(255,255,255,0.18)" : "rgba(12,12,12,0.12)";
+  const shellColor = isDark ? "rgba(255,255,255,0.92)" : "var(--charcoal)";
+  const loginColor = isDark ? "rgba(234,239,243,0.86)" : "rgba(6,16,39,0.82)";
+  const buyTextColor = isDark ? "rgba(217,231,255,0.94)" : "#1849a9";
+  const buyBorderColor = isDark ? "rgba(86,146,255,0.58)" : "rgba(45,108,255,0.42)";
+  const buyBg = isDark ? "rgba(16,52,128,0.28)" : "rgba(45,108,255,0.08)";
+  const callBg = "#2d6cff";
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-[9999] transition-shadow duration-200"
+      className="fixed top-0 left-0 right-0 z-[9999]"
       style={{
-        background: "rgba(255,255,255,0.97)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid var(--rule)",
-        boxShadow: scrolled ? "0 2px 16px rgba(5,79,154,0.07)" : "none",
+        background: "transparent",
       }}
     >
-      <div className="flex items-center page-gutter h-16 gap-0 max-w-[80rem] mx-auto w-full">
+      <div className="page-gutter">
+        <div
+          className="max-w-7xl mx-auto"
+          style={{
+            background: shellBg,
+            borderLeft: `1px solid ${shellBorder}`,
+            borderRight: `1px solid ${shellBorder}`,
+            borderBottom: `1px solid ${shellBorder}`,
+            borderTop: "none",
+            borderRadius: "0 0 26px 26px",
+            boxShadow: scrolled ? "0 10px 28px rgba(0,0,0,0.16)" : "0 8px 22px rgba(0,0,0,0.12)",
+            color: shellColor,
+            transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease, box-shadow 260ms ease",
+          }}
+        >
+      <div className="flex items-center h-16 gap-0 w-full px-4 md:px-7">
         {/* Logo */}
         <Link
           href="/"
-          className="flex-shrink-0 mr-8 text-[1rem] font-bold tracking-[0.04em] no-underline"
-          style={{ fontFamily: "var(--font-montserrat)", color: "var(--navy-dark)" }}
+          className="shrink-0 mr-8 no-underline"
+          aria-label="Interval 360 home"
         >
-          Interval 360
+          <Image
+            src={isDark ? "/white_logologo.svg" : "/black_logologo.svg"}
+            alt="Interval 360"
+            width={140}
+            height={32}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* Links — desktop */}
@@ -106,8 +173,8 @@ export default function Nav() {
           <li>
             <Link
               href="/"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] no-underline"
-              style={{ color: "var(--charcoal)" }}
+              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              style={{ color: "currentColor" }}
             >
               Home
             </Link>
@@ -116,8 +183,8 @@ export default function Nav() {
           {/* Platform dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] bg-transparent cursor-pointer"
-              style={{ color: "var(--charcoal)" }}
+              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              style={{ color: "currentColor" }}
             >
               Platform
               <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
@@ -130,8 +197,8 @@ export default function Nav() {
           {/* Solutions dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] bg-transparent cursor-pointer"
-              style={{ color: "var(--charcoal)" }}
+              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              style={{ color: "currentColor" }}
             >
               Solutions
               <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
@@ -144,8 +211,8 @@ export default function Nav() {
           <li>
             <Link
               href="/pricing"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] no-underline"
-              style={{ color: "var(--charcoal)" }}
+              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              style={{ color: "currentColor" }}
             >
               Pricing
             </Link>
@@ -153,8 +220,8 @@ export default function Nav() {
           <li>
             <Link
               href="/resources"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] no-underline"
-              style={{ color: "var(--charcoal)" }}
+              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              style={{ color: "currentColor" }}
             >
               Resources
             </Link>
@@ -163,8 +230,8 @@ export default function Nav() {
           {/* Company dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-colors hover:text-[var(--navy)] hover:border-[var(--navy)] bg-transparent cursor-pointer"
-              style={{ color: "var(--charcoal)" }}
+              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              style={{ color: "currentColor" }}
             >
               Company
               <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
@@ -176,28 +243,39 @@ export default function Nav() {
         </ul>
 
         {/* CTA Actions */}
-        <div className="hidden lg:flex items-center gap-2 flex-shrink-0 ml-6">
+        <div className="hidden lg:flex items-center gap-3 shrink-0 ml-6">
           <a
             href="https://app.interval360.com"
-            className="text-[0.8rem] px-2 no-underline transition-colors hover:text-[var(--navy)]"
-            style={{ color: "var(--slate)" }}
+            className="inline-flex items-center gap-1.5 text-[0.8rem] font-medium px-1 no-underline transition-colors hover:opacity-90"
+            style={{ color: loginColor }}
           >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
             Login
           </a>
-          <Link
-            href="/buy"
-            className="text-[0.78rem] font-medium px-[0.9rem] py-[0.42rem] rounded border-[1.5px] no-underline transition-all hover:bg-[var(--navy)] hover:text-white whitespace-nowrap"
-            style={{ color: "var(--navy)", borderColor: "var(--navy)", background: "transparent" }}
-          >
-            Buy an Assessment
-          </Link>
-          <Link
-            href="/company#contact"
-            className="text-[0.78rem] font-semibold px-[0.9rem] py-[0.42rem] rounded no-underline transition-colors hover:bg-[var(--navy-dark)] whitespace-nowrap"
-            style={{ background: "var(--navy)", color: "#fff" }}
-          >
-            Book a Call
-          </Link>
+          <span aria-hidden className="h-5 w-px" style={{ background: isDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
+          <div className="flex items-center gap-2">
+            <Link
+              href="/buy"
+              className="text-[0.78rem] font-semibold px-3.5 py-1.5 rounded-md border no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5"
+              style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
+            >
+              Buy an Assessment
+            </Link>
+            <Link
+              href="/company#contact"
+              className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold px-3.5 py-1.5 rounded-md no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              style={{ background: callBg, color: "#fff" }}
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
+                <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+              Book a Call
+            </Link>
+          </div>
         </div>
 
         {/* Mobile hamburger */}
@@ -207,16 +285,26 @@ export default function Nav() {
           aria-label="Toggle menu"
         >
           <div className="space-y-1.5">
-            <span className="block w-6 h-0.5" style={{ background: "var(--charcoal)" }} />
-            <span className="block w-6 h-0.5" style={{ background: "var(--charcoal)" }} />
-            <span className="block w-6 h-0.5" style={{ background: "var(--charcoal)" }} />
+            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
+            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
+            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
           </div>
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden" style={{ background: "#fff", borderTop: "1px solid var(--rule)" }}>
+        <div
+          className="lg:hidden"
+          style={{
+            background: shellBg,
+            borderTop: `1px solid ${shellBorder}`,
+            borderRadius: "0 0 26px 26px",
+            overflow: "hidden",
+            color: shellColor,
+            transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease",
+          }}
+        >
           {[
             { href: "/", label: "Home" },
             { href: "/platform-overview", label: "Platform" },
@@ -254,6 +342,8 @@ export default function Nav() {
           </div>
         </div>
       )}
+        </div>
+      </div>
     </nav>
   );
 }

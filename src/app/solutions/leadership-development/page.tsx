@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const cadenceItems = [
@@ -32,7 +30,6 @@ const scaleItems = [
 export default function LeadershipDevelopmentPage() {
   return (
     <>
-      <Nav />
       <PageHero
         eyebrow=""
         tag="Use Case — Leadership Development"
@@ -166,7 +163,6 @@ export default function LeadershipDevelopmentPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

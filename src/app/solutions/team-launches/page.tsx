@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const transitions = [
@@ -31,7 +29,6 @@ const helpItems = [
 export default function TeamLaunchesPage() {
   return (
     <>
-      <Nav />
       <PageHero
         eyebrow=""
         tag="Use Case — Role Transitions"
@@ -46,7 +43,8 @@ export default function TeamLaunchesPage() {
       />
 
       {/* TRANSITIONS */}
-      <section className="py-24 page-gutter" style={{ background: "var(--light-bg)" }}>
+      <section style={{ background: "var(--light-bg)" }}>
+        <div className="content-wrap page-gutter py-24">
         <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
           <div>
             <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Three Transition Moments</p>
@@ -77,10 +75,12 @@ export default function TeamLaunchesPage() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* WHY TIMING */}
-      <section className="py-24 page-gutter" style={{ background: "#fff" }}>
+      <section style={{ background: "#fff" }}>
+        <div className="content-wrap page-gutter py-24">
         <div className="grid lg:grid-cols-[5fr_7fr] gap-24 items-start">
           <div>
             <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Why Timing Matters</p>
@@ -108,10 +108,12 @@ export default function TeamLaunchesPage() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* HOW IT HELPS */}
-      <section className="py-24 page-gutter" style={{ background: "var(--light-bg)" }}>
+      <section style={{ background: "var(--light-bg)" }}>
+        <div className="content-wrap page-gutter py-24">
         <div className="mb-12">
           <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>How It Helps</p>
           <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
@@ -137,12 +139,13 @@ export default function TeamLaunchesPage() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="py-28 page-gutter text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
+      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
         <div className="absolute inset-0 pointer-events-none grid-pattern" />
-        <div className="relative z-10">
+        <div className="relative z-10 content-wrap page-gutter py-28 text-center">
           <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] mb-5 mx-auto max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>
             Start the transition with clear signal.
           </h2>
@@ -160,7 +163,6 @@ export default function TeamLaunchesPage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

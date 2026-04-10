@@ -1,12 +1,8 @@
 import Link from "next/link";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 export default function BuyPage() {
   return (
-    <>
-      <Nav />
-      <div
+    <div
         className="flex items-center justify-center min-h-screen pt-16 relative overflow-hidden"
         style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 55%, #1565c0 100%)" }}
       >
@@ -66,7 +62,5 @@ export default function BuyPage() {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
   );
 }
