@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const solutionsMenu = [
   { href: "/solutions", label: "Solutions Overview", sub: "All use cases at a glance", hub: true },
@@ -79,6 +79,9 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const [showMobileNav, setShowMobileNav] = useState(true);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const detectTheme = () => {
@@ -107,26 +110,48 @@ export default function Nav() {
     };
 
     const onScroll = () => {
-      setScrolled(window.scrollY > 8);
+      const currentY = window.scrollY;
+      setScrolled(currentY > 8);
       detectTheme();
+
+      if (window.innerWidth < 1280) {
+        const delta = currentY - lastScrollY.current;
+        if (currentY < 12) {
+          setShowMobileNav(true);
+        } else if (delta > 4) {
+          setShowMobileNav(false);
+        } else if (delta < -4) {
+          setShowMobileNav(true);
+        }
+      } else {
+        setShowMobileNav(true);
+      }
+
+      lastScrollY.current = currentY;
     };
 
+    const detectViewport = () => setIsMobile(window.innerWidth < 1280);
+
     detectTheme();
+    detectViewport();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", detectTheme);
+    window.addEventListener("resize", detectViewport);
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", detectTheme);
+      window.removeEventListener("resize", detectViewport);
     };
   }, []);
 
-  const shellBg = isDark ? "rgba(12,12,12,0.88)" : "rgba(255,255,255,0.96)";
-  const shellBorder = isDark ? "rgba(255,255,255,0.18)" : "rgba(12,12,12,0.12)";
-  const shellColor = isDark ? "rgba(255,255,255,0.92)" : "var(--charcoal)";
-  const loginColor = isDark ? "rgba(234,239,243,0.86)" : "rgba(6,16,39,0.82)";
-  const buyTextColor = isDark ? "rgba(217,231,255,0.94)" : "#1849a9";
-  const buyBorderColor = isDark ? "rgba(86,146,255,0.58)" : "rgba(45,108,255,0.42)";
-  const buyBg = isDark ? "rgba(16,52,128,0.28)" : "rgba(45,108,255,0.08)";
+  const navIsDark = !isDark;
+  const shellBg = navIsDark ? "rgba(12,12,12,0.88)" : "rgba(255,255,255,0.96)";
+  const shellBorder = navIsDark ? "rgba(255,255,255,0.18)" : "rgba(12,12,12,0.12)";
+  const shellColor = navIsDark ? "rgba(255,255,255,0.92)" : "var(--charcoal)";
+  const loginColor = navIsDark ? "rgba(234,239,243,0.86)" : "rgba(6,16,39,0.82)";
+  const buyTextColor = navIsDark ? "rgba(217,231,255,0.94)" : "#1849a9";
+  const buyBorderColor = navIsDark ? "rgba(86,146,255,0.58)" : "rgba(45,108,255,0.42)";
+  const buyBg = navIsDark ? "rgba(16,52,128,0.28)" : "rgba(45,108,255,0.08)";
   const callBg = "#2d6cff";
 
   return (
@@ -134,6 +159,8 @@ export default function Nav() {
       className="fixed top-0 left-0 right-0 z-[9999]"
       style={{
         background: "transparent",
+        transform: isMobile && !showMobileNav && !mobileOpen ? "translateY(-120%)" : "translateY(0)",
+        transition: "transform 260ms ease",
       }}
     >
       <div className="page-gutter">
@@ -144,14 +171,15 @@ export default function Nav() {
             borderLeft: `1px solid ${shellBorder}`,
             borderRight: `1px solid ${shellBorder}`,
             borderBottom: `1px solid ${shellBorder}`,
-            borderTop: "none",
-            borderRadius: "0 0 26px 26px",
+            borderTop: isMobile ? `1px solid ${shellBorder}` : "none",
+            borderRadius: isMobile ? (mobileOpen ? "26px" : "999px") : "0 0 26px 26px",
             boxShadow: scrolled ? "0 10px 28px rgba(0,0,0,0.16)" : "0 8px 22px rgba(0,0,0,0.12)",
             color: shellColor,
+            marginTop: isMobile ? "10px" : "0",
             transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease, box-shadow 260ms ease",
           }}
         >
-      <div className="flex items-center h-16 gap-0 w-full px-4 md:px-7">
+      <div className="flex items-center h-14 md:h-16 gap-0 w-full px-4 md:px-7">
         {/* Logo */}
         <Link
           href="/"
@@ -159,7 +187,7 @@ export default function Nav() {
           aria-label="Interval 360 home"
         >
           <Image
-            src={isDark ? "/white_logologo.svg" : "/black_logologo.svg"}
+            src={navIsDark ? "/white_logologo.svg" : "/black_logologo.svg"}
             alt="Interval 360"
             width={140}
             height={32}
@@ -169,7 +197,7 @@ export default function Nav() {
         </Link>
 
         {/* Links — desktop */}
-        <ul className="hidden lg:flex items-center list-none flex-1 gap-0 m-0 p-0">
+        <ul className="hidden xl:flex items-center list-none flex-1 gap-0 m-0 p-0">
           <li>
             <Link
               href="/"
@@ -243,7 +271,7 @@ export default function Nav() {
         </ul>
 
         {/* CTA Actions */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0 ml-6">
+        <div className="hidden xl:flex items-center gap-3 shrink-0 ml-6">
           <a
             href="https://app.interval360.com"
             className="inline-flex items-center gap-1.5 text-[0.8rem] font-medium px-1 no-underline transition-colors hover:opacity-90"
@@ -255,7 +283,7 @@ export default function Nav() {
             </svg>
             Login
           </a>
-          <span aria-hidden className="h-5 w-px" style={{ background: isDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
+          <span aria-hidden className="h-5 w-px" style={{ background: navIsDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
           <div className="flex items-center gap-2">
             <Link
               href="/buy"
@@ -280,14 +308,15 @@ export default function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="lg:hidden ml-auto p-2"
+          className="xl:hidden ml-auto inline-flex items-center justify-center w-10 h-10 rounded-md transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          style={{ background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.06)" }}
         >
           <div className="space-y-1.5">
-            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
-            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
-            <span className="block w-6 h-0.5" style={{ background: "currentColor" }} />
+            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
+            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
+            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
           </div>
         </button>
       </div>
@@ -295,7 +324,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="lg:hidden"
+          className="xl:hidden"
           style={{
             background: shellBg,
             borderTop: `1px solid ${shellBorder}`,
@@ -305,38 +334,64 @@ export default function Nav() {
             transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease",
           }}
         >
-          {[
-            { href: "/", label: "Home" },
-            { href: "/platform-overview", label: "Platform" },
-            { href: "/solutions", label: "Solutions" },
-            { href: "/pricing", label: "Pricing" },
-            { href: "/resources", label: "Resources" },
-            { href: "/company", label: "Company" },
-            { href: "/for-coaches", label: "For Coaches" },
-          ].map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className="block px-6 py-3 text-sm border-b no-underline"
-              style={{ color: "var(--charcoal)", borderColor: "var(--rule)" }}
+          <div className="px-4 pt-3 pb-2">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/platform-overview", label: "Platform" },
+              { href: "/solutions", label: "Solutions" },
+              { href: "/pricing", label: "Pricing" },
+              { href: "/resources", label: "Resources" },
+              { href: "/company", label: "Company" },
+              { href: "/for-coaches", label: "For Coaches" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="block px-3.5 py-3 text-[0.92rem] font-medium rounded-lg no-underline transition-colors"
+                style={{
+                  color: shellColor,
+                  borderBottom: "1px solid rgba(127,141,168,0.2)",
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className="px-4 pb-4 pt-2 space-y-2">
+            <a
+              href="https://app.interval360.com"
+              className="flex w-full items-center justify-center gap-2 h-11 text-[0.86rem] font-medium rounded-lg no-underline border"
+              style={{
+                color: shellColor,
+                background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.05)",
+                borderColor: navIsDark ? "rgba(255,255,255,0.2)" : "rgba(6,16,39,0.16)",
+              }}
             >
-              {item.label}
-            </Link>
-          ))}
-          <div className="flex gap-3 px-6 py-4">
+              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Login
+            </a>
             <Link
               href="/buy"
-              className="flex-1 text-center text-sm font-medium py-2 rounded border-[1.5px] no-underline"
-              style={{ color: "var(--navy)", borderColor: "var(--navy)" }}
+              onClick={() => setMobileOpen(false)}
+              className="inline-flex w-full items-center justify-center text-[0.84rem] font-semibold py-2.5 rounded-lg border no-underline"
+              style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
             >
               Buy
             </Link>
             <Link
               href="/company#contact"
-              className="flex-1 text-center text-sm font-semibold py-2 rounded no-underline"
-              style={{ background: "var(--navy)", color: "#fff" }}
+              onClick={() => setMobileOpen(false)}
+              className="inline-flex w-full items-center justify-center gap-1.5 text-[0.84rem] font-semibold py-2.5 rounded-lg no-underline"
+              style={{ background: callBg, color: "#fff" }}
             >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
+                <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
               Book a Call
             </Link>
           </div>
