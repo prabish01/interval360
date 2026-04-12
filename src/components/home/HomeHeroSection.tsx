@@ -30,7 +30,7 @@ export function HomeHeroSection() {
             </Link>
           </div>
           <div className="mt-5">
-            <Link href="#sample" className="text-[0.9rem] font-medium no-underline border-b border-current pb-0.5" style={{ color: "rgba(234,239,243,0.68)" }}>
+            <Link href="/reports-and-outputs" className="text-[0.9rem] font-medium no-underline border-b border-current pb-0.5" style={{ color: "rgba(234,239,243,0.68)" }}>
               See sample reports →
             </Link>
           </div>

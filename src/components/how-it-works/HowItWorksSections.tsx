@@ -1,51 +1,136 @@
+import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
-import { conversationExample, stats, steps } from "./data";
+import { Send } from "lucide-react";
+import { homeTheme } from "@/lib/homeTheme";
+import { conversationExample, receiveReports, stats, steps } from "./data";
 
 export default function HowItWorksSections() {
   return (
-    <>
-      <PageHero
-        eyebrow="How It Works"
-        title={<>From launch to insight in <span style={{ color: "var(--sky-blue)" }}>days — not weeks.</span></>}
-        body="Interval 360 is designed to reduce friction at every stage of the 360 process — for the people providing feedback, for the leader receiving it, and for the HR team or coach running it."
-        buttons={[
-          { href: "/buy", label: "Buy an Assessment", variant: "teal" },
-          { href: "/company#contact", label: "Book a Call", variant: "secondary" },
-          { href: "#conversation", label: "See the conversation →", variant: "ghost" },
-        ]}
-      />
+    <div className="min-h-screen">
+      {/* 1 — Dark: Hero */}
+      <section
+        className="relative overflow-hidden pt-28 pb-16 text-white md:pb-20 page-gutter"
+        style={{ background: homeTheme.heroGradient }}
+      >
+        <div className="pointer-events-none absolute inset-0 grid-pattern" style={{ opacity: 0.16 }} />
+        <div
+          className="pointer-events-none absolute inset-0 opacity-50"
+          style={{
+            backgroundImage: `
+              radial-gradient(ellipse 80% 50% at 50% -20%, ${homeTheme.blueGlowSoft}, transparent 55%)
+            `,
+          }}
+        />
+        <div className="content-wrap relative z-10 max-w-4xl">
+          <p
+            className="mb-5 text-[0.68rem] font-semibold tracking-[0.28em] uppercase"
+            style={{ color: homeTheme.blue }}
+          >
+            How it works
+          </p>
+          <h1
+            className="mb-6 text-[clamp(2rem,5vw,3.25rem)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            From launch to insight in{" "}
+            <span style={{ color: homeTheme.blueBright }}>days — not weeks.</span>
+          </h1>
+          <p className="mb-10 max-w-[52ch] text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.textBody }}>
+            Interval 360 is designed to reduce friction at every stage of the 360 process — for the people providing feedback, for the leader receiving it, and for the HR team or coach running it.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              href="/buy"
+              className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-[0.82rem] font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
+            >
+              Buy an assessment
+            </Link>
+            <Link
+              href="/company#contact"
+              className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-[0.82rem] font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
+              style={{
+                borderColor: homeTheme.outlineButtonBorder,
+                background: homeTheme.outlineButtonBg,
+              }}
+            >
+              Book a call
+            </Link>
+            <Link
+              href="#conversation"
+              className="inline-flex items-center gap-1.5 border-b border-current px-0.5 py-3 text-[0.82rem] font-medium no-underline transition-opacity hover:opacity-80 uppercase"
+              style={{ color: homeTheme.linkMuted }}
+            >
+              See the conversation <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      <div style={{ background: "var(--navy-dark)", borderBottom: "1px solid rgba(187,220,251,0.1)" }}>
-        <div className="grid grid-cols-2 lg:grid-cols-4 px-[4vw] py-8">
-          {stats.map((stat, i) => (
-            <div key={i} className="flex flex-col items-center text-center py-4 px-6" style={{ borderRight: i < stats.length - 1 ? "1px solid rgba(187,220,251,0.12)" : "none" }}>
-              <span className="text-[2rem] font-bold mb-1" style={{ fontFamily: "var(--font-montserrat)", color: "var(--teal-light)" }}>{stat.num}</span>
-              <span className="text-[0.8rem] text-center" style={{ color: "rgba(234,239,243,0.55)" }}>{stat.label}</span>
+      {/* 2 — Light: Stats */}
+      <div className="border-y" style={{ borderColor: homeTheme.lightRule, background: homeTheme.sectionWhite }}>
+        <div className="content-wrap page-gutter grid grid-cols-2 gap-px lg:grid-cols-4" style={{ background: homeTheme.lightRule }}>
+          {stats.map((stat) => (
+            <div
+              key={stat.num}
+              className="flex flex-col items-center justify-center gap-1 px-4 py-8 text-center md:py-10"
+              style={{ background: homeTheme.sectionWhite }}
+            >
+              <span
+                className="text-[clamp(1.35rem,2.8vw,1.85rem)] font-extrabold tracking-tight"
+                style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.blue }}
+              >
+                {stat.num}
+              </span>
+              <span
+                className="max-w-[18ch] text-[0.65rem] font-semibold uppercase leading-snug tracking-[0.14em]"
+                style={{ color: homeTheme.lightBody }}
+              >
+                {stat.label}
+              </span>
             </div>
           ))}
         </div>
       </div>
 
-      <section style={{ background: "#fff" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-2 gap-16 mb-16 items-end">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>The Process</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>A better process from start to finish.</h2>
-            </div>
-            <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              Traditional 360 processes fail at both ends — the collection is burdensome, and the output is hard to use. Interval 360 is built to fix both.
-            </p>
-          </div>
-          <div className="flex flex-col">
-            {steps.map((step, i) => (
-              <div key={i} className="grid items-start py-10 gap-8" style={{ gridTemplateColumns: "4rem 1fr", borderTop: "1px solid var(--rule)", borderBottom: i === steps.length - 1 ? "1px solid var(--rule)" : "none" }}>
-                <p className="text-[0.85rem] font-bold tracking-[0.06em] pt-0.5" style={{ fontFamily: "var(--font-montserrat)", color: "var(--teal)" }}>{step.num}</p>
-                <div>
-                  <h3 className="text-[1.05rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>{step.title}</h3>
-                  <p className="text-[0.92rem] leading-[1.7] mb-4" style={{ color: "var(--slate)" }}>{step.body}</p>
-                  <span className="inline-block text-[0.72rem] font-semibold tracking-[0.1em] uppercase px-3 py-1 rounded" style={{ background: "rgba(44,166,164,0.1)", color: "var(--teal)" }}>{step.time}</span>
+      {/* 3 — Dark: Process */}
+      <section
+        className="border-b py-20 text-white md:py-28"
+        style={{ borderColor: homeTheme.borderSubtle, background: homeTheme.sectionBlack }}
+      >
+        <div className="content-wrap page-gutter">
+          <h2
+            className="mb-14 text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase md:mb-16"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            The process
+          </h2>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 xl:grid-cols-5 xl:gap-6">
+            {steps.map((step) => (
+              <div key={step.num} className="relative min-h-44">
+                <span
+                  className="pointer-events-none absolute -left-1 -top-4 select-none text-[4.25rem] font-extrabold leading-none text-white/[0.08] sm:text-[4.75rem]"
+                  style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  aria-hidden
+                >
+                  {step.num}
+                </span>
+                <div className="relative z-10 flex h-full flex-col pt-10">
+                  <h3
+                    className="mb-3 text-[0.78rem] font-bold uppercase leading-snug tracking-[0.12em]"
+                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p className="mb-4 text-[0.88rem] leading-[1.7]" style={{ color: homeTheme.textMuted }}>
+                    {step.body}
+                  </p>
+                  <span
+                    className="mt-auto inline-block w-fit rounded px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em]"
+                    style={{ background: homeTheme.blueTint12, color: homeTheme.blue }}
+                  >
+                    {step.time}
+                  </span>
                 </div>
               </div>
             ))}
@@ -53,88 +138,216 @@ export default function HowItWorksSections() {
         </div>
       </section>
 
-      <section id="conversation" style={{ background: "var(--light-bg)" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>The Conversation</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-5" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>What it actually looks like.</h2>
-              <p className="text-[1.05rem] leading-[1.75] mb-6" style={{ color: "var(--slate)" }}>
-                The AI starts with structured opening questions designed to elicit useful, specific input. When a response is general, it follows up with a targeted probe — the same way a skilled interviewer would.
-              </p>
-              <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-                The result is feedback that is richer, more specific, and more useful than anything a static survey can produce — in the same amount of time.
-              </p>
+      {/* 4 — Light: Conversation */}
+      <section
+        id="conversation"
+        className="scroll-mt-24 border-b py-20 md:py-28"
+        style={{ borderColor: homeTheme.lightRule, background: homeTheme.sectionPaper }}
+      >
+        <div className="content-wrap page-gutter grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <h2
+              className="mb-6 text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase"
+              style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
+            >
+              The conversation
+            </h2>
+            <p className="mb-6 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              The AI starts with structured opening questions designed to elicit useful, specific input. When a response is general, it follows up with a targeted probe — the same way a skilled interviewer would.
+            </p>
+            <p className="mb-8 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              The result is feedback that is richer, more specific, and more useful than anything a static survey can produce — in the same amount of time.
+            </p>
+            <div
+              className="inline-flex items-center gap-2.5 rounded-full border px-4 py-2"
+              style={{
+                borderColor: homeTheme.lightRule,
+                background: homeTheme.sectionWhite,
+              }}
+              role="status"
+            >
+              <span className="relative flex h-2 w-2">
+                <span
+                  className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-40"
+                  style={{ background: homeTheme.blue }}
+                />
+                <span className="relative inline-flex h-2 w-2 rounded-full" style={{ background: homeTheme.blue }} />
+              </span>
+              <span
+                className="text-[0.62rem] font-semibold uppercase tracking-[0.2em]"
+                style={{ color: homeTheme.lightBody }}
+              >
+                AI intelligence pulse active
+              </span>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-xl" style={{ background: "#fff", border: "1px solid var(--rule)" }}>
-              <div className="flex items-center gap-2 px-4 py-3" style={{ background: "var(--navy-dark)", borderBottom: "1px solid rgba(187,220,251,0.1)" }}>
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
-                <span className="ml-3 text-[0.75rem]" style={{ color: "rgba(234,239,243,0.5)" }}>Interval 360 — Feedback Conversation</span>
+          </div>
+
+          <div className="overflow-hidden rounded-xl border border-black/10 bg-[#101010] text-white shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
+            <div className="flex items-center gap-2 border-b border-white/8 px-4 py-3">
+              <div className="flex gap-1.5">
+                <span className="size-2.5 rounded-full bg-[#ff5f57]/90" />
+                <span className="size-2.5 rounded-full bg-[#febc2e]/90" />
+                <span className="size-2.5 rounded-full bg-[#28c840]/90" />
               </div>
-              <div className="p-6 flex flex-col gap-4">
-                {conversationExample.map((msg, i) => (
-                  <div key={i} className={`flex ${msg.speaker === "rater" ? "justify-end" : "justify-start"}`}>
-                    <div className="max-w-[85%] px-4 py-3 rounded-lg text-[0.88rem] leading-[1.65]" style={msg.speaker === "ai" ? { background: "var(--light-bg)", color: "var(--charcoal)", borderRadius: "4px 16px 16px 16px" } : { background: "var(--navy)", color: "#fff", borderRadius: "16px 4px 16px 16px" }}>
-                      {msg.speaker === "ai" && <span className="block text-[0.68rem] font-bold tracking-[0.1em] uppercase mb-1.5" style={{ color: "var(--teal)" }}>Interval 360 AI</span>}
-                      {msg.text}
-                    </div>
+              <span className="ml-2 text-[0.72rem] text-white/35">Interval 360 — Feedback Conversation</span>
+            </div>
+            <div className="flex max-h-[min(28rem,70vh)] flex-col gap-4 overflow-y-auto p-5 md:p-6">
+              {conversationExample.map((msg, i) => (
+                <div key={i} className={`flex ${msg.speaker === "rater" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className={`max-w-[92%] rounded-2xl px-4 py-3 text-[0.86rem] leading-[1.65] md:max-w-[88%] ${
+                      msg.speaker === "ai"
+                        ? "rounded-bl-md border text-white/90"
+                        : "rounded-br-md bg-white/7 text-white/80"
+                    }`}
+                    style={
+                      msg.speaker === "ai"
+                        ? {
+                            borderColor: "rgba(187,220,251,0.22)",
+                            background: `linear-gradient(165deg, ${homeTheme.blueTint35} 0%, ${homeTheme.blueTint12} 100%)`,
+                          }
+                        : undefined
+                    }
+                  >
+                    {msg.speaker === "ai" && (
+                      <span
+                        className="mb-1.5 block text-[0.62rem] font-bold uppercase tracking-[0.16em]"
+                        style={{ color: homeTheme.blue }}
+                      >
+                        Interval 360 AI
+                      </span>
+                    )}
+                    {msg.text}
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 border-t border-white/8 px-4 py-3">
+              <div className="flex flex-1 items-center rounded-lg border border-white/10 bg-black/40 px-3 py-2.5">
+                <span className="text-[0.78rem] text-white/25">Type a response…</span>
               </div>
+              <button
+                type="button"
+                className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/12 bg-white/6 text-white/50"
+                aria-label="Send (illustration)"
+              >
+                <Send className="size-4" aria-hidden />
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section style={{ background: "var(--navy-dark)" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal-light)" }}>What You Receive</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-5" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>Two purpose-built reports.</h2>
-              <p className="text-[1.05rem] leading-[1.75] mb-8" style={{ color: "rgba(234,239,243,0.7)" }}>
-                Every Interval 360 assessment produces two distinct reports — one for the organization and one for the leader. Both are designed to be used directly, without additional interpretation.
-              </p>
-              <div className="flex gap-4 flex-wrap">
-                <Link href="/reports-and-outputs" className="text-[0.9rem] font-semibold px-6 py-3 rounded no-underline" style={{ background: "var(--teal)", color: "#fff" }}>See report structure →</Link>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              {[
-                { label: "Assessment Report", title: "For managers, HR, and talent decisions", items: ["Executive summary across all feedback", "What + How leadership analysis", "Strengths and development areas", "Succession and placement signal"] },
-                { label: "Development Report", title: "For the leader themselves", items: ["Structured deep-dive on each theme", "Specific examples and patterns", "Curated development resources", "Actionable next steps and focus areas"] },
-              ].map((report, i) => (
-                <div key={i} className="rounded-lg p-6" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(187,220,251,0.15)" }}>
-                  <p className="text-[0.68rem] font-bold tracking-[0.1em] uppercase mb-2" style={{ color: "var(--teal)" }}>{report.label}</p>
-                  <h4 className="text-[1rem] font-semibold mb-4" style={{ color: "#fff" }}>{report.title}</h4>
-                  <ul className="flex flex-col gap-2">
+      {/* 5 — Dark: What you receive */}
+      <section className="py-20 text-white md:py-28" style={{ background: homeTheme.sectionCharcoal }}>
+        <div className="content-wrap page-gutter">
+          <h2
+            className="mx-auto mb-14 text-center text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase md:mb-16"
+            style={{ fontFamily: "var(--font-space-grotesk)" }}
+          >
+            What you receive
+          </h2>
+          <p className="mx-auto mb-12 max-w-[56ch] text-center text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.textFaint }}>
+            Every Interval 360 assessment produces two distinct reports — one for the organization and one for the leader. Both are designed to be used directly, without additional interpretation.
+          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
+            {receiveReports.map((report) => (
+              <div
+                key={report.label}
+                className="flex flex-col overflow-hidden rounded-2xl border border-white/9 bg-[#0c0c0c]"
+              >
+                <div className="p-8 pb-6">
+                  <p className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.18em]">{report.label}</p>
+                  <p
+                    className="mb-6 text-[0.72rem] font-semibold uppercase tracking-[0.16em]"
+                    style={{ color: homeTheme.blue }}
+                  >
+                    {report.subtitle}
+                  </p>
+                  <ul className="flex flex-col gap-2.5">
                     {report.items.map((item) => (
-                      <li key={item} className="flex items-center gap-2.5 text-[0.85rem]" style={{ color: "rgba(234,239,243,0.7)" }}>
-                        <span className="w-1 h-1 rounded-full shrink-0" style={{ background: "var(--teal)" }} />
+                      <li key={item} className="flex items-start gap-2.5 text-[0.88rem] leading-[1.55]" style={{ color: homeTheme.textMuted }}>
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: homeTheme.blue }}
+                          aria-hidden
+                        />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-              ))}
-            </div>
+                <div className="relative mt-auto aspect-16/10 w-full border-t border-white/6 bg-black/50">
+                  <Image
+                    src={report.image}
+                    alt={report.imageAlt}
+                    fill
+                    className="object-cover object-top opacity-90"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#0c0c0c] via-transparent to-transparent opacity-70" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/reports-and-outputs"
+              className="text-[0.88rem] font-semibold no-underline border-b pb-0.5 transition-opacity hover:opacity-70 uppercase"
+              style={{ color: homeTheme.blue, borderColor: homeTheme.blue }}
+            >
+              See report structure →
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none grid-pattern" />
-        <div className="relative z-10 content-wrap page-gutter py-28 text-center">
-          <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] mb-5 mx-auto max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>Ready to see the process in action?</h2>
-          <p className="text-[1.05rem] leading-[1.75] mb-10 mx-auto max-w-[48ch]" style={{ color: "rgba(234,239,243,0.7)" }}>Buy a single assessment and experience the full process — from setup to report.</p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/buy" className="text-[0.9rem] font-semibold px-8 py-3.5 rounded no-underline" style={{ background: "var(--teal)", color: "#fff" }}>Buy an Assessment</Link>
-            <Link href="/company#contact" className="text-[0.9rem] font-medium px-8 py-3.5 rounded border-[1.5px] no-underline" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.4)", background: "transparent" }}>Book a Call</Link>
+      {/* 6 — Light: Final CTA */}
+      <section
+        className="relative overflow-hidden border-t py-24 md:py-32"
+        style={{ borderColor: homeTheme.lightRule, background: homeTheme.sectionWhite }}
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage: `
+              linear-gradient(${homeTheme.lightRule} 1px, transparent 1px),
+              linear-gradient(90deg, ${homeTheme.lightRule} 1px, transparent 1px)
+            `,
+            backgroundSize: "40px 40px",
+          }}
+        />
+        <div className="content-wrap page-gutter relative z-10 mx-auto max-w-3xl text-center">
+          <h2
+            className="mb-6 text-[clamp(1.65rem,3.2vw,2.35rem)] font-bold leading-[1.2] uppercase"
+            style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
+          >
+            Ready to see the process in action?
+          </h2>
+          <p className="mb-10 text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+            Buy a single assessment and experience the full process — from setup to report.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link
+              href="/buy"
+              className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.85rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
+            >
+              Buy an assessment
+            </Link>
+            <Link
+              href="/company#contact"
+              className="inline-flex items-center justify-center rounded-sm border-2 border-transparent bg-transparent px-8 py-3.5 text-[0.85rem] font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
+              style={{
+                color: homeTheme.lightHeading,
+                borderColor: homeTheme.lightHeading,
+              }}
+            >
+              Book a call
+            </Link>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

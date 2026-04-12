@@ -1,116 +1,201 @@
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
+import Image from "next/image";
 import { differentiators, modelDimensions, whoItems } from "./data";
 
 export default function PlatformOverviewSections() {
   return (
-    <>
-      <PageHero
-        eyebrow="Platform Overview"
-        title={<>A leadership assessment platform built for <span style={{ color: "var(--sky-blue)" }}>repeatable, organization-wide 360 assessments.</span></>}
-        body="Interval 360 replaces cumbersome survey-based 360 processes with a faster, more scalable approach — producing two purpose-built reports: one that gives managers and HR the insight they need for talent decisions, and one that gives leaders what they need to grow."
-        buttons={[
-          { href: "/company#contact", label: "Book a Call", variant: "teal" },
-          { href: "/reports-and-outputs", label: "See the reports →", variant: "secondary" },
-          { href: "/buy", label: "Buy an assessment →", variant: "ghost" },
-        ]}
-      />
+    <div className="flex flex-col">
 
-      <section className="py-24 page-gutter" style={{ background: "#fff" }}>
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <span className="inline-block text-[0.72rem] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded mb-5" style={{ background: "rgba(5,79,154,0.08)", color: "var(--navy)" }}>
-              Leadership Assessment Platform
-            </span>
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>What Interval 360 Is</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-              A focused assessment layer — not another HR platform.
-            </h2>
+      {/* ── HERO — dark ── */}
+      <section className="min-h-screen flex flex-col bg-[#0a0e1a]">
+        <div className="flex-1 grid lg:grid-cols-2 content-wrap page-gutter w-full pt-28 pb-16 gap-12">
+
+          {/* Left */}
+          <div className="flex flex-col justify-center py-10">
+            <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-8">
+              Evolution of Talent Intelligence
+            </p>
+            <h1 className="text-[clamp(3rem,6vw,5.5rem)] font-extrabold uppercase leading-[0.92] text-white mb-8" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              Platform<br />Overview
+            </h1>
+            <p className="text-[1rem] leading-[1.8] text-white/60 mb-10 max-w-[44ch]">
+              A leadership assessment platform built for repeatable, organization-wide 360 assessments.
+            </p>
+            <div className="flex flex-wrap gap-4 items-center">
+              <Link href="/buy" className="text-[0.85rem] font-semibold px-7 py-3 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors no-underline">
+                Buy an Assessment
+              </Link>
+              <Link href="/reports-and-outputs" className="text-[0.85rem] font-medium px-7 py-3 border border-white/20 text-white hover:border-white/40 transition-colors no-underline">
+                See the Reports
+              </Link>
+              <Link href="/company#contact" className="text-[0.85rem] font-medium text-[#2d6cff] border-b border-[#2d6cff] pb-0.5 no-underline hover:opacity-70 transition-opacity">
+                Get an Assessment →
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-col gap-5">
-            <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              Interval 360 is the next-gen talent intelligence platform. AI-powered insights that scale, revealing the talent you have and the leadership development you need.
-            </p>
-            <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              Unlike broad HR platforms that treat 360 assessments as one module among many, Interval 360 is purpose-built around the assessment process itself — how feedback is collected, how it is synthesized, and how it is used. That focus is what makes the outputs more useful and the process more scalable.
-            </p>
-            <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-              It works for a single leader buying an assessment independently, and for organizations assessing hundreds of leaders across a development program, a succession cycle, or an ongoing assessment cadence.
-            </p>
+
+          {/* Right — product mockup */}
+          <div className="hidden lg:flex items-center justify-center py-10">
+            <div className="w-full border border-white/6 overflow-hidden">
+              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/6 bg-[#0e1220]">
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <div className="w-2 h-2 rounded-full bg-white/10" />
+                <span className="text-[0.6rem] text-white/20 ml-2 tracking-wider">interval360 — platform</span>
+              </div>
+              <div className="bg-[#0b0f1a] p-6">
+                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#2d6cff] mb-3">A focused assessment layer —</p>
+                <h3 className="text-[1.6rem] font-extrabold uppercase leading-[1.05] text-white mb-5" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  not another HR<br />platform.
+                </h3>
+                <p className="text-[0.82rem] leading-[1.7] text-white/50 mb-6 max-w-[38ch]">
+                  Interval 360 is purpose-built around the assessment process itself — how feedback is collected, synthesized, and used.
+                </p>
+                <div className="flex flex-col gap-2">
+                  {["Purpose-built for collection, synthesis, and usage", "Two reports per assessment", "Five-minute feedback process"].map((pt, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-1 h-1 rounded-full bg-[#2d6cff]" />
+                      <span className="text-[0.78rem] text-white/40">{pt}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
-      <section className="py-24 page-gutter" style={{ background: "var(--light-bg)" }}>
-        <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
-          <div>
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>What Makes It Different</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>
-              Better input. Better output. Less burden.
+      {/* ── BETTER INPUT — white ── */}
+      <section className="min-h-screen flex flex-col bg-white">
+        <div className="flex-1 flex flex-col content-wrap page-gutter w-full py-24">
+
+          {/* Top row */}
+          <div className="grid lg:grid-cols-2 gap-12 items-end mb-16">
+            <h2 className="text-[clamp(2.8rem,5.5vw,4.5rem)] font-extrabold uppercase leading-[0.92] text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              Better Input.<br />Better Output.<br />
+              <span className="text-[#2d6cff]">Less Burden.</span>
+            </h2>
+            <p className="text-[1rem] leading-[1.8] text-[#4a5877] max-w-[42ch] lg:self-end">
+              Traditional 360 tools rely on long static surveys and produce exhaustive reports. Interval 360 was built to fix both problems — at the collection stage and the output stage.
+            </p>
+          </div>
+
+          {/* 4-col differentiator grid */}
+          <div className="flex-1 grid lg:grid-cols-4 border-t border-l border-[#e4eaf5]">
+            {differentiators.map((d, i) => {
+              const [num, label] = d.num.split(" — ");
+              return (
+                <div key={i} className="group flex flex-col p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300">
+                  <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-50 group-hover:opacity-100 transition-opacity duration-300 mb-6">
+                    {num}{label ? ` — ${label}` : ""}
+                  </p>
+                  <h3 className="text-[0.95rem] font-bold uppercase tracking-[0.02em] leading-[1.3] mb-4 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                    {d.title}
+                  </h3>
+                  <p className="text-[0.85rem] leading-[1.7] text-[#4a5877] mt-auto">{d.body}</p>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── TWO DIMENSIONS — dark ── */}
+      <section className="min-h-screen flex flex-col bg-[#0e0e0e]">
+        <div className="flex-1 flex flex-col content-wrap page-gutter w-full py-24">
+
+          <div className="mb-14">
+            <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">
+              The Assessment Framework
+            </p>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+              <h2 className="text-[clamp(2.8rem,5.5vw,4.5rem)] font-extrabold uppercase leading-[0.92] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                Two Dimensions.<br />
+                <span className="text-[#2d6cff]">One Complete Picture.</span>
+              </h2>
+              <p className="text-[0.95rem] leading-[1.8] text-white/50 max-w-[40ch] lg:text-right">
+                Interval 360 evaluates leadership across two dimensions — what a leader delivers and how they lead. Both are required for a complete view.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex-1 grid lg:grid-cols-2 border-t border-l border-white/6">
+            {modelDimensions.map((dim, i) => (
+              <div key={dim.label} className="p-10 border-r border-b border-white/6 flex flex-col gap-6">
+                <div>
+                  <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#2d6cff] mb-4">{dim.label}</p>
+                  <h3 className="text-[1.4rem] font-extrabold uppercase leading-[1.1] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                    {dim.title}
+                  </h3>
+                </div>
+                <div className="flex flex-col">
+                  {dim.items.map((item) => (
+                    <div key={item} className="flex items-start gap-4 py-3.5 border-b border-white/6 last:border-0">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#2d6cff] shrink-0 mt-2" />
+                      <span className="text-[0.88rem] leading-[1.6] text-white/60">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── BUILT FOR — white ── */}
+      <section className="min-h-screen flex flex-col bg-white">
+        <div className="flex-1 flex flex-col content-wrap page-gutter w-full py-24">
+
+          <div className="mb-14">
+            <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">
+              Who It Serves
+            </p>
+            <h2 className="text-[clamp(2.8rem,5.5vw,4.5rem)] font-extrabold uppercase leading-[0.92] text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              Built For Individuals<br />And Organizations,{" "}
+              <span className="text-[#2d6cff] italic">Alike.</span>
             </h2>
           </div>
-          <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-            Traditional 360 tools rely on long static surveys and produce exhaustive reports. Interval 360 was built to fix both problems — at the collection stage and the output stage.
+
+          <div className="flex-1 grid lg:grid-cols-3 border-t border-l border-[#e4eaf5]">
+            {whoItems.map((item, i) => (
+              <div key={i} className="group flex flex-col p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300">
+                <p className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-50 group-hover:opacity-100 transition-opacity duration-300 mb-5">
+                  {item.label}
+                </p>
+                <h3 className="text-[1rem] font-bold uppercase tracking-[0.02em] leading-[1.3] mb-4 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  {item.title}
+                </h3>
+                <p className="text-[0.88rem] leading-[1.7] text-[#4a5877]">{item.body}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── CTA — blue ── */}
+      <section className="min-h-[50vh] flex items-center bg-[#2d6cff]">
+        <div className="content-wrap page-gutter w-full py-24 text-center">
+          <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-white/60 mb-6">
+            Ready To Evolve?
           </p>
-        </div>
-        <div className="grid lg:grid-cols-2 gap-6">
-          {differentiators.map((d, i) => (
-            <div key={i} className="p-8 rounded-lg" style={{ background: "#fff", border: "1px solid var(--rule)" }}>
-              <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-3" style={{ color: "var(--teal)" }}>{d.num}</p>
-              <h3 className="text-[1.05rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>{d.title}</h3>
-              <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>{d.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-24 page-gutter" style={{ background: "#fff" }}>
-        <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>The Assessment Framework</p>
-        <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-5 max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>Two dimensions. One complete picture.</h2>
-        <p className="text-[1.05rem] leading-[1.75] mb-12 max-w-[60ch]" style={{ color: "var(--slate)" }}>Interval 360 evaluates leadership across two dimensions — what a leader delivers and how they lead. Both are required for a complete view of leadership effectiveness.</p>
-        <div className="grid lg:grid-cols-2 gap-6">
-          {modelDimensions.map((dim) => (
-            <div key={dim.label} className="p-10 rounded-lg" style={{ background: "var(--light-bg)", borderTop: `3px solid ${dim.color}` }}>
-              <p className="text-[0.72rem] font-bold tracking-[0.15em] uppercase mb-3" style={{ color: dim.color }}>{dim.label}</p>
-              <h3 className="text-[1.15rem] font-semibold mb-5" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>{dim.title}</h3>
-              <ul className="flex flex-col gap-3">
-                {dim.items.map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-[0.92rem]" style={{ color: "var(--slate)" }}>
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: dim.color }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-24 page-gutter" style={{ background: "var(--navy-dark)" }}>
-        <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal-light)" }}>Who It Serves</p>
-        <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-14 max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>Built for individuals and organizations, alike.</h2>
-        <div className="grid lg:grid-cols-3 gap-6">
-          {whoItems.map((item, i) => (
-            <div key={i} className="p-8 rounded-lg" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(187,220,251,0.15)" }}>
-              <p className="text-[0.72rem] font-bold tracking-[0.15em] uppercase mb-3" style={{ color: "var(--teal)" }}>{item.label}</p>
-              <h3 className="text-[1.05rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>{item.title}</h3>
-              <p className="text-[0.92rem] leading-[1.7]" style={{ color: "rgba(234,239,243,0.65)" }}>{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="py-28 page-gutter text-center relative overflow-hidden" style={{ background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)" }}>
-        <div className="absolute inset-0 pointer-events-none grid-pattern" />
-        <div className="relative z-10">
-          <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] mb-5 mx-auto max-w-[28ch]" style={{ fontFamily: "var(--font-poppins)", color: "#fff" }}>Ready to see the platform in action?</h2>
-          <p className="text-[1.05rem] leading-[1.75] mb-10 mx-auto max-w-[48ch]" style={{ color: "rgba(234,239,243,0.7)" }}>Buy a single assessment, or book a call to discuss an enterprise rollout.</p>
+          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold uppercase leading-[0.92] text-white mb-10" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+            Ready To See The<br />Platform In Action?
+          </h2>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/buy" className="text-[0.9rem] font-semibold px-8 py-3.5 rounded no-underline" style={{ background: "var(--teal)", color: "#fff" }}>Buy an Assessment</Link>
-            <Link href="/company#contact" className="text-[0.9rem] font-medium px-8 py-3.5 rounded border-[1.5px] no-underline" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.4)", background: "transparent" }}>Book a Call</Link>
+            <Link href="/buy" className="text-[0.9rem] font-bold px-8 py-3.5 bg-white text-[#2d6cff] hover:bg-white/90 transition-colors no-underline">
+              Deploy the Mission
+            </Link>
+            <Link href="/company#contact" className="text-[0.9rem] font-medium px-8 py-3.5 border border-white/40 text-white hover:border-white/70 transition-colors no-underline">
+              Schedule a Demo
+            </Link>
           </div>
         </div>
       </section>
-    </>
+
+    </div>
   );
 }

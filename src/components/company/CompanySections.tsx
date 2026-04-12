@@ -1,149 +1,287 @@
+import Image from "next/image";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
-import { credentials, principles, whatItIs, whatItIsNot } from "./data";
+import { homeTheme, marketingTypography } from "@/lib/homeTheme";
+import {
+  companyHero,
+  reimaginingSection,
+  corePrinciplesSection,
+  practitionerRoots,
+  definitionOfScope,
+  joinIntelligence,
+} from "./data";
 
 export default function CompanySections() {
   return (
-    <>
-      <PageHero
-        eyebrow="Company"
-        title={<>Built by people who have <span style={{ color: "var(--sky-blue)" }}>run assessments, not just designed them.</span></>}
-        body="Interval 360 was founded by executive assessors and coaches who spent years collecting leadership feedback the slow way — and decided there had to be a better process."
-      />
-
-      <section style={{ background: "#fff" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-[5fr_7fr] gap-24 items-start">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Our Story</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>Why we reimagined the 360.</h2>
-            </div>
-            <div className="flex flex-col gap-5">
-              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>After fifteen years running executive assessments and leadership development programs inside some of the world&apos;s largest organizations, the founders of Interval 360 clearly understood that 360 assessments worked. When done well, 360s can accelerate development, sharpen self-awareness, and provide HR teams with the kind of data that actually informs talent decisions.</p>
-              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>The problem wasn&apos;t the concept. It was everything around it.</p>
-              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>360s were expensive and complex to run, so they got reserved for senior leaders, leaving the majority of the organization without meaningful feedback. When they were deployed more broadly, the process was cumbersome enough to tank participation rates and produce shallow responses. The reports that came back were dense and hard to act on. And because the whole thing took months to execute, it happened once — maybe twice — and then stopped. No cadence. No trend data. No continuity.</p>
-              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>The result: 360 assessments were being done in pockets, sporadically, and often not well. The organizations that needed it most — running talent reviews, building bench strength, developing managers at scale — couldn&apos;t operationalize it.</p>
-              <p className="text-[1rem] leading-[1.75]" style={{ color: "var(--slate)" }}>That&apos;s where Interval 360 comes from. A platform designed to collect meaningful feedback in five minutes, synthesize it into a focused and actionable report, and run cheaply enough to deploy across the full enterprise — not just the C-suite — at regular intervals.</p>
-              <div className="pl-6 py-4 pr-4 rounded-r mt-2" style={{ background: "var(--light-bg)", borderLeft: "3px solid var(--teal)" }}>
-                <p className="italic text-[0.95rem] leading-[1.7]" style={{ color: "var(--navy-dark)" }}>&ldquo;We didn&apos;t set out to build another assessment tool. We set out to solve the puzzle — why something this valuable gets used so rarely. The answer turned out to be cost, burden, and outputs that didn&apos;t earn their keep. So we fixed those things.&rdquo;</p>
-              </div>
-            </div>
+    <div className="font-sans bg-black">
+      {/* 1. Hero Section */}
+      <section className="relative overflow-hidden min-h-screen flex flex-col justify-end pt-48 pb-24 lg:pb-32 border-b border-white/10" style={{ background: "radial-gradient(ellipse at 50% -20%, #171d2b 0%, #08090d 100%)" }}>
+        {/* Abstract Grid Mesh background representation */}
+        <div 
+          className="absolute inset-0 opacity-[0.15] mix-blend-screen pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "60px 20px",
+            transform: "perspective(500px) rotateX(60deg) scale(2)",
+            transformOrigin: "top text-center"
+          }}
+        />
+        <div className="w-full px-6 md:px-12 lg:px-20 xl:px-[8%] relative z-10 flex flex-col gap-6">
+          <div className="flex items-center gap-4">
+            <span className="h-[2px] w-10 origin-left" style={{ background: homeTheme.blue }} aria-hidden />
+            <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.blue }}>
+              {companyHero.eyebrow}
+            </p>
           </div>
+          <h1 className="text-[clamp(3.5rem,8vw,7rem)] font-bold leading-[0.9] tracking-tight text-white m-0 max-w-[12ch]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+            {companyHero.titlePart1}<br />
+            <span className="font-serif italic font-light opacity-90">{companyHero.titlePart2}</span>
+          </h1>
+          <p className="text-[1.1rem] leading-[1.6] text-white/60 max-w-[45ch] mt-4 font-[400] font-sans">
+            {companyHero.body}
+          </p>
         </div>
       </section>
 
-      <section style={{ background: "var(--light-bg)" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-2 gap-16 mb-14 items-end">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Our Approach</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>A few principles we won&apos;t compromise on.</h2>
-            </div>
-            <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>These are not values written for a wall. They are the specific choices that shape how we have built the product and how we work with customers.</p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            {principles.map((p, i) => (
-              <div key={i} className="p-8 rounded-lg" style={{ background: "#fff", border: "1px solid var(--rule)" }}>
-                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-3" style={{ color: "var(--teal)" }}>{p.num}</p>
-                <h3 className="text-[1.05rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>{p.title}</h3>
-                <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>{p.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: "#fff" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="mb-12">
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Our Background</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-5" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>Built by practitioners, not theorists.</h2>
-            <p className="text-[1.05rem] leading-[1.75] max-w-[60ch]" style={{ color: "var(--slate)" }}>The founding team brings direct experience running executive assessments, leadership development programs, and organizational coaching engagements across a range of industries and company stages.</p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            {credentials.map((cred, i) => (
-              <div key={i} className="p-8 rounded-lg" style={{ background: "var(--light-bg)" }}>
-                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase mb-3" style={{ color: "var(--teal)" }}>{cred.label}</p>
-                <h3 className="text-[1.05rem] font-semibold mb-3" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>{cred.title}</h3>
-                <p className="text-[0.92rem] leading-[1.7]" style={{ color: "var(--slate)" }}>{cred.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ background: "var(--light-bg)" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="mb-12">
-            <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Clarity on Scope</p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em]" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>What Interval 360 is — and is not.</h2>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--rule)" }}>
-              <div className="px-6 py-4" style={{ background: "var(--teal)" }}>
-                <span className="text-[0.75rem] font-bold tracking-[0.1em] uppercase" style={{ color: "#fff" }}>What It Is</span>
-              </div>
-              <div className="flex flex-col">
-                {whatItIs.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 px-6 py-4" style={{ background: "#fff", borderBottom: i < whatItIs.length - 1 ? "1px solid var(--rule)" : "none" }}>
-                    <div className="rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: "var(--teal)", width: 18, height: 18, minWidth: 18 }}>
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5L8 3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                    </div>
-                    <p className="text-[0.88rem] leading-[1.65]" style={{ color: "var(--charcoal)" }}>{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-lg overflow-hidden" style={{ border: "1px solid var(--rule)" }}>
-              <div className="px-6 py-4" style={{ background: "var(--warm-gray)" }}>
-                <span className="text-[0.75rem] font-bold tracking-[0.1em] uppercase" style={{ color: "#fff" }}>What It Is Not</span>
-              </div>
-              <div className="flex flex-col">
-                {whatItIsNot.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3 px-6 py-4" style={{ background: "#fff", borderBottom: i < whatItIsNot.length - 1 ? "1px solid var(--rule)" : "none" }}>
-                    <span className="text-[1rem] shrink-0 mt-0.5" style={{ color: "var(--warm-gray)" }}>—</span>
-                    <p className="text-[0.88rem] leading-[1.65]" style={{ color: "var(--slate)" }}>{item}</p>
-                  </div>
-                ))}
-              </div>
+      {/* 2. Reimagining the 360 */}
+      <section className="py-24 md:py-32 border-b border-white/5" style={{ background: "#0c0d12" }}>
+        <div className="content-wrap page-gutter grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="flex flex-col gap-8">
+            <h2 className="text-[clamp(2.5rem,5vw,3.5rem)] font-bold leading-[1.05] tracking-tight text-white whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              {reimaginingSection.title}
+            </h2>
+            <div className="flex flex-col gap-6 text-[1.05rem] leading-[1.65] text-white/50 max-w-[48ch]">
+              <p>{reimaginingSection.body1}</p>
+              <p>{reimaginingSection.body2}</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="contact" style={{ background: "#fff" }}>
-        <div className="content-wrap page-gutter py-24">
-          <div className="grid lg:grid-cols-[5fr_7fr] gap-24 items-start">
-            <div>
-              <p className="text-[0.72rem] font-semibold tracking-[0.2em] uppercase mb-4" style={{ color: "var(--teal)" }}>Get in Touch</p>
-              <h2 className="text-[clamp(1.7rem,3vw,2.3rem)] font-bold leading-[1.2] tracking-[-0.02em] mb-5" style={{ fontFamily: "var(--font-poppins)", color: "var(--navy-dark)" }}>We&apos;d like to hear from you.</h2>
-              <p className="text-[1.05rem] leading-[1.75]" style={{ color: "var(--slate)" }}>
-                Whether you&apos;re exploring Interval 360 for your organization, interested in a coach partner arrangement, or have a question about the platform — reach out and we&apos;ll get back to you within one business day.
+          <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square w-full rounded-sm overflow-hidden bg-[#111218] border border-white/5">
+            <Image 
+              src="/assessment-preview-results.png" 
+              alt="Abstract representation" 
+              fill 
+              className="object-cover opacity-50 grayscale mix-blend-luminosity" 
+            />
+            {/* Dark gradient overlay for atmosphere */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-black/20 to-transparent pointer-events-none" />
+            
+            {/* Floating Blue Block */}
+            <div className="absolute bottom-8 right-8 p-6 md:p-8 max-w-[280px]" style={{ background: homeTheme.blue }}>
+              <p className="text-[0.6rem] font-black uppercase tracking-[0.2em] text-white/70 mb-3">
+                {reimaginingSection.overlayTag}
+              </p>
+              <p className="text-[0.7rem] font-bold uppercase leading-[1.45] tracking-wider text-white">
+                "{reimaginingSection.overlayText}"
               </p>
             </div>
-            <div className="flex flex-col gap-5">
-              <div className="p-7 rounded-lg flex flex-col gap-3" style={{ background: "var(--light-bg)" }}>
-                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase" style={{ color: "var(--teal)" }}>Enterprise Inquiries</p>
-                <p className="text-[0.92rem]" style={{ color: "var(--slate)" }}>Volume pricing, security docs, enterprise rollout</p>
-                <a href="mailto:enterprise@interval360.com" className="text-[0.9rem] font-semibold no-underline" style={{ color: "var(--navy)" }}>enterprise@interval360.com</a>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. The Core Principles */}
+      <section className="py-24 md:py-32 border-b border-black/10 text-black" style={{ background: "#ffffff" }}>
+        <div className="content-wrap page-gutter">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20 pb-12 border-b border-black/10">
+            <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)", color: "#111" }}>
+              {corePrinciplesSection.title}
+            </h2>
+            <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-[#888] md:pb-2">
+              {corePrinciplesSection.subtitle}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+            {corePrinciplesSection.principles.map((p, idx) => (
+              <div key={idx} className="flex flex-col group border-l border-black/5 pl-6 hover:border-black/20 transition-colors">
+                <span className="text-[0.65rem] font-bold text-[#888] mb-6">
+                  {p.num}
+                </span>
+                <h3 className="text-[1.3rem] font-bold leading-[1.2] tracking-tight mb-4 whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)", color: "#111" }}>
+                  {p.title}
+                </h3>
+                <p className="text-[0.95rem] leading-[1.65] text-[#666] max-w-[32ch]">
+                  {p.body}
+                </p>
               </div>
-              <div className="p-7 rounded-lg flex flex-col gap-3" style={{ background: "var(--light-bg)" }}>
-                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase" style={{ color: "var(--teal)" }}>Coaching & Partnerships</p>
-                <p className="text-[0.92rem]" style={{ color: "var(--slate)" }}>Coach partnerships, white-label, consultant arrangements</p>
-                <a href="mailto:partners@interval360.com" className="text-[0.9rem] font-semibold no-underline" style={{ color: "var(--navy)" }}>partners@interval360.com</a>
-              </div>
-              <div className="p-7 rounded-lg flex flex-col gap-3" style={{ background: "var(--light-bg)" }}>
-                <p className="text-[0.72rem] font-bold tracking-[0.12em] uppercase" style={{ color: "var(--teal)" }}>General Questions</p>
-                <p className="text-[0.92rem]" style={{ color: "var(--slate)" }}>Product questions, media, anything else</p>
-                <a href="mailto:hello@interval360.com" className="text-[0.9rem] font-semibold no-underline" style={{ color: "var(--navy)" }}>hello@interval360.com</a>
-              </div>
-              <div className="pt-2">
-                <Link href="/company#contact" className="inline-block text-[0.9rem] font-semibold px-8 py-3.5 rounded no-underline" style={{ background: "var(--teal)", color: "#fff" }}>Book a Call</Link>
-              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Practitioner Roots */}
+      <section className="py-24 md:py-32 border-b border-white/5 text-white" style={{ background: "#16171b" }}>
+        <div className="content-wrap page-gutter">
+          <div className="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-8">
+            <div className="flex flex-col gap-6">
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.blue }}>
+                {practitionerRoots.tag}
+              </p>
+              <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                {practitionerRoots.title}
+              </h2>
+              <p className="text-[0.95rem] leading-[1.65] text-white/50 max-w-[35ch] mt-2">
+                {practitionerRoots.body}
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-[1px] bg-white/5 border border-white/5 rounded-sm overflow-hidden auto-rows-fr">
+              {practitionerRoots.cards.map((c, i) => (
+                <div key={i} className="bg-[#121316] p-8 md:p-10 flex flex-col group hover:bg-[#15161a] transition-colors relative overflow-hidden h-full">
+                  {/* Subtle top accent line */}
+                  <div className="absolute top-0 left-0 w-full h-[2px] opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: homeTheme.blue }} />
+                  
+                  {/* Decorative Icon */}
+                  <div className="w-10 h-10 rounded bg-white/5 flex items-center justify-center mb-10 border border-white/5 group-hover:border-white/10 transition-colors">
+                    {i === 0 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>}
+                    {i === 1 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>}
+                    {i === 2 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>}
+                    {i === 3 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>}
+                  </div>
+                  
+                  <h3 className="text-[1.1rem] font-bold mb-4 tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                    {c.title}
+                  </h3>
+                  <p className="text-[0.95rem] leading-[1.65] text-white/50">
+                    {c.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
-    </>
+
+      {/* 5. Definition of Scope */}
+      <section className="py-24 md:py-32 border-b border-white/5 text-white" style={{ background: "#111215" }}>
+        <div className="content-wrap page-gutter max-w-[70rem]">
+          <div className="text-center flex flex-col items-center gap-4 mb-20 pb-16 border-b border-white/10">
+            <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              {definitionOfScope.title}
+            </h2>
+            <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/40">
+              {definitionOfScope.subtitle}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-[1px] bg-white/5 border border-white/5 overflow-hidden rounded-sm">
+            {/* What It Is */}
+            <div className="bg-[#15161a] p-10 md:p-14">
+              <div className="flex items-center gap-4 mb-14">
+                <div className="size-5 rounded-full flex items-center justify-center shrink-0" style={{ background: homeTheme.blue }}>
+                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h3 className="text-[1.4rem] font-black italic tracking-wider mt-1" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  INTERVAL 360 IS
+                </h3>
+              </div>
+              <ul className="flex flex-col gap-10">
+                {definitionOfScope.whatItIs.map((item, i) => (
+                  <li key={i} className="flex gap-5">
+                    <div className="size-[5px] rounded-full mt-2.5 shrink-0 bg-white/40" />
+                    <div>
+                      <p className="font-bold text-[1.05rem] leading-snug mb-1.5 tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>{item.title}</p>
+                      <p className="text-[0.95rem] leading-[1.6] text-white/50">{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* What It Is Not */}
+            <div className="bg-[#121316] p-10 md:p-14">
+              <div className="flex items-center gap-4 mb-14">
+                <div className="size-5 rounded-full flex items-center justify-center shrink-0 bg-white/5 border border-white/10">
+                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#e11d48" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </div>
+                <h3 className="text-[1.4rem] font-black italic tracking-wider mt-1 text-white/60" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  INTERVAL 360 IS NOT
+                </h3>
+              </div>
+              <ul className="flex flex-col gap-10">
+                {definitionOfScope.whatItIsNot.map((item, i) => (
+                  <li key={i} className="flex gap-5">
+                     <div className="size-[5px] rounded-full mt-2.5 shrink-0 bg-white/20" />
+                    <div>
+                      <p className="font-bold text-[1.05rem] leading-snug mb-1.5 text-white/60 tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>{item.title}</p>
+                      <p className="text-[0.95rem] leading-[1.6] text-white/30">{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Join the Intelligence */}
+      <section className="py-24 md:py-32 text-black" style={{ background: "#ffffff" }}>
+        <div className="content-wrap page-gutter">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+            <div className="flex flex-col gap-8 lg:max-w-[40ch]">
+              <h2 className="text-[clamp(3.5rem,5vw,4.5rem)] font-bold leading-[1] tracking-tight whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)", color: "#111" }}>
+                {joinIntelligence.title}
+              </h2>
+              <p className="text-[1.05rem] leading-[1.65] text-[#555]">
+                {joinIntelligence.body}
+              </p>
+              
+              <div className="flex flex-col gap-4 mt-8">
+                <div className="flex items-center gap-4 bg-[#f9fafc] p-4 pr-6 rounded-sm w-fit border border-black/5">
+                  <div className="w-10 h-10 bg-[#111] text-white flex items-center justify-center rounded-[3px]">
+                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  </div>
+                  <a href={`mailto:${joinIntelligence.email}`} className="text-[0.8rem] font-bold tracking-wide mt-0.5">
+                    {joinIntelligence.email}
+                  </a>
+                </div>
+                
+                <div className="flex items-center gap-4 bg-[#f9fafc] p-4 pr-6 rounded-sm w-fit border border-black/5">
+                  <div className="w-10 h-10 bg-[#111] text-white flex items-center justify-center rounded-[3px]">
+                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <p className="text-[0.8rem] font-bold tracking-wide mt-0.5">
+                    {joinIntelligence.location}
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Streamlined Form Box */}
+            <div className="bg-white border border-black/10 p-10 md:p-14 lg:mt-4 shadow-sm rounded-sm">
+              <form className="flex flex-col gap-10">
+                <div className="grid md:grid-cols-2 gap-10 md:gap-8">
+                  <div className="flex flex-col gap-4">
+                    <label className="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[#888]">
+                      {joinIntelligence.form.name}
+                    </label>
+                    <input type="text" className="border-b border-black/10 pb-2 focus:outline-none focus:border-black/50 transition-colors bg-transparent text-[#111] text-[0.95rem] font-medium" />
+                  </div>
+                  <div className="flex flex-col gap-4">
+                    <label className="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[#888]">
+                      {joinIntelligence.form.email}
+                    </label>
+                    <input type="email" className="border-b border-black/10 pb-2 focus:outline-none focus:border-black/50 transition-colors bg-transparent text-[#111] text-[0.95rem] font-medium" />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-4">
+                  <label className="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[#888]">
+                    {joinIntelligence.form.org}
+                  </label>
+                  <input type="text" className="border-b border-black/10 pb-2 focus:outline-none focus:border-black/50 transition-colors bg-transparent text-[#111] text-[0.95rem] font-medium" />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <label className="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-[#888]">
+                    {joinIntelligence.form.inquiry}
+                  </label>
+                  <textarea rows={3} className="border-b border-black/10 pb-2 focus:outline-none focus:border-black/50 transition-colors bg-transparent resize-none text-[#111] text-[0.95rem] font-medium"></textarea>
+                </div>
+                <button type="button" className="mt-4 bg-[#111] text-white font-bold text-[0.7rem] uppercase tracking-widest py-5 rounded-[3px] hover:-translate-y-0.5 hover:shadow-lg transition-all active:translate-y-0 active:shadow-none hover:bg-black">
+                  {joinIntelligence.form.submit}
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

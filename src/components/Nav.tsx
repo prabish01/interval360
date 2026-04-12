@@ -197,11 +197,11 @@ export default function Nav() {
         </Link>
 
         {/* Links — desktop */}
-        <ul className="hidden xl:flex items-center list-none flex-1 gap-0 m-0 p-0">
+        <ul className="hidden xl:flex items-center list-none flex-1 gap-2 m-0 p-0">
           <li>
             <Link
               href="/"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
               style={{ color: "currentColor" }}
             >
               Home
@@ -211,13 +211,10 @@ export default function Nav() {
           {/* Platform dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
               style={{ color: "currentColor" }}
             >
               Platform
-              <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
-                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
             </button>
             <Dropdown items={platformMenu} />
           </li>
@@ -225,13 +222,10 @@ export default function Nav() {
           {/* Solutions dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
               style={{ color: "currentColor" }}
             >
               Solutions
-              <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
-                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
             </button>
             <Dropdown items={solutionsMenu} />
           </li>
@@ -239,7 +233,7 @@ export default function Nav() {
           <li>
             <Link
               href="/pricing"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
               style={{ color: "currentColor" }}
             >
               Pricing
@@ -248,7 +242,7 @@ export default function Nav() {
           <li>
             <Link
               href="/resources"
-              className="block text-[0.82rem] px-[0.85rem] leading-[64px] border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current no-underline"
+              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
               style={{ color: "currentColor" }}
             >
               Resources
@@ -258,13 +252,10 @@ export default function Nav() {
           {/* Company dropdown */}
           <li className="relative group">
             <button
-              className="flex items-center gap-1 text-[0.82rem] px-[0.85rem] h-16 border-b-2 border-transparent transition-all hover:opacity-70 hover:border-current bg-transparent cursor-pointer"
+              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
               style={{ color: "currentColor" }}
             >
               Company
-              <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none">
-                <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
             </button>
             <Dropdown items={companyMenu} />
           </li>
@@ -274,34 +265,34 @@ export default function Nav() {
         <div className="hidden xl:flex items-center gap-3 shrink-0 ml-6">
           <a
             href="https://app.interval360.com"
-            className="inline-flex items-center gap-1.5 text-[0.8rem] font-medium px-1 no-underline transition-colors hover:opacity-90"
+            className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-1 no-underline transition-colors hover:opacity-90"
             style={{ color: loginColor }}
           >
             <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
               <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            Login
+            LOGIN
           </a>
           <span aria-hidden className="h-5 w-px" style={{ background: navIsDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
           <div className="flex items-center gap-2">
             <Link
               href="/buy"
-              className="text-[0.78rem] font-semibold px-3.5 py-1.5 rounded-md border no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5"
+              className="text-[0.65rem] font-bold uppercase tracking-[0.16em] px-3.5 py-2 rounded-[2px] border no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm"
               style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
             >
-              Buy an Assessment
+              BUY ASSESSMENT
             </Link>
             <Link
               href="/company#contact"
-              className="inline-flex items-center gap-1.5 text-[0.78rem] font-semibold px-3.5 py-1.5 rounded-md no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90"
+              className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-[2px] no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm hover:opacity-90"
               style={{ background: callBg, color: "#fff" }}
             >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
                 <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
               </svg>
-              Book a Call
+              GET STARTED
             </Link>
           </div>
         </div>

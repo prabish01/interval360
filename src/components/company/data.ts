@@ -1,31 +1,68 @@
-export const principles = [
-  { num: "Principle 01", title: "Measure impact, not just intent", body: "Leaders are not experienced through their intentions. They are experienced through their behavior and its effect on other people. Interval 360 is built to capture that real-world impact, because that is what drives trust, performance, and better talent decisions." },
-  { num: "Principle 02", title: "Confidentiality is non-negotiable", body: "People give better feedback when they trust the process. We are explicit about what will and will not be shared, and we protect anonymity through the design of the platform, not just through policy language. Trust is a prerequisite for honest data." },
-  { num: "Principle 03", title: "AI should strengthen judgment, not replace it", body: "AI is excellent at gathering signal, organizing patterns, and reducing administrative burden. It should not be the final decision-maker on people. Our role is to surface sharper insight so managers, HR leaders, and executives can apply human judgment with better information." },
-  { num: "Principle 04", title: "Speed should increase quality, not reduce it", body: "Most 360 processes are slow, expensive, and difficult to repeat. We believe speed matters because feedback is more useful when it is timely and easier to deploy at scale. The goal is not to make feedback lighter. It is to make strong feedback easier to access." },
-  { num: "Principle 05", title: "What gets delivered and how it gets delivered both matter", body: "Performance is not one-dimensional. Results matter, and so does the way a leader creates those results. Interval 360 is built around that distinction so organizations can make better development, promotion, and succession decisions with a fuller picture." },
-  { num: "Principle 06", title: "Specificity over scores", body: "A number can flag an issue, but it rarely explains it. Real development happens when feedback includes examples, context, and patterns people can actually understand and act on. We design every part of the process to produce signal, not just ratings." },
-];
+export const companyHero = {
+  eyebrow: "BUILT BY PRACTITIONERS",
+  titlePart1: "THE ARCHIVE",
+  titlePart2: "OF MOTION.",
+  body: "We didn't build another SaaS tool. We built a high-performance neural stream for talent intelligence, designed by the people who lead the industry."
+};
 
-export const credentials = [
-  { label: "Executive Assessment", title: "Experience evaluating leaders across industries and company stages", body: "The team has direct experience conducting structured leadership assessments for executive hiring, succession planning, and high-potential identification — including the kind of qualitative interviews that Interval 360 now automates." },
-  { label: "Leadership Coaching", title: "Years using 360 outputs as the foundation for coaching engagements", body: "We know what makes a 360 report useful in a coaching context — and what makes it a document that gets filed and forgotten. The output structure in Interval 360 reflects what actually surfaces productive coaching conversations." },
-  { label: "Succession and Talent Planning", title: "Helps organizations see leadership readiness more clearly", body: "High-stakes talent decisions should not rely on instinct alone. By capturing structured feedback on both results and leadership approach, Interval 360 gives organizations better visibility into who is ready now, who is growing, and where development support may be needed." },
-  { label: "HR and Talent Partnerships", title: "Collaborated with HR and talent teams on high-stakes people decisions", body: "We understand the organizational dynamics around 360 feedback — who sees what, how results get used in calibration conversations, and the political realities that determine whether feedback gets acted on or not." },
-];
+export const reimaginingSection = {
+  title: "REIMAGINING\nTHE 360.",
+  body1: "The traditional talent review is a static snapshot of a dynamic human being. It's a grainy Polaroid in an era of 4K streaming. We saw the disconnect between how people actually work and how they are measured.",
+  body2: "Interval 360 was born at the intersection of high-growth technology leadership. We needed a system that measured motion, not inertia. We built that system because we couldn't just tell what someone did, we needed to predict what they do next.",
+  overlayTag: "PURE INTENT",
+  overlayText: "“INTERVAL 360 WAS SPECIFICALLY BUILT TO FIX PERFORMANCE MEASUREMENT.”"
+};
 
-export const whatItIs = [
-  "A fast, structured 360 assessment process that takes minutes to complete — not hours",
-  "A platform that produces two professional-quality outputs: one for the organization, one for the leader",
-  "An AI-assisted collection layer that produces more specific, contextual input than static surveys can deliver",
-  "A scalable tool that works for one leader buying independently, or for enterprise teams running hundreds of assessments",
-  "A complement to, not a replacement for, human judgment in talent decisions",
-];
+export const corePrinciplesSection = {
+  title: "THE CORE\nPRINCIPLES",
+  subtitle: "SHAPING INTERVAL 360 INTELLIGENCE",
+  principles: [
+    { num: "01", title: "Absolute\nTransparency", body: "The math is clear. Thoughts must be traceable, verifiable, and clear to every stakeholder." },
+    { num: "02", title: "Context Over Code", body: "Intelligence is useless without the human element of the why, the how, and the context." },
+    { num: "03", title: "Real-Time Pulse", body: "Feedback isn't an annual event, it's a continuous stream of data points." },
+    { num: "04", title: "Inherent Bias Shield", body: "Systems must actively identify and neutralize unconscious bias in performance data." },
+    { num: "05", title: "Dynamic Growth", body: "We think and move faster. We ship the fastest paths to the next level of capability." },
+    { num: "06", title: "The Expert Loop", body: "Our zero constraint architecture ensuring it speaks in the language of leadership." },
+  ]
+};
 
-export const whatItIsNot = [
-  "A full HRIS or talent management platform",
-  "A psychometric assessment or personality instrument",
-  "A replacement for structured executive assessment or competency-based interviews",
-  "A tool for continuous performance management or OKR tracking",
-  "An anonymous forum or peer review system without structure",
-];
+export const practitionerRoots = {
+  tag: "FOUNDERS",
+  title: "PRACTITIONER\nROOTS.",
+  body: "Our founding team consists of former Heads of Engineering, VPs of Talent, and Chief People Officers from the world's most aggressive growth companies.",
+  cards: [
+    { title: "Engineering Edge", body: "Built with the same architecture agile to the modern tech environment." },
+    { title: "Cognitive Science", body: "Informed by behavioral psychology to capture the nuance of human interaction." },
+    { title: "Data Precision", body: "Delivering millions of data points across specialized methods and lateral dependencies." },
+    { title: "Enterprise Grade", body: "Security and compliance built into the base fabric of the platform from day one." }
+  ]
+};
+
+export const definitionOfScope = {
+  title: "DEFINITION OF SCOPE",
+  subtitle: "WHERE INTERVAL 360 FITS IN YOUR ECOSYSTEM",
+  whatItIs: [
+    { title: "A Predictive Engine", body: "Forecasting future performance based on velocity and trajectory." },
+    { title: "A High-Performance Cockpit", body: "Giving managers the controls to steer team growth in real-time." },
+    { title: "A Behavioral Layer", body: "An architectural element that sits above your existing HR data." }
+  ],
+  whatItIsNot: [
+    { title: "A Legacy HRIS", body: "We don't manage payroll, benefits, or basic personnel records." },
+    { title: "A Survey Tool", body: "We collect data through active and interactive, not just passive means." },
+    { title: "A Replacement for Judgment", body: "Our intelligence augments human leaders, it doesn't replace them." }
+  ]
+};
+
+export const joinIntelligence = {
+  title: "JOIN THE\nINTELLIGENCE.",
+  body: "Schedule a briefing with a practitioner to see how Interval 360 can redefine your talent strategy.",
+  email: "intelligence@interval360.com",
+  location: "Global Operations: San Francisco / Berlin",
+  form: {
+    name: "FULL NAME",
+    email: "WORK EMAIL",
+    org: "ORGANIZATION",
+    inquiry: "INQUIRY SUMMARY",
+    submit: "Submit Request"
+  }
+};

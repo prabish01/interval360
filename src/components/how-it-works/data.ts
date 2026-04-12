@@ -39,8 +39,47 @@ export const steps = [
 ];
 
 export const conversationExample = [
-  { speaker: "ai", text: "Thank you for taking the time to share feedback. To start, can you describe one or two moments from the last six months where you observed this leader at their best — situations where their leadership made a real difference?" },
-  { speaker: "rater", text: "Yeah, there were a few. The Q3 delivery crunch comes to mind. Everyone was stressed, timelines were slipping, and she just stayed calm, reset expectations with stakeholders really clearly, and kept the team focused. It didn't feel like the wheels were coming off even when they kind of were." },
-  { speaker: "ai", text: "That's a useful example — it speaks to how she manages pressure and stakeholder communication. You mentioned she kept the team focused. How did she do that specifically? Was it through communication, structure, presence, or something else?" },
-  { speaker: "rater", text: "More communication than anything. She ran a daily standup during that stretch, not to micromanage but just to surface blockers early. People knew what was happening. And she was transparent about what was at risk, which I think actually helped. No one was in the dark." },
+  {
+    speaker: "ai" as const,
+    text: "Thank you for taking the time to share feedback. To start, can you describe one or two moments from the last six months where you observed this leader at their best — situations where their leadership made a real difference?",
+  },
+  {
+    speaker: "rater" as const,
+    text: "Yeah, there were a few. The Q3 delivery crunch comes to mind. Everyone was stressed, timelines were slipping, and she just stayed calm, reset expectations with stakeholders really clearly, and kept the team focused. It didn't feel like the wheels were coming off even when they kind of were.",
+  },
+  {
+    speaker: "ai" as const,
+    text: "That's a useful example — it speaks to how she manages pressure and stakeholder communication. You mentioned she kept the team focused. How did she do that specifically? Was it through communication, structure, presence, or something else?",
+  },
+  {
+    speaker: "rater" as const,
+    text: "More communication than anything. She ran a daily standup during that stretch, not to micromanage but just to surface blockers early. People knew what was happening. And she was transparent about what was at risk, which I think actually helped. No one was in the dark.",
+  },
+];
+
+export const receiveReports = [
+  {
+    label: "Assessment Report",
+    subtitle: "For managers, HR, and talent decisions",
+    items: [
+      "Executive summary across all feedback",
+      "What + How leadership analysis",
+      "Strengths and development areas",
+      "Succession and placement signal",
+    ],
+    image: "/assessment-preview-overview.png",
+    imageAlt: "Preview of an Interval 360 assessment report",
+  },
+  {
+    label: "Development Report",
+    subtitle: "For the leader themselves",
+    items: [
+      "Structured deep-dive on each theme",
+      "Specific examples and patterns",
+      "Curated development resources",
+      "Actionable next steps and focus areas",
+    ],
+    image: "/assessment-preview-results.png",
+    imageAlt: "Preview of an Interval 360 development report",
+  },
 ];
