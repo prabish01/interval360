@@ -265,11 +265,10 @@ export default function TalentDecisionsSections() {
             className="grid grid-cols-1 border lg:grid-cols-5"
             style={{ borderColor: homeTheme.lightRule }}
           >
-            {moments.map((m) => {
-              const key = Array.isArray(m.title) ? m.title.join("-") : m.title;
+            {moments.map((m, i) => {
               return (
                 <div
-                  key={key}
+                  key={i}
                   className="flex min-h-full flex-col border-t px-5 py-8 first:border-t-0 lg:border-t-0 lg:border-l lg:px-6 lg:py-10 lg:first:border-l-0"
                   style={{ borderColor: homeTheme.lightRule }}
                 >

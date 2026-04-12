@@ -8,6 +8,7 @@ export const pricingPlans = [
   {
     id: "single",
     title: "Single Assessment",
+    badge: undefined,
     description: "Surgical precision for independent talent intelligence deep dives.",
     price: "$150",
     priceSuffix: "/assessment",
@@ -31,6 +32,7 @@ export const pricingPlans = [
   {
     id: "enterprise",
     title: "Enterprise Custom",
+    badge: undefined,
     description: "Complex structural integration for high-performance global operations.",
     price: "Custom",
     priceSuffix: "/year",
