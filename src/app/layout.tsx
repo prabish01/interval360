@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins, Inter, Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import LayoutShell from "@/components/LayoutShell";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -41,9 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={cn(montserrat.variable, poppins.variable, inter.variable, spaceGrotesk.variable, "font-sans", geist.variable)}>
 
       <body className="min-h-screen w-full flex flex-col antialiased" style={{ fontFamily: "var(--font-inter), sans-serif" }}>
-        <Nav />
-        {children}
-        <Footer />
+        <LayoutShell>{children}</LayoutShell>
       </body>
     </html>
   );

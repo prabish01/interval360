@@ -249,6 +249,16 @@ export default function Nav() {
             </Link>
           </li>
 
+          <li>
+            <Link
+              href="/particle"
+              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
+              style={{ color: "currentColor" }}
+            >
+              Particle
+            </Link>
+          </li>
+
           {/* Company dropdown */}
           <li className="relative group">
             <button
@@ -334,6 +344,7 @@ export default function Nav() {
               { href: "/resources", label: "Resources" },
               { href: "/company", label: "Company" },
               { href: "/for-coaches", label: "For Coaches" },
+              { href: "/particle", label: "Particle" },
             ].map((item) => (
               <Link
                 key={item.href}
