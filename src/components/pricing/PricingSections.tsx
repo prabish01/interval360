@@ -2,15 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Minus } from "lucide-react";
 import { homeTheme, marketingTypography } from "@/lib/homeTheme";
 import { TechnicalProtocolFaq } from "./TechnicalProtocolFaq";
-import {
-  comparisonRows,
-  faqItems,
-  includedCopy,
-  pricingCta,
-  pricingHero,
-  pricingPlans,
-  protocolCopy,
-} from "./data";
+import { faqItems, pricingCta, pricingHero, pricingPlans, protocolCopy } from "./data";
 
 function Cell({ value }: { value: "check" | "dash" | "limited" }) {
   if (value === "check") {
@@ -55,10 +47,7 @@ export default function PricingSections() {
 
         <div className="content-wrap page-gutter relative z-10">
           <div className="mx-auto mb-14 max-w-3xl text-center md:mb-16">
-            <h1
-              className="mb-4 text-[clamp(2.5rem,7vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.03em] text-white"
-              style={{ fontFamily: "var(--font-space-grotesk)" }}
-            >
+            <h1 className="mb-4 text-[clamp(2.5rem,7vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.03em] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
               {pricingHero.title}
             </h1>
             <p className="text-[clamp(1.05rem,2vw,1.35rem)] font-medium text-white/90">{pricingHero.sub}</p>
@@ -78,10 +67,7 @@ export default function PricingSections() {
                 }}
               >
                 {plan.badge && (
-                  <span
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white"
-                    style={{ background: homeTheme.blue }}
-                  >
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white" style={{ background: homeTheme.blue }}>
                     {plan.badge}
                   </span>
                 )}
@@ -124,62 +110,6 @@ export default function PricingSections() {
         </div>
       </section>
 
-      {/* What's included */}
-      <section className="border-y py-20 md:py-28" style={{ borderColor: homeTheme.lightRule, background: "#fff" }}>
-        <div className="content-wrap page-gutter">
-          <div className="mx-auto mb-12 max-w-3xl text-center md:mb-16">
-            <h2
-              className={`mb-4 ${marketingTypography.sectionDisplayLight}`}
-              style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
-            >
-              {includedCopy.title}
-            </h2>
-            <p className="text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
-              {includedCopy.sub}
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-4xl overflow-x-auto">
-            <table className="w-full min-w-[600px] border-collapse text-left">
-              <thead>
-                <tr style={{ borderBottom: `1px solid ${homeTheme.lightRule}` }}>
-                  <th className="pb-4 pr-4 text-[0.72rem] font-bold uppercase tracking-[0.12em]" style={{ color: homeTheme.lightBody }}>
-                    Capability
-                  </th>
-                  <th className="pb-4 px-3 text-center text-[0.72rem] font-bold uppercase tracking-[0.12em]" style={{ color: homeTheme.lightHeading }}>
-                    Single
-                  </th>
-                  <th className="pb-4 px-3 text-center text-[0.72rem] font-bold uppercase tracking-[0.12em]" style={{ color: homeTheme.lightHeading }}>
-                    Team
-                  </th>
-                  <th className="pb-4 px-3 text-center text-[0.72rem] font-bold uppercase tracking-[0.12em]" style={{ color: homeTheme.lightHeading }}>
-                    Enterprise
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row) => (
-                  <tr key={row.label} style={{ borderBottom: `1px solid ${homeTheme.lightRule}` }}>
-                    <td className="py-5 pr-4 text-[0.92rem] font-semibold capitalize" style={{ color: "#0b1733" }}>
-                      {row.label}
-                    </td>
-                    <td className="px-3 py-5 text-center">
-                      <Cell value={row.single} />
-                    </td>
-                    <td className="px-3 py-5 text-center">
-                      <Cell value={row.team} />
-                    </td>
-                    <td className="px-3 py-5 text-center">
-                      <Cell value={row.enterprise} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
       {/* Technical protocol FAQ */}
       <section className="border-b py-20 text-white md:py-28" style={{ borderColor: homeTheme.borderSubtle, background: "#070a12" }}>
         <div className="content-wrap page-gutter">
@@ -206,19 +136,12 @@ export default function PricingSections() {
         <div className="content-wrap page-gutter">
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 md:flex-row md:gap-10">
             <div className="max-w-xl text-center md:text-left">
-              <p
-                className="text-[1.15rem] font-bold uppercase leading-snug tracking-tight text-white md:text-[1.25rem]"
-                style={{ fontFamily: "var(--font-space-grotesk)" }}
-              >
+              <p className="text-[1.15rem] font-bold uppercase leading-snug tracking-tight text-white md:text-[1.25rem]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                 {pricingCta.title}
               </p>
               <p className="mt-1 text-[0.98rem] font-medium leading-snug text-white/90">{pricingCta.sub}</p>
             </div>
-            <Link
-              href={pricingCta.href}
-              className="inline-flex shrink-0 items-center justify-center rounded-sm bg-white px-8 py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.16em] no-underline transition-opacity hover:opacity-95"
-              style={{ color: homeTheme.blue }}
-            >
+            <Link href={pricingCta.href} className="inline-flex shrink-0 items-center justify-center rounded-sm bg-white px-8 py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.16em] no-underline transition-opacity hover:opacity-95" style={{ color: homeTheme.blue }}>
               {pricingCta.button}
             </Link>
           </div>

@@ -75,7 +75,7 @@ export const playbooksSection = {
     {
       title: "How to Run a 360 in 14 Days",
       body: "A practical cadence for launch, reminders, and completion — without burning out raters or the participant.",
-      href: "#",
+      href: "/resources/how-to-run-a-360-in-14-days",
     },
     {
       title: "How to Choose the Right Raters",

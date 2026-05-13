@@ -101,7 +101,7 @@ export default function LeadershipDevelopmentSections() {
             >
               Leadership
               <br />
-              development
+              <span style={{ color: homeTheme.blue }}>development</span>
             </h1>
             <p
               className={`mb-10 max-w-[62ch] ${marketingTypography.heroLead}`}

@@ -17,10 +17,10 @@ export const useCases = [
   },
   {
     num: "Use Case 03",
-    title: "Team Launches and Role Transitions",
-    body: "Support leaders stepping into new roles — first-time managers, promotions, executive transitions — with a clear baseline of how they are starting and where to focus first.",
-    who: ["New Managers", "HR Partners", "Coaches"],
-    href: "/solutions/team-launches",
+    title: "For Coaches & Consultants",
+    body: "Deliver client-ready 360 feedback without building or licensing your own instrument. Professional reports on the same day, priced per assessment — no platform fees.",
+    who: ["Executive Coaches", "HR Consultants", "Practitioners"],
+    href: "/for-coaches",
     accent: "#2d6cff",
   },
 ];

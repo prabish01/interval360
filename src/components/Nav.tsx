@@ -8,7 +8,6 @@ const solutionsMenu = [
   { href: "/solutions", label: "Solutions Overview", sub: "All use cases at a glance", hub: true },
   { href: "/solutions/leadership-development", label: "Leadership Development", sub: "Programs, cohorts, and coaching" },
   { href: "/solutions/talent-decisions", label: "Talent Decisions & Succession", sub: "Promotions, HiPo, placement" },
-  { href: "/solutions/team-launches", label: "Team & Role Transitions", sub: "New managers, exec transitions" },
   null, // divider
   { href: "/for-coaches", label: "For Coaches & Consultants", sub: "Client-ready 360 for practitioners" },
 ];
@@ -18,6 +17,13 @@ const platformMenu = [
   { href: "/how-it-works", label: "How It Works", sub: "Step-by-step process" },
   { href: "/conversational-ai", label: "Conversational AI", sub: "Why conversation beats surveys" },
   { href: "/reports-and-outputs", label: "Reports & Outputs", sub: "What you receive" },
+];
+
+const resourcesMenu = [
+  { href: "/resources", label: "Resources Hub", sub: "All playbooks, reports, and field notes", hub: true },
+  null,
+  { href: "/resources/how-to-run-a-360-in-14-days", label: "How to Run a 360 in 14 Days", sub: "Playbook — setup, collection, and close" },
+  { href: "/reports-and-outputs", label: "Sample Reports", sub: "See a real assessment output" },
 ];
 
 const companyMenu = [
@@ -53,23 +59,15 @@ function Dropdown({ items }: { items: (DropdownItem | null)[] }) {
         item === null ? (
           <div key={i} style={{ height: 1, background: "var(--rule)" }} />
         ) : (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="block px-5 py-3 transition-colors hover:bg-[var(--light-bg)]"
-            style={{ borderBottom: i < items.length - 1 ? "1px solid var(--rule)" : "none" }}
-          >
-            <span
-              className="block text-[0.82rem] font-semibold"
-              style={{ color: item.hub ? "var(--navy)" : "var(--charcoal)" }}
-            >
+          <Link key={item.href} href={item.href} className="block px-5 py-3 transition-colors hover:bg-[var(--light-bg)]" style={{ borderBottom: i < items.length - 1 ? "1px solid var(--rule)" : "none" }}>
+            <span className="block text-[0.82rem] font-semibold" style={{ color: item.hub ? "var(--navy)" : "var(--charcoal)" }}>
               {item.label}
             </span>
             <span className="block text-[0.74rem] mt-0.5" style={{ color: "var(--slate)" }}>
               {item.sub}
             </span>
           </Link>
-        )
+        ),
       )}
     </div>
   );
@@ -179,226 +177,224 @@ export default function Nav() {
             transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease, box-shadow 260ms ease",
           }}
         >
-      <div className="flex items-center h-14 md:h-16 gap-0 w-full px-4 md:px-7">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="shrink-0 mr-8 no-underline"
-          aria-label="Interval 360 home"
-        >
-          <Image
-            src={navIsDark ? "/white_logologo.svg" : "/black_logologo.svg"}
-            alt="Interval 360"
-            width={140}
-            height={32}
-            className="h-8 w-auto"
-            priority
-          />
-        </Link>
-
-        {/* Links — desktop */}
-        <ul className="hidden xl:flex items-center list-none flex-1 gap-2 m-0 p-0">
-          <li>
-            <Link
-              href="/"
-              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
-              style={{ color: "currentColor" }}
-            >
-              Home
+          <div className="flex items-center h-14 md:h-16 gap-0 w-full px-4 md:px-7">
+            {/* Logo */}
+            <Link href="/" className="shrink-0 mr-8 no-underline" aria-label="Interval 360 home">
+              <Image src={navIsDark ? "/white_logologo.svg" : "/black_logologo.svg"} alt="Interval 360" width={140} height={32} className="h-8 w-auto" priority />
             </Link>
-          </li>
 
-          {/* Platform dropdown */}
-          <li className="relative group">
-            <button
-              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
-              style={{ color: "currentColor" }}
-            >
-              Platform
+            {/* Links — desktop */}
+            <ul className="hidden xl:flex items-center list-none flex-1 gap-2 m-0 p-0">
+              <li>
+                <Link href="/" className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline" style={{ color: "currentColor" }}>
+                  Home
+                </Link>
+              </li>
+
+              {/* Platform dropdown */}
+              <li className="relative group">
+                <button className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer" style={{ color: "currentColor" }}>
+                  Platform
+                </button>
+                <Dropdown items={platformMenu} />
+              </li>
+
+              {/* Solutions dropdown */}
+              <li className="relative group">
+                <button className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer" style={{ color: "currentColor" }}>
+                  Solutions
+                </button>
+                <Dropdown items={solutionsMenu} />
+              </li>
+
+              <li>
+                <Link href="/pricing" className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline" style={{ color: "currentColor" }}>
+                  Pricing
+                </Link>
+              </li>
+              {/* Resources dropdown */}
+              <li className="relative group">
+                <button
+                  className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
+                  style={{ color: "currentColor" }}
+                >
+                  Resources
+                </button>
+                <Dropdown items={resourcesMenu} />
+              </li>
+
+              <li>
+                <Link href="/particle" className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline" style={{ color: "currentColor" }}>
+                  Particle
+                </Link>
+              </li>
+
+              {/* Company dropdown */}
+              <li className="relative group">
+                <button className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer" style={{ color: "currentColor" }}>
+                  Company
+                </button>
+                <Dropdown items={companyMenu} />
+              </li>
+            </ul>
+
+            {/* CTA Actions */}
+            <div className="hidden xl:flex items-center gap-3 shrink-0 ml-6">
+              {/* Login dropdown */}
+              <div className="relative group">
+                <button className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-1 no-underline transition-colors hover:opacity-90 bg-transparent cursor-pointer" style={{ color: loginColor }}>
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                    <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  LOGIN
+                  <svg className="w-2.5 h-2.5 opacity-60" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                    <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+                <div
+                  className="absolute right-0 top-full z-50 min-w-[180px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200"
+                  style={{
+                    background: "#fff",
+                    borderLeft: "1px solid var(--rule)",
+                    borderRight: "1px solid var(--rule)",
+                    borderBottom: "1px solid var(--rule)",
+                    borderTop: "2px solid var(--navy)",
+                    borderRadius: "0 0 8px 8px",
+                    boxShadow: "0 12px 40px rgba(5,79,154,0.12)",
+                    transform: "translateY(-4px)",
+                    transition: "opacity 0.18s, transform 0.18s, visibility 0.18s",
+                  }}
+                >
+                  <Link href="/login" className="block px-5 py-3 transition-colors hover:bg-[var(--light-bg)]" style={{ borderBottom: "1px solid var(--rule)" }}>
+                    <span className="block text-[0.82rem] font-semibold" style={{ color: "var(--charcoal)" }}>
+                      User Login
+                    </span>
+                    <span className="block text-[0.74rem] mt-0.5" style={{ color: "var(--slate)" }}>
+                      Assessment platform
+                    </span>
+                  </Link>
+                  <Link href="/admin/login" className="block px-5 py-3 transition-colors hover:bg-[var(--light-bg)]">
+                    <span className="block text-[0.82rem] font-semibold" style={{ color: "var(--charcoal)" }}>
+                      Admin Login
+                    </span>
+                    <span className="block text-[0.74rem] mt-0.5" style={{ color: "var(--slate)" }}>
+                      Platform administration
+                    </span>
+                  </Link>
+                </div>
+              </div>
+              <span aria-hidden className="h-5 w-px" style={{ background: navIsDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
+              <div className="flex items-center gap-2">
+                <Link
+                  href="/buy"
+                  className="text-[0.65rem] font-bold uppercase tracking-[0.16em] px-3.5 py-2 rounded-[2px] border no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm"
+                  style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
+                >
+                  BUY ASSESSMENT
+                </Link>
+                <Link
+                  href="/company#contact"
+                  className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-[2px] no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm hover:opacity-90"
+                  style={{ background: callBg, color: "#fff" }}
+                >
+                  <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
+                    <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
+                  GET STARTED
+                </Link>
+              </div>
+            </div>
+
+            {/* Mobile hamburger */}
+            <button className="xl:hidden ml-auto inline-flex items-center justify-center w-10 h-10 rounded-md transition-colors" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu" style={{ background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.06)" }}>
+              <div className="space-y-1.5">
+                <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
+                <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
+                <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
+              </div>
             </button>
-            <Dropdown items={platformMenu} />
-          </li>
-
-          {/* Solutions dropdown */}
-          <li className="relative group">
-            <button
-              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
-              style={{ color: "currentColor" }}
-            >
-              Solutions
-            </button>
-            <Dropdown items={solutionsMenu} />
-          </li>
-
-          <li>
-            <Link
-              href="/pricing"
-              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
-              style={{ color: "currentColor" }}
-            >
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/resources"
-              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
-              style={{ color: "currentColor" }}
-            >
-              Resources
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="/particle"
-              className="block text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 leading-[64px] transition-all hover:opacity-60 no-underline"
-              style={{ color: "currentColor" }}
-            >
-              Particle
-            </Link>
-          </li>
-
-          {/* Company dropdown */}
-          <li className="relative group">
-            <button
-              className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
-              style={{ color: "currentColor" }}
-            >
-              Company
-            </button>
-            <Dropdown items={companyMenu} />
-          </li>
-        </ul>
-
-        {/* CTA Actions */}
-        <div className="hidden xl:flex items-center gap-3 shrink-0 ml-6">
-          <a
-            href="https://app.interval360.com"
-            className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-1 no-underline transition-colors hover:opacity-90"
-            style={{ color: loginColor }}
-          >
-            <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            LOGIN
-          </a>
-          <span aria-hidden className="h-5 w-px" style={{ background: navIsDark ? "rgba(255,255,255,0.24)" : "rgba(6,16,39,0.18)" }} />
-          <div className="flex items-center gap-2">
-            <Link
-              href="/buy"
-              className="text-[0.65rem] font-bold uppercase tracking-[0.16em] px-3.5 py-2 rounded-[2px] border no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm"
-              style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
-            >
-              BUY ASSESSMENT
-            </Link>
-            <Link
-              href="/company#contact"
-              className="inline-flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-[2px] no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm hover:opacity-90"
-              style={{ background: callBg, color: "#fff" }}
-            >
-              <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
-                <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-              GET STARTED
-            </Link>
           </div>
-        </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="xl:hidden ml-auto inline-flex items-center justify-center w-10 h-10 rounded-md transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-          style={{ background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.06)" }}
-        >
-          <div className="space-y-1.5">
-            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
-            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
-            <span className="block w-5 h-0.5" style={{ background: "currentColor" }} />
-          </div>
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          className="xl:hidden"
-          style={{
-            background: shellBg,
-            borderTop: `1px solid ${shellBorder}`,
-            borderRadius: "0 0 26px 26px",
-            overflow: "hidden",
-            color: shellColor,
-            transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease",
-          }}
-        >
-          <div className="px-4 pt-3 pb-2">
-            {[
-              { href: "/", label: "Home" },
-              { href: "/platform-overview", label: "Platform" },
-              { href: "/solutions", label: "Solutions" },
-              { href: "/pricing", label: "Pricing" },
-              { href: "/resources", label: "Resources" },
-              { href: "/company", label: "Company" },
-              { href: "/for-coaches", label: "For Coaches" },
-              { href: "/particle", label: "Particle" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="block px-3.5 py-3 text-[0.92rem] font-medium rounded-lg no-underline transition-colors"
-                style={{
-                  color: shellColor,
-                  borderBottom: "1px solid rgba(127,141,168,0.2)",
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-          <div className="px-4 pb-4 pt-2 space-y-2">
-            <a
-              href="https://app.interval360.com"
-              className="flex w-full items-center justify-center gap-2 h-11 text-[0.86rem] font-medium rounded-lg no-underline border"
+          {/* Mobile menu */}
+          {mobileOpen && (
+            <div
+              className="xl:hidden"
               style={{
+                background: shellBg,
+                borderTop: `1px solid ${shellBorder}`,
+                borderRadius: "0 0 26px 26px",
+                overflow: "hidden",
                 color: shellColor,
-                background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.05)",
-                borderColor: navIsDark ? "rgba(255,255,255,0.2)" : "rgba(6,16,39,0.16)",
+                transition: "background-color 360ms ease, color 360ms ease, border-color 360ms ease",
               }}
             >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <path d="M8 6.2V5a2.5 2.5 0 0 1 2.5-2.5h3A2.5 2.5 0 0 1 16 5v10a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 15.8V14.6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M11.8 10H3.8M6.3 7.6 3.8 10l2.5 2.4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Login
-            </a>
-            <Link
-              href="/buy"
-              onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center text-[0.84rem] font-semibold py-2.5 rounded-lg border no-underline"
-              style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}
-            >
-              Buy
-            </Link>
-            <Link
-              href="/company#contact"
-              onClick={() => setMobileOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-1.5 text-[0.84rem] font-semibold py-2.5 rounded-lg no-underline"
-              style={{ background: callBg, color: "#fff" }}
-            >
-              <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
-                <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-              Book a Call
-            </Link>
-          </div>
-        </div>
-      )}
+              <div className="px-4 pt-3 pb-2">
+                {[
+                  { href: "/", label: "Home" },
+                  { href: "/platform-overview", label: "Platform" },
+                  { href: "/solutions", label: "Solutions" },
+                  { href: "/pricing", label: "Pricing" },
+                  { href: "/resources", label: "Resources" },
+                  { href: "/company", label: "Company" },
+                  { href: "/for-coaches", label: "For Coaches" },
+                  { href: "/particle", label: "Particle" },
+                ].map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-3.5 py-3 text-[0.92rem] font-medium rounded-lg no-underline transition-colors"
+                    style={{
+                      color: shellColor,
+                      borderBottom: "1px solid rgba(127,141,168,0.2)",
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+              <div className="px-4 pb-4 pt-2 space-y-2">
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    href="/login"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex w-full items-center justify-center gap-1.5 h-11 text-[0.82rem] font-semibold rounded-lg no-underline border"
+                    style={{
+                      color: shellColor,
+                      background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.05)",
+                      borderColor: navIsDark ? "rgba(255,255,255,0.2)" : "rgba(6,16,39,0.16)",
+                    }}
+                  >
+                    User Login
+                  </Link>
+                  <Link
+                    href="/admin/login"
+                    onClick={() => setMobileOpen(false)}
+                    className="flex w-full items-center justify-center gap-1.5 h-11 text-[0.82rem] font-semibold rounded-lg no-underline border"
+                    style={{
+                      color: shellColor,
+                      background: navIsDark ? "rgba(255,255,255,0.08)" : "rgba(6,16,39,0.05)",
+                      borderColor: navIsDark ? "rgba(255,255,255,0.2)" : "rgba(6,16,39,0.16)",
+                    }}
+                  >
+                    Admin Login
+                  </Link>
+                </div>
+                <Link href="/buy" onClick={() => setMobileOpen(false)} className="inline-flex w-full items-center justify-center text-[0.84rem] font-semibold py-2.5 rounded-lg border no-underline" style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}>
+                  Buy
+                </Link>
+                <Link href="/company#contact" onClick={() => setMobileOpen(false)} className="inline-flex w-full items-center justify-center gap-1.5 text-[0.84rem] font-semibold py-2.5 rounded-lg no-underline" style={{ background: callBg, color: "#fff" }}>
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
+                    <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                  </svg>
+                  Book a Call
+                </Link>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>

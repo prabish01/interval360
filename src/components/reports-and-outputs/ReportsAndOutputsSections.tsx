@@ -5,20 +5,17 @@ import ReportViewer from "./ReportViewer";
 export default function ReportsAndOutputsSections() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0e0e0e]">
-
       {/* Page header */}
       <div className="content-wrap page-gutter w-full pt-28 pb-12">
-        <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">
-          Reports &amp; Outputs
-        </p>
+        <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">Reports &amp; Outputs</p>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
           <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold uppercase leading-[0.92] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            Two Reports.<br />One Assessment.
+            Two Reports.
+            <br />
+            <span style={{ color: "#2d6cff" }}>One Assessment.</span>
           </h1>
           <div className="flex flex-col gap-4 max-w-[40ch] lg:text-right">
-            <p className="text-[0.95rem] leading-[1.8] text-white/50">
-              Every assessment produces two reports — one for the organization, one for the leader. Both designed to be used directly, not filed away.
-            </p>
+            <p className="text-[0.95rem] leading-[1.8] text-white/50">Every assessment produces two reports — one for the organization, one for the leader. Both designed to be used directly, not filed away.</p>
             <div className="flex gap-3 lg:justify-end flex-wrap">
               <Link href="/buy" className="text-[0.82rem] font-semibold px-6 py-2.5 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors no-underline">
                 Buy an Assessment
@@ -32,6 +29,7 @@ export default function ReportsAndOutputsSections() {
       </div>
 
       {/* Stats bar */}
+      {/* 
       <div className="content-wrap page-gutter w-full mb-3">
         <div className="grid grid-cols-3 border border-white/6 border-l-[3px] border-l-[#2d6cff]">
           {[
@@ -55,6 +53,7 @@ export default function ReportsAndOutputsSections() {
           ))}
         </div>
       </div>
+      */}
 
       {/* PDF Viewer */}
       <div className="content-wrap page-gutter w-full flex-1 flex flex-col pb-20">
@@ -66,12 +65,12 @@ export default function ReportsAndOutputsSections() {
       {/* Report anatomy */}
       <div className="content-wrap page-gutter w-full pb-24">
         <div className="border-t border-white/6 pt-16">
-          <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">
-            Report Structure
-          </p>
+          <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">Report Structure</p>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-extrabold uppercase leading-[0.92] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-              Six Sections.<br />Nothing Extra.
+              Six Sections.
+              <br />
+              Nothing Extra.
             </h2>
             <div className="flex flex-col">
               {anatomySections.map((item, i) => (
@@ -87,7 +86,6 @@ export default function ReportsAndOutputsSections() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

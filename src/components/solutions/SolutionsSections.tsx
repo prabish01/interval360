@@ -49,10 +49,11 @@ export default function SolutionsSections() {
             className="mb-6 text-[clamp(2rem,4.6vw,3.25rem)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            Solutions: Better leadership feedback for the moments that matter most.
+            Solutions: Better leadership feedback for the{" "}
+            <span style={{ color: "#2d6cff" }}>moments that matter most.</span>
           </h1>
           <p className="mb-10 max-w-[52ch] text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.textBody }}>
-            Interval 360 is built for the specific moments where leadership insight is most valuable — talent decisions, development programs, and leadership transitions. Find your use case below.
+            Interval 360 is built for the specific moments where leadership insight is most valuable — talent decisions, development programs, and practitioners who need client-ready feedback. Find your use case below.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link

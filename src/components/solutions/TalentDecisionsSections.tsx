@@ -121,7 +121,7 @@ export default function TalentDecisionsSections() {
             >
               Talent
               <br />
-              Decisions
+              <span style={{ color: homeTheme.blue }}>Decisions</span>
             </h1>
             <p className={`mb-10 max-w-[62ch] ${marketingTypography.heroLead}`} style={{ color: homeTheme.textBody }}>
               Move from guesswork to signal-driven certainty. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes.
