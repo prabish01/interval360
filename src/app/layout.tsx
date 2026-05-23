@@ -33,10 +33,6 @@ export const metadata: Metadata = {
   title: "Interval 360 — Leadership Assessment, Reimagined",
   description:
     "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
   openGraph: {
     title: "Interval 360 — Leadership Assessment, Reimagined",
     description:
