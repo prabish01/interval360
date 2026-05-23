@@ -57,12 +57,12 @@ export const caseStudiesSection = {
     {
       title: "Scaling feedback across a global leadership cohort",
       body: "Fewer coordination hours, faster cycles, and reports leaders actually use in development conversations.",
-      href: "#",
+      href: "/resources/case-study-global-cohort",
     },
     {
       title: "From annual survey fatigue to a quarterly signal",
       body: "Replacing a legacy 360 with a lighter, AI-assisted flow — without sacrificing rigor for talent reviews.",
-      href: "#",
+      href: "/resources/case-study-survey-fatigue",
     },
   ],
 } as const;
@@ -80,12 +80,12 @@ export const playbooksSection = {
     {
       title: "How to Choose the Right Raters",
       body: "Balance perspective, credibility, and burden so feedback reflects how the leader is actually experienced.",
-      href: "#",
+      href: "/resources/how-to-choose-the-right-raters",
     },
     {
       title: "Using What + How in Promotion Decisions",
       body: "Pair performance signal with leadership experience so talent conversations stay grounded in evidence.",
-      href: "#",
+      href: "/resources/using-what-and-how-in-promotion-decisions",
     },
   ],
 } as const;

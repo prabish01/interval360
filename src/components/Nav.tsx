@@ -23,7 +23,11 @@ const resourcesMenu = [
   { href: "/resources", label: "Resources Hub", sub: "All playbooks, reports, and field notes", hub: true },
   null,
   { href: "/resources/how-to-run-a-360-in-14-days", label: "How to Run a 360 in 14 Days", sub: "Playbook — setup, collection, and close" },
+  { href: "/resources/case-study-survey-fatigue", label: "Overcoming Survey Fatigue", sub: "Case study — quarterly signal cadence" },
+  { href: "/resources/case-study-global-cohort", label: "Scaling a Global Cohort", sub: "Case study — global leadership feedback" },
   { href: "/reports-and-outputs", label: "Sample Reports", sub: "See a real assessment output" },
+  { href: "/resources/how-to-choose-the-right-raters", label: "How to Choose the Right Raters", sub: "Playbook — ~12 min · Participants & HR stakeholders" },
+  { href: "/resources/using-what-and-how-in-promotion-decisions", label: "Using What + How in Promotion Decisions", sub: "Playbook — ~15 min · HR stakeholders" },
 ];
 
 const companyMenu = [
@@ -214,10 +218,7 @@ export default function Nav() {
               </li>
               {/* Resources dropdown */}
               <li className="relative group">
-                <button
-                  className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer"
-                  style={{ color: "currentColor" }}
-                >
+                <button className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.16em] px-3 h-16 transition-all hover:opacity-60 bg-transparent cursor-pointer" style={{ color: "currentColor" }}>
                   Resources
                 </button>
                 <Dropdown items={resourcesMenu} />
