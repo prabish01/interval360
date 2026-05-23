@@ -33,6 +33,33 @@ export const metadata: Metadata = {
   title: "Interval 360 — Leadership Assessment, Reimagined",
   description:
     "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Interval 360 — Leadership Assessment, Reimagined",
+    description:
+      "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
+    url: "https://interval360.com",
+    siteName: "Interval 360",
+    images: [
+      {
+        url: "/interval360-og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Interval 360 — Leadership Assessment",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Interval 360 — Leadership Assessment, Reimagined",
+    description:
+      "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
+    images: ["/interval360-og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
