@@ -20,7 +20,7 @@ export function HomeCtaSection() {
 
         {/* Left — heading + stats */}
         <div className="flex flex-col justify-center lg:pr-16 py-10" style={{ borderRight: "1px solid rgba(255,255,255,0.06)" }}>
-          <p className="text-[0.68rem] font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-8">
+          <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-8">
             Get Started
           </p>
           <h2 className="text-[clamp(2.6rem,5.5vw,4.5rem)] font-extrabold uppercase leading-[0.92] text-white mb-14" style={{ fontFamily: "var(--font-space-grotesk)" }}>
@@ -34,10 +34,10 @@ export function HomeCtaSection() {
                   {stat.value}
                 </span>
                 <div>
-                  <p className="text-[0.75rem] font-bold tracking-[0.15em] uppercase text-white mb-1">
+                  <p className="text-xs font-bold tracking-[0.15em] uppercase text-white mb-1">
                     {stat.label}
                   </p>
-                  <p className="text-[0.85rem] leading-[1.7] text-white/50">
+                  <p className="text-base leading-[1.7] text-white/50">
                     {stat.desc}
                   </p>
                 </div>
@@ -51,12 +51,12 @@ export function HomeCtaSection() {
 
           {/* Quote card */}
           <div className="bg-[#2d6cff] p-8">
-            <p className="text-[1.05rem] leading-[1.75] text-white font-medium italic mb-6">
+            <p className="text-base leading-[1.75] text-white font-medium italic mb-6">
               &ldquo;Interval 360 changed how we run talent reviews. The feedback is more specific, the outputs are actually usable, and leaders take the results seriously because the process felt credible.&rdquo;
             </p>
             <div className="flex items-center gap-3">
               <div className="w-6 h-px bg-white/50" />
-              <p className="text-[0.68rem] font-semibold tracking-[0.2em] uppercase text-white/70">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70">
                 Head of Talent, Mid-Market Technology Co.
               </p>
             </div>
@@ -64,19 +64,19 @@ export function HomeCtaSection() {
 
           {/* CTA buttons */}
           <div>
-            <p className="text-[0.88rem] leading-[1.7] text-white/50 mb-6 max-w-[38ch]">
+            <p className="text-base leading-[1.7] text-white/50 mb-6 max-w-[38ch]">
               Try a single assessment, buy a team pack, or talk to us about an enterprise rollout.
             </p>
             <div className="flex gap-4 flex-wrap">
               <Link
                 href="/company#contact"
-                className="text-[0.9rem] font-semibold px-8 py-3.5 no-underline bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors duration-200"
+                className="text-sm font-semibold px-8 py-3.5 no-underline bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors duration-200"
               >
                 Book a Call
               </Link>
               <Link
                 href="/buy"
-                className="text-[0.9rem] font-medium px-8 py-3.5 no-underline border border-white/20 text-white hover:border-white/40 transition-colors duration-200"
+                className="text-sm font-medium px-8 py-3.5 no-underline border border-white/20 text-white hover:border-white/40 transition-colors duration-200"
               >
                 Buy an Assessment
               </Link>
