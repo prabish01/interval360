@@ -19,6 +19,15 @@
   --white:      #ffffff;
   --black:      #000000;
   --rule:       rgba(5,79,154,0.12);
+
+  /* ── TYPE SCALE ── */
+  --text-xs:      0.75rem;                   /* 12px  eyebrows, labels */
+  --text-sm:      0.875rem;                  /* 14px  captions, footer body */
+  --text-base:    1rem;                      /* 16px  default body copy */
+  --text-lg:      1.125rem;                  /* 18px  lead paragraphs */
+  --text-xl:      1.5rem;                    /* 24px  small section headers */
+  --text-2xl:     2rem;                      /* 32px  section subheads */
+  --text-display: clamp(3rem, 7vw, 5.5rem); /* heroes */
   --background:       oklch(1 0 0);
   --foreground:       oklch(0.145 0 0);
   --card:       oklch(1 0 0);
@@ -147,6 +156,11 @@ body {
   --radius-2xl:       calc(var(--radius) * 1.8);
   --radius-3xl:       calc(var(--radius) * 2.2);
   --radius-4xl:       calc(var(--radius) * 2.6);
+
+  /* Type scale — xl and 2xl override Tailwind defaults; display is new */
+  --font-size-xl:      var(--text-xl);
+  --font-size-2xl:     var(--text-2xl);
+  --font-size-display: var(--text-display);
 }
 
 .dark {
