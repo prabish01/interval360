@@ -245,7 +245,7 @@ export default function SurveyFatigueCaseStudy() {
         <div className="content-wrap page-gutter">
 
           {/* Breadcrumb */}
-          <nav style={{ marginBottom: "2.5rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>
+          <nav style={{ marginBottom: "2.5rem", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)" }}>
             <Link href="/resources" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>
               Resources
             </Link>
@@ -256,7 +256,7 @@ export default function SurveyFatigueCaseStudy() {
           {/* Eyebrow */}
           <p style={{
             display: "flex", alignItems: "center", gap: "8px",
-            fontSize: "0.68rem", fontWeight: 700,
+            fontSize: "var(--text-xs)", fontWeight: 700,
             letterSpacing: "0.2em", textTransform: "uppercase",
             color: homeTheme.blue, marginBottom: "1.25rem",
           }}>
@@ -278,7 +278,7 @@ export default function SurveyFatigueCaseStudy() {
 
           {/* Sub */}
           <p style={{
-            fontSize: "1.05rem", color: "rgba(255,255,255,0.55)",
+            fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)",
             lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch",
           }}>
             Replacing a legacy 360 with a lighter, AI-assisted flow — without sacrificing rigor for talent reviews.
@@ -290,7 +290,7 @@ export default function SurveyFatigueCaseStudy() {
             background: "rgba(255,255,255,0.05)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "8px", padding: "0.6rem 1.1rem",
-            fontSize: "0.68rem", fontWeight: 700,
+            fontSize: "var(--text-xs)", fontWeight: 700,
             letterSpacing: "0.12em", textTransform: "uppercase",
             color: "rgba(255,255,255,0.55)", flexWrap: "wrap",
           }}>
@@ -329,8 +329,8 @@ export default function SurveyFatigueCaseStudy() {
                 }}>
                   {s.value}
                 </p>
-                <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "#fff", marginBottom: "0.3rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</p>
-                <p style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.5 }}>{s.sub}</p>
+                <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "#fff", marginBottom: "0.3rem", textTransform: "uppercase", letterSpacing: "0.08em" }}>{s.label}</p>
+                <p style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.4)", lineHeight: 1.5 }}>{s.sub}</p>
               </div>
             ))}
           </div>
@@ -340,7 +340,7 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── SITUATION ── */}
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             {situation.eyebrow}
           </p>
           <h2 style={{
@@ -354,7 +354,7 @@ export default function SurveyFatigueCaseStudy() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)" }}>
             {situation.body.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
         </div>
@@ -367,7 +367,7 @@ export default function SurveyFatigueCaseStudy() {
           {/* Heading + intro body + quote — 2 col */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "start", marginBottom: "3rem" }}>
             <div>
-              <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
                 {challenge.eyebrow}
               </p>
               <h2 style={{
@@ -382,7 +382,7 @@ export default function SurveyFatigueCaseStudy() {
               </h2>
               <div style={{ borderLeft: "2px solid rgba(99,102,241,0.4)", paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {challenge.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -404,13 +404,13 @@ export default function SurveyFatigueCaseStudy() {
                 &ldquo;
               </span>
               <p style={{
-                fontSize: "1.05rem", fontStyle: "italic",
+                fontSize: "var(--text-base)", fontStyle: "italic",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.75,
                 marginBottom: "1.5rem",
               }}>
                 {challenge.quote.text}
               </p>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
                 — {challenge.quote.author}
               </p>
             </div>
@@ -419,22 +419,22 @@ export default function SurveyFatigueCaseStudy() {
           {/* Sub-sections — full width, 2-col grid */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem" }}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.1rem", fontWeight: 700, color: "#fff", marginBottom: "1rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1rem" }}>
                 {challenge.raterExperience.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {challenge.raterExperience.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.93rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.1rem", fontWeight: 700, color: "#fff", marginBottom: "1rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1rem" }}>
                 {challenge.dataCosted.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {challenge.dataCosted.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.93rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -446,18 +446,18 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── SYSTEM COMPARISON ── */}
       <section style={{ background: "#111318", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem", textAlign: "center" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem", textAlign: "center" }}>
             {systemComparison.heading}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginTop: "2rem" }}>
             {/* Legacy */}
             <div style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "2rem", background: "rgba(255,255,255,0.02)" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,100,100,0.8)", marginBottom: "1.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,100,100,0.8)", marginBottom: "1.25rem" }}>
                 A. {systemComparison.legacy.label}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {systemComparison.legacy.items.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "0.88rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.55 }}>
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.55 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,100,100,0.6)", flexShrink: 0, marginTop: "0.45rem" }} />
                     {item}
                   </li>
@@ -466,12 +466,12 @@ export default function SurveyFatigueCaseStudy() {
             </div>
             {/* Interval */}
             <div style={{ border: `1px solid rgba(99,102,241,0.3)`, borderRadius: "6px", padding: "2rem", background: "rgba(99,102,241,0.06)" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
                 B. {systemComparison.interval.label}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {systemComparison.interval.items.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.55 }}>
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.55 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: homeTheme.blue, flexShrink: 0, marginTop: "0.45rem" }} />
                     {item}
                   </li>
@@ -487,7 +487,7 @@ export default function SurveyFatigueCaseStudy() {
         <div className="content-wrap page-gutter">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "start" }}>
             <div>
-              <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
                 {inflectionPoint.eyebrow}
               </p>
               <h2 style={{
@@ -501,7 +501,7 @@ export default function SurveyFatigueCaseStudy() {
               </h2>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {inflectionPoint.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -522,13 +522,13 @@ export default function SurveyFatigueCaseStudy() {
                 &ldquo;
               </span>
               <p style={{
-                fontSize: "1.05rem", fontStyle: "italic",
+                fontSize: "var(--text-base)", fontStyle: "italic",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.75,
                 marginBottom: "1.5rem",
               }}>
                 {inflectionPoint.quote.text}
               </p>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
                 — {inflectionPoint.quote.author}
               </p>
             </div>
@@ -539,7 +539,7 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── APPROACH ── */}
       <section style={{ background: "#0d0f14", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             {approach.eyebrow}
           </p>
           <h2 style={{
@@ -555,17 +555,17 @@ export default function SurveyFatigueCaseStudy() {
           {/* Pilot paragraphs */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "3rem" }}>
             {approach.pilotBody.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
 
           {/* Cadence sub-section */}
-          <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+          <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
             {approach.cadenceHeading}
           </h3>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "3rem" }}>
             {approach.cadenceBody.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
 
@@ -576,21 +576,21 @@ export default function SurveyFatigueCaseStudy() {
               {cadence.map((c, i) => (
                 <div key={c.quarter}>
                   <div style={{ width: 10, height: 10, borderRadius: "50%", background: i < 2 ? homeTheme.blue : "rgba(99,102,241,0.35)", border: "2px solid #0d0f14", marginBottom: "1.5rem", boxShadow: i < 2 ? `0 0 12px ${homeTheme.blue}66` : "none" }} />
-                  <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.4rem" }}>{c.quarter}</p>
-                  <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1rem", fontWeight: 700, color: "#fff", marginBottom: "0.6rem" }}>{c.title}</p>
-                  <p style={{ fontSize: "0.84rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65 }}>{c.body}</p>
+                  <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.4rem" }}>{c.quarter}</p>
+                  <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-base)", fontWeight: 700, color: "#fff", marginBottom: "0.6rem" }}>{c.title}</p>
+                  <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.45)", lineHeight: 1.65 }}>{c.body}</p>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Preparing managers sub-section */}
-          <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+          <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
             {approach.prepHeading}
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", maxWidth: "72ch" }}>
             {approach.prepBody.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
         </div>
@@ -599,7 +599,7 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── OUTCOMES ── */}
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             {outcomes.eyebrow}
           </p>
           <h2 style={{
@@ -615,22 +615,22 @@ export default function SurveyFatigueCaseStudy() {
           {/* Data + Rater sections side by side */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 5vw, 5rem)", marginBottom: "3rem" }}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {outcomes.dataSection.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {outcomes.dataSection.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {outcomes.raterSection.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {outcomes.raterSection.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -639,12 +639,12 @@ export default function SurveyFatigueCaseStudy() {
           {/* HR section + Quote side by side */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 5vw, 5rem)", marginBottom: "3rem" }}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {outcomes.hrSection.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {outcomes.hrSection.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -664,13 +664,13 @@ export default function SurveyFatigueCaseStudy() {
                 &ldquo;
               </span>
               <p style={{
-                fontSize: "1.05rem", fontStyle: "italic",
+                fontSize: "var(--text-base)", fontStyle: "italic",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.75,
                 marginBottom: "1.5rem",
               }}>
                 {outcomes.quote.text}
               </p>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
                 — {outcomes.quote.author}
               </p>
             </div>
@@ -686,20 +686,20 @@ export default function SurveyFatigueCaseStudy() {
               background: "rgba(255,255,255,0.02)",
               alignSelf: "start",
             }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
                 {outcomes.callout.heading}
               </p>
-              <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
                 {outcomes.callout.body}
               </p>
             </div>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {outcomes.managersSection.heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {outcomes.managersSection.body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -710,7 +710,7 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── WHAT COMES NEXT / ORGANISATIONAL INTELLIGENCE ── */}
       <section style={{ background: "#0c0e12", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
             {intelligence.heading}
           </p>
           <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 800, color: "#fff", lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: "2rem" }}>
@@ -718,14 +718,14 @@ export default function SurveyFatigueCaseStudy() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "3rem" }}>
             {intelligence.body.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             {intelligence.cards.map((card) => (
               <div key={card.label} style={{ border: "1px solid rgba(255,255,255,0.07)", borderRadius: "6px", padding: "2rem", background: "rgba(255,255,255,0.02)" }}>
-                <p style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>{card.label}</p>
-                <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{card.body}</p>
+                <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>{card.label}</p>
+                <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{card.body}</p>
               </div>
             ))}
           </div>
@@ -735,36 +735,36 @@ export default function SurveyFatigueCaseStudy() {
       {/* ── CTA ── */}
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "clamp(3rem, 6vw, 5rem) 0" }}>
         <div className="content-wrap page-gutter" style={{ maxWidth: "860px" }}>
-          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
+          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
             <TrendingUp size={13} style={{ opacity: 0.6 }} />
             Get Started
           </p>
           <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 800, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
             Ready to replace your legacy 360?
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>
+          <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>
             Self-serve assessments start at $150 each, with ten-packs at $125. For organisations running ongoing programmes across a larger leadership population, enterprise plans provide unlimited assessments within an annual subscription. Contact us to discuss what that looks like for your organisation.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: homeTheme.blue, color: "#fff", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: homeTheme.blue, color: "#fff", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Buy an Assessment
               <ArrowRight size={14} />
             </Link>
-            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Talk to us about Enterprise
             </Link>
           </div>
 
           {/* Related resources */}
           <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>
               Related resources
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
               {relatedResources.map((r) => (
                 <Link key={r.title} href={r.href} style={{ textDecoration: "none", display: "block", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "1.25rem 1.5rem", background: "rgba(255,255,255,0.02)", transition: "border-color 0.2s" }}>
-                  <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.type}</p>
-                  <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
+                  <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.type}</p>
+                  <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
                 </Link>
               ))}
             </div>
@@ -772,7 +772,7 @@ export default function SurveyFatigueCaseStudy() {
 
           {/* Back link */}
           <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
+            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
               ← Back to Resources
             </Link>
           </div>

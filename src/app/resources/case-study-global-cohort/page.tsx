@@ -192,7 +192,7 @@ export default function GlobalCohortCaseStudy() {
         <div className="content-wrap page-gutter">
 
           {/* Breadcrumb */}
-          <nav style={{ marginBottom: "2.5rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>
+          <nav style={{ marginBottom: "2.5rem", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)" }}>
             <Link href="/resources" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>
               Resources
             </Link>
@@ -206,7 +206,7 @@ export default function GlobalCohortCaseStudy() {
             background: "rgba(255,255,255,0.05)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "8px", padding: "0.6rem 1.1rem",
-            fontSize: "0.68rem", fontWeight: 700,
+            fontSize: "var(--text-xs)", fontWeight: 700,
             letterSpacing: "0.12em", textTransform: "uppercase",
             color: "rgba(255,255,255,0.55)", marginBottom: "1.25rem",
             flexWrap: "wrap",
@@ -238,7 +238,7 @@ export default function GlobalCohortCaseStudy() {
 
           {/* Sub */}
           <p style={{
-            fontSize: "1.05rem", color: "rgba(255,255,255,0.55)",
+            fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)",
             lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch",
           }}>
             Fewer coordination hours, faster cycles, and reports leaders actually use in development conversations.
@@ -248,7 +248,7 @@ export default function GlobalCohortCaseStudy() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px", background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", overflow: "hidden", marginTop: "2.5rem" }}>
             {snapshot.map((s) => (
               <div key={s.label} style={{ padding: "1.5rem 1.75rem", background: "#080808" }}>
-                <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.5rem" }}>{s.label}</p>
+                <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "0.5rem" }}>{s.label}</p>
                 <p style={{
                   fontFamily: "var(--font-space-grotesk), sans-serif",
                   fontSize: "clamp(1rem, 2vw, 1.25rem)",
@@ -282,7 +282,7 @@ export default function GlobalCohortCaseStudy() {
                 11 wks
               </p>
               <div style={{ height: 1, background: "rgba(0,0,0,0.12)", marginBottom: "1rem" }} />
-              <p style={{ fontSize: "0.88rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
                 Average cycle time reduction, from 12 weeks to under one
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function GlobalCohortCaseStudy() {
                 84%
               </p>
               <div style={{ height: 1, background: "rgba(0,0,0,0.12)", marginBottom: "1rem" }} />
-              <p style={{ fontSize: "0.88rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
                 Rater completion rate across the cohort
               </p>
             </div>
@@ -316,7 +316,7 @@ export default function GlobalCohortCaseStudy() {
                 300+
               </p>
               <div style={{ height: 1, background: "rgba(0,0,0,0.12)", marginBottom: "1rem" }} />
-              <p style={{ fontSize: "0.88rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.6 }}>
                 L&D coordination hours recovered per cycle
               </p>
             </div>
@@ -328,7 +328,7 @@ export default function GlobalCohortCaseStudy() {
       {/* ── SITUATION ── */}
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             Situation
           </p>
           <h2 style={{
@@ -342,7 +342,7 @@ export default function GlobalCohortCaseStudy() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)" }}>
             {situation.body.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: i === situation.body.length - 1 && situation.body.length % 2 !== 0 ? "1 / -1" : undefined }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: i === situation.body.length - 1 && situation.body.length % 2 !== 0 ? "1 / -1" : undefined }}>{p}</p>
             ))}
           </div>
         </div>
@@ -351,7 +351,7 @@ export default function GlobalCohortCaseStudy() {
       {/* ── CHALLENGE ── */}
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             The Challenge
           </p>
           <h2 style={{
@@ -367,19 +367,19 @@ export default function GlobalCohortCaseStudy() {
           {/* Body paragraphs */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "3.5rem" }}>
             {challenge.body.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
 
           {/* Before / After comparison */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem" }}>
             <div style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "2rem", background: "rgba(255,255,255,0.02)" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,100,100,0.8)", marginBottom: "1.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,100,100,0.8)", marginBottom: "1.25rem" }}>
                 A. {challenge.before.label}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {challenge.before.items.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "0.88rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.55 }}>
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.55 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(255,100,100,0.6)", flexShrink: 0, marginTop: "0.45rem" }} />
                     {item}
                   </li>
@@ -387,12 +387,12 @@ export default function GlobalCohortCaseStudy() {
               </ul>
             </div>
             <div style={{ border: "1px solid rgba(99,102,241,0.3)", borderRadius: "6px", padding: "2rem", background: "rgba(99,102,241,0.06)" }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
                 B. {challenge.after.label}
               </p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
                 {challenge.after.items.map((item) => (
-                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.55 }}>
+                  <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem", fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.55 }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: homeTheme.blue, flexShrink: 0, marginTop: "0.45rem" }} />
                     {item}
                   </li>
@@ -406,7 +406,7 @@ export default function GlobalCohortCaseStudy() {
       {/* ── APPROACH ── */}
       <section style={{ background: "#0d0f14", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             The Approach
           </p>
           <h2 style={{
@@ -422,19 +422,19 @@ export default function GlobalCohortCaseStudy() {
           {/* Intro */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "3.5rem" }}>
             {approach.intro.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
 
           {/* Pilot findings */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)", alignItems: "start", marginBottom: "3.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem" }}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {approach.pilotHeading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {approach.pilotBody.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.93rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -455,16 +455,16 @@ export default function GlobalCohortCaseStudy() {
                 &ldquo;
               </span>
               <p style={{
-                fontSize: "1.05rem", fontStyle: "italic",
+                fontSize: "var(--text-base)", fontStyle: "italic",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.75,
                 marginBottom: "1.5rem",
               }}>
                 {approach.pilotQuote.text}
               </p>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
                 — {approach.pilotQuote.attribution}
               </p>
-              <p style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.3)", marginTop: "0.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.3)", marginTop: "0.25rem" }}>
                 {approach.pilotQuote.attributionDetail}
               </p>
             </div>
@@ -472,12 +472,12 @@ export default function GlobalCohortCaseStudy() {
 
           {/* Rollout design */}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem" }}>
-            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
               {approach.rolloutHeading}
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "2rem" }}>
               {approach.rolloutBody.map((p, i) => (
-                <p key={i} style={{ fontSize: "0.93rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
+                <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.85 }}>{p}</p>
               ))}
             </div>
             <div style={{
@@ -487,10 +487,10 @@ export default function GlobalCohortCaseStudy() {
               padding: "1.75rem 2rem",
               background: "rgba(255,255,255,0.02)",
             }}>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
                 {approach.rolloutCallout.label}
               </p>
-              <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
                 {approach.rolloutCallout.text}
               </p>
             </div>
@@ -501,7 +501,7 @@ export default function GlobalCohortCaseStudy() {
       {/* ── OUTCOMES ── */}
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             Outcomes
           </p>
           <h2 style={{
@@ -518,12 +518,12 @@ export default function GlobalCohortCaseStudy() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 5vw, 5rem)", marginBottom: "3rem" }}>
             {outcomeSections.slice(0, 2).map((s) => (
               <div key={s.id}>
-                <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+                <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                   {s.heading}
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                   {s.body.map((p, i) => (
-                    <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                    <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                   ))}
                 </div>
               </div>
@@ -532,12 +532,12 @@ export default function GlobalCohortCaseStudy() {
 
           {/* L&D capacity */}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem", marginBottom: "3rem" }}>
-            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
               {outcomeSections[2].heading}
             </h3>
             <div>
               {outcomeSections[2].body.map((p, i) => (
-                <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
               ))}
             </div>
           </div>
@@ -545,12 +545,12 @@ export default function GlobalCohortCaseStudy() {
           {/* How leaders used the reports + quote */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 5vw, 5rem)", marginBottom: "3rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem" }}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+              <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
                 {outcomeSections[3].heading}
               </h3>
               <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
                 {outcomeSections[3].body.map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -570,16 +570,16 @@ export default function GlobalCohortCaseStudy() {
                 &ldquo;
               </span>
               <p style={{
-                fontSize: "1.05rem", fontStyle: "italic",
+                fontSize: "var(--text-base)", fontStyle: "italic",
                 color: "rgba(255,255,255,0.75)", lineHeight: 1.75,
                 marginBottom: "1.5rem",
               }}>
                 {outcomeSections[3].quote!.text}
               </p>
-              <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>
                 — {outcomeSections[3].quote!.attribution}
               </p>
-              <p style={{ fontSize: "0.68rem", color: "rgba(255,255,255,0.3)", marginTop: "0.25rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.3)", marginTop: "0.25rem" }}>
                 {outcomeSections[3].quote!.attributionDetail}
               </p>
             </div>
@@ -587,24 +587,24 @@ export default function GlobalCohortCaseStudy() {
 
           {/* Group-level development intelligence */}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem", marginBottom: "3rem" }}>
-            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
               {outcomeSections[4].heading}
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)" }}>
               {outcomeSections[4].body.map((p, i) => (
-                <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
               ))}
             </div>
           </div>
 
           {/* Succession and talent decisions */}
           <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "3rem" }}>
-            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.15rem", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
+            <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "1.25rem" }}>
               {outcomeSections[5].heading}
             </h3>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)" }}>
               {outcomeSections[5].body.map((p, i) => (
-                <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
               ))}
             </div>
           </div>
@@ -614,7 +614,7 @@ export default function GlobalCohortCaseStudy() {
       {/* ── WHAT COMES NEXT ── */}
       <section style={{ background: "#0c0e12", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
-          <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1rem" }}>
             What Comes Next
           </p>
           <h2 style={{
@@ -628,7 +628,7 @@ export default function GlobalCohortCaseStudy() {
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)", marginBottom: "2.5rem" }}>
             {nextSection.body.map((p, i) => (
-              <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+              <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
             ))}
           </div>
           <div style={{
@@ -638,10 +638,10 @@ export default function GlobalCohortCaseStudy() {
             padding: "1.75rem 2rem",
             background: "rgba(255,255,255,0.02)",
           }}>
-            <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
+            <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>
               {nextSection.callout.label}
             </p>
-            <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
+            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
               {nextSection.callout.text}
             </p>
           </div>
@@ -651,14 +651,14 @@ export default function GlobalCohortCaseStudy() {
       {/* ── CTA + RELATED ── */}
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "clamp(3rem, 6vw, 5rem) 0" }}>
         <div className="content-wrap page-gutter" style={{ maxWidth: "860px" }}>
-          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
+          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
             <TrendingUp size={13} style={{ opacity: 0.6 }} />
             Get Started
           </p>
           <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 800, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>
             Running a leadership cohort?
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>
+          <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>
             Individual assessments are $150. A pack of ten starts at $125 each. Enterprise pricing is available for larger cohorts and ongoing programs.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
@@ -667,7 +667,7 @@ export default function GlobalCohortCaseStudy() {
               style={{
                 display: "inline-flex", alignItems: "center", gap: "8px",
                 background: homeTheme.blue, color: "#fff",
-                fontSize: "0.78rem", fontWeight: 700,
+                fontSize: "var(--text-xs)", fontWeight: 700,
                 letterSpacing: "0.12em", textTransform: "uppercase",
                 padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none",
               }}
@@ -681,7 +681,7 @@ export default function GlobalCohortCaseStudy() {
                 display: "inline-flex", alignItems: "center",
                 border: "1px solid rgba(255,255,255,0.18)",
                 color: "rgba(255,255,255,0.7)",
-                fontSize: "0.78rem", fontWeight: 700,
+                fontSize: "var(--text-xs)", fontWeight: 700,
                 letterSpacing: "0.12em", textTransform: "uppercase",
                 padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none",
               }}
@@ -692,14 +692,14 @@ export default function GlobalCohortCaseStudy() {
 
           {/* Related */}
           <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>
               Related resources
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
               {related.map((r) => (
                 <Link key={r.title} href={r.href} style={{ textDecoration: "none", display: "block", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "1.25rem 1.5rem", background: "rgba(255,255,255,0.02)" }}>
-                  <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.label}</p>
-                  <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
+                  <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.label}</p>
+                  <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
                 </Link>
               ))}
             </div>
@@ -707,7 +707,7 @@ export default function GlobalCohortCaseStudy() {
 
           {/* Back link */}
           <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
+            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
               ← Back to Resources
             </Link>
           </div>

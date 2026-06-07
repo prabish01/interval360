@@ -202,13 +202,13 @@ export default function UsingWhatAndHowPage() {
       {/* ── HERO ── */}
       <section style={{ paddingTop: "clamp(6rem, 12vw, 9rem)", paddingBottom: "clamp(4rem, 8vw, 6rem)" }}>
         <div className="content-wrap page-gutter">
-          <nav style={{ marginBottom: "2.5rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>
+          <nav style={{ marginBottom: "2.5rem", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)" }}>
             <Link href="/resources" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>Resources</Link>
             <span style={{ margin: "0 0.5rem" }}>/</span>
             <span>Playbooks</span>
           </nav>
 
-          <p style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
+          <p style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.25rem" }}>
             <span style={{ width: 7, height: 7, borderRadius: "50%", background: homeTheme.blue, display: "inline-block", flexShrink: 0 }} />
             Playbook
           </p>
@@ -217,11 +217,11 @@ export default function UsingWhatAndHowPage() {
             Using <span style={{ color: homeTheme.blue }}>What + How</span> in Promotion Decisions
           </h1>
 
-          <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch" }}>
+          <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch" }}>
             Pair performance signal with leadership experience so talent conversations stay grounded in evidence rather than instinct.
           </p>
 
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 0, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "0.6rem 1.1rem", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 0, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", padding: "0.6rem 1.1rem", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
             <span style={{ display: "flex", alignItems: "center", gap: "6px" }}>
               <Clock size={13} style={{ opacity: 0.7 }} />
               ~15 min read
@@ -240,9 +240,9 @@ export default function UsingWhatAndHowPage() {
       <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)" }}>
-            <p style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[0]}</p>
-            <p style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[1]}</p>
-            <p style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: "1 / -1" }}>{introParagraphs[2]}</p>
+            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[0]}</p>
+            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[1]}</p>
+            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: "1 / -1" }}>{introParagraphs[2]}</p>
           </div>
         </div>
       </section>
@@ -254,24 +254,24 @@ export default function UsingWhatAndHowPage() {
             <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "3.5rem", fontWeight: 800, color: "rgba(0,0,0,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>01</p>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0a0a0a", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "1rem" }}>Understanding the two dimensions</h2>
-              <p style={{ fontSize: "0.97rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.85, marginBottom: "3rem" }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.85, marginBottom: "3rem" }}>
                 Interval 360 produces two scores for every assessed leader. They measure different things, draw from different sources, and tell different parts of the story. Neither one is sufficient on its own.
               </p>
 
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", marginBottom: "3rem" }}>
                 {dimensions.map((d) => (
                   <div key={d.label} style={{ border: "1px solid rgba(99,102,241,0.2)", borderTop: `3px solid ${homeTheme.blue}`, borderRadius: "6px", padding: "2rem" }}>
-                    <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.4rem" }}>{d.label}</p>
-                    <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.1rem", fontWeight: 700, color: "#0a0a0a", marginBottom: "1.25rem" }}>{d.name}</p>
-                    <p style={{ fontSize: "0.9rem", color: "rgba(0,0,0,0.55)", lineHeight: 1.75, marginBottom: "1.25rem" }}>{d.description}</p>
+                    <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.4rem" }}>{d.label}</p>
+                    <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#0a0a0a", marginBottom: "1.25rem" }}>{d.name}</p>
+                    <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.55)", lineHeight: 1.75, marginBottom: "1.25rem" }}>{d.description}</p>
                     <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", borderTop: "1px solid rgba(0,0,0,0.07)", paddingTop: "1.25rem" }}>
                       <div>
-                        <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", marginBottom: "0.3rem" }}>Captures</p>
-                        <p style={{ fontSize: "0.84rem", color: "rgba(0,0,0,0.6)", lineHeight: 1.6 }}>{d.captures}</p>
+                        <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", marginBottom: "0.3rem" }}>Captures</p>
+                        <p style={{ fontSize: "var(--text-sm)", color: "rgba(0,0,0,0.6)", lineHeight: 1.6 }}>{d.captures}</p>
                       </div>
                       <div>
-                        <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", marginBottom: "0.3rem" }}>Does not capture</p>
-                        <p style={{ fontSize: "0.84rem", color: "rgba(0,0,0,0.6)", lineHeight: 1.6 }}>{d.doesNotCapture}</p>
+                        <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(0,0,0,0.35)", marginBottom: "0.3rem" }}>Does not capture</p>
+                        <p style={{ fontSize: "var(--text-sm)", color: "rgba(0,0,0,0.6)", lineHeight: 1.6 }}>{d.doesNotCapture}</p>
                       </div>
                     </div>
                   </div>
@@ -279,8 +279,8 @@ export default function UsingWhatAndHowPage() {
               </div>
 
               <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderLeft: `3px solid ${homeTheme.blue}`, borderRadius: "4px", padding: "1.75rem 2rem", background: "rgba(99,102,241,0.04)" }}>
-                <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.65rem" }}>Why both matter</p>
-                <p style={{ fontSize: "0.93rem", color: "rgba(0,0,0,0.55)", lineHeight: 1.8 }}>{whyBothMatter}</p>
+                <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.65rem" }}>Why both matter</p>
+                <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.55)", lineHeight: 1.8 }}>{whyBothMatter}</p>
               </div>
             </div>
           </div>
@@ -294,29 +294,29 @@ export default function UsingWhatAndHowPage() {
             <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "3.5rem", fontWeight: 800, color: "rgba(255,255,255,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>02</p>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "1rem" }}>The four quadrant placements</h2>
-              <p style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "1rem" }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "1rem" }}>
                 Plotting the What score against the How score places each leader in one of four quadrants. Each placement tells a different story and calls for a different conversation in a talent review.
               </p>
-              <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.28)", lineHeight: 1.65, marginBottom: "3rem", fontStyle: "italic" }}>{calibrationNote}</p>
+              <p style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.28)", lineHeight: 1.65, marginBottom: "3rem", fontStyle: "italic" }}>{calibrationNote}</p>
 
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {quadrants.map((q, qi) => (
                   <div key={q.id} style={{ borderTop: qi === 0 ? `2px solid ${q.accent}` : "1px solid rgba(255,255,255,0.06)", paddingTop: "2.5rem", paddingBottom: "2.5rem", paddingLeft: qi > 0 ? "1.5rem" : 0, borderLeft: qi > 0 ? `2px solid ${q.accent}` : "none", marginTop: qi > 0 ? "1.5rem" : 0 }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-                      <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.5rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{q.label}</p>
+                      <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-xl)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em" }}>{q.label}</p>
                       <div style={{ display: "flex", gap: "0.5rem" }}>
-                        <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: q.accent, background: `${q.accent}18`, border: `1px solid ${q.accent}40`, borderRadius: "4px", padding: "0.25rem 0.6rem" }}>{q.what} What</span>
-                        <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: q.accent, background: `${q.accent}18`, border: `1px solid ${q.accent}40`, borderRadius: "4px", padding: "0.25rem 0.6rem" }}>{q.how} How</span>
+                        <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: q.accent, background: `${q.accent}18`, border: `1px solid ${q.accent}40`, borderRadius: "4px", padding: "0.25rem 0.6rem" }}>{q.what} What</span>
+                        <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.15em", textTransform: "uppercase", color: q.accent, background: `${q.accent}18`, border: `1px solid ${q.accent}40`, borderRadius: "4px", padding: "0.25rem 0.6rem" }}>{q.how} How</span>
                       </div>
                     </div>
-                    <p style={{ fontSize: "0.88rem", fontWeight: 600, color: "rgba(255,255,255,0.4)", lineHeight: 1.5, marginBottom: "1.25rem", fontStyle: "italic" }}>{q.tagline}</p>
-                    <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2rem" }}>{q.description}</p>
+                    <p style={{ fontSize: "var(--text-base)", fontWeight: 600, color: "rgba(255,255,255,0.4)", lineHeight: 1.5, marginBottom: "1.25rem", fontStyle: "italic" }}>{q.tagline}</p>
+                    <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2rem" }}>{q.description}</p>
 
                     <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2rem" }}>
                       {q.notes.map((note, ni) => (
                         <div key={ni}>
                           {note.text.split("\n\n").map((para, pi) => (
-                            <p key={pi} style={{ fontSize: "0.93rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: pi < note.text.split("\n\n").length - 1 ? "0.75rem" : 0 }}>
+                            <p key={pi} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: pi < note.text.split("\n\n").length - 1 ? "0.75rem" : 0 }}>
                               {pi === 0
                                 ? <><strong style={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}>{note.label} </strong>{para}</>
                                 : para}
@@ -327,10 +327,10 @@ export default function UsingWhatAndHowPage() {
                     </div>
 
                     <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "1.5rem" }}>
-                      <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: "1rem" }}>Discussion questions</p>
+                      <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: "1rem" }}>Discussion questions</p>
                       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                         {q.questions.map((qu) => (
-                          <li key={qu} style={{ display: "flex", alignItems: "flex-start", gap: "0.7rem", fontSize: "0.88rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
+                          <li key={qu} style={{ display: "flex", alignItems: "flex-start", gap: "0.7rem", fontSize: "var(--text-base)", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
                             <span style={{ width: 5, height: 5, borderRadius: "50%", background: q.accent, flexShrink: 0, marginTop: "0.5rem", opacity: 0.7 }} />
                             {qu}
                           </li>
@@ -352,16 +352,16 @@ export default function UsingWhatAndHowPage() {
             <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "3.5rem", fontWeight: 800, color: "rgba(0,0,0,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>03</p>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0a0a0a", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "1rem" }}>Bringing the data into an actual promotion conversation</h2>
-              <p style={{ fontSize: "0.97rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.85, marginBottom: "3rem" }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.85, marginBottom: "3rem" }}>
                 Having the data is not the same as knowing how to use it. Promotion conversations involve multiple stakeholders, competing priorities, and the accumulated weight of people&apos;s prior impressions. Interval 360 data does not walk into that room and make the case for itself. You do.
               </p>
 
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {section03.map((sub, i, arr) => (
                   <div key={sub.heading} style={{ padding: "2rem 0", borderTop: "1px solid rgba(0,0,0,0.07)", borderBottom: i === arr.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none" }}>
-                    <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "#0a0a0a", marginBottom: "1rem", lineHeight: 1.2 }}>{sub.heading}</h3>
+                    <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-base)", fontWeight: 700, color: "#0a0a0a", marginBottom: "1rem", lineHeight: 1.2 }}>{sub.heading}</h3>
                     {sub.body.split("\n\n").map((para, pi, parts) => (
-                      <p key={pi} style={{ fontSize: "0.93rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.8, marginBottom: pi < parts.length - 1 ? "0.75rem" : 0 }}>{para}</p>
+                      <p key={pi} style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.8, marginBottom: pi < parts.length - 1 ? "0.75rem" : 0 }}>{para}</p>
                     ))}
                   </div>
                 ))}
@@ -378,12 +378,12 @@ export default function UsingWhatAndHowPage() {
             <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "3.5rem", fontWeight: 800, color: "rgba(255,255,255,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>04</p>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "1rem" }}>What this framework does not do</h2>
-              <p style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2.5rem" }}>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, marginBottom: "2.5rem" }}>
                 Interval 360 produces data that informs promotion decisions. It does not make them.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(2rem, 4vw, 4rem)" }}>
                 {section04Paragraphs.map((para, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: i === section04Paragraphs.length - 1 && section04Paragraphs.length % 2 !== 0 ? "1 / -1" : undefined }}>{para}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: i === section04Paragraphs.length - 1 && section04Paragraphs.length % 2 !== 0 ? "1 / -1" : undefined }}>{para}</p>
                 ))}
               </div>
             </div>
@@ -398,14 +398,14 @@ export default function UsingWhatAndHowPage() {
             <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "3.5rem", fontWeight: 800, color: "rgba(0,0,0,0.08)", lineHeight: 1, letterSpacing: "-0.04em" }}>05</p>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", fontWeight: 800, color: "#0a0a0a", letterSpacing: "-0.03em", lineHeight: 1.1, marginBottom: "0.75rem" }}>Common mistakes to avoid</h2>
-              <p style={{ fontSize: "0.97rem", color: "rgba(0,0,0,0.45)", lineHeight: 1.7, marginBottom: "2.5rem" }}>Most problems with the framework come from how it is used, not what it measures.</p>
+              <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.45)", lineHeight: 1.7, marginBottom: "2.5rem" }}>Most problems with the framework come from how it is used, not what it measures.</p>
               <div style={{ display: "flex", flexDirection: "column" }}>
                 {section05.map((flag, i, arr) => (
                   <div key={flag.heading} style={{ display: "grid", gridTemplateColumns: "28px 1fr", gap: "1.25rem", padding: "2rem 0", borderTop: "1px solid rgba(0,0,0,0.07)", borderBottom: i === arr.length - 1 ? "1px solid rgba(0,0,0,0.07)" : "none" }}>
-                    <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "0.72rem", fontWeight: 700, color: "rgba(180,40,40,0.65)", paddingTop: "0.2rem" }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-xs)", fontWeight: 700, color: "rgba(180,40,40,0.65)", paddingTop: "0.2rem" }}>{String(i + 1).padStart(2, "0")}</span>
                     <div>
-                      <h4 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1rem", fontWeight: 700, color: "#0a0a0a", marginBottom: "0.65rem" }}>{flag.heading}</h4>
-                      <p style={{ fontSize: "0.92rem", color: "rgba(0,0,0,0.5)", lineHeight: 1.8 }}>{flag.body}</p>
+                      <h4 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-base)", fontWeight: 700, color: "#0a0a0a", marginBottom: "0.65rem" }}>{flag.heading}</h4>
+                      <p style={{ fontSize: "var(--text-base)", color: "rgba(0,0,0,0.5)", lineHeight: 1.8 }}>{flag.body}</p>
                     </div>
                   </div>
                 ))}
@@ -418,24 +418,24 @@ export default function UsingWhatAndHowPage() {
       {/* ── CTA + RELATED ── */}
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "clamp(3rem, 6vw, 5rem) 0" }}>
         <div className="content-wrap page-gutter" style={{ maxWidth: "860px" }}>
-          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
+          <p style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
             <TrendingUp size={13} style={{ opacity: 0.6 }} />
             Get Started
           </p>
           <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.5rem)", fontWeight: 800, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.1, letterSpacing: "-0.02em" }}>Ready to run your first assessment?</h2>
-          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>Individual assessments are $150. A pack of ten starts at $125 each. Reports generate automatically on your project close date, no waiting.</p>
+          <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "60ch" }}>Individual assessments are $150. A pack of ten starts at $125 each. Reports generate automatically on your project close date, no waiting.</p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: homeTheme.blue, color: "#fff", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: homeTheme.blue, color: "#fff", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Buy an Assessment
               <ArrowRight size={14} />
             </Link>
-            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Talk to the team
             </Link>
           </div>
 
           <div style={{ marginTop: "4rem", paddingTop: "3rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>Related resources</p>
+            <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1.5rem" }}>Related resources</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
               {[
                 { label: "Playbook", title: "How to Run a 360 in 14 Days", href: "/resources/how-to-run-a-360-in-14-days" },
@@ -443,15 +443,15 @@ export default function UsingWhatAndHowPage() {
                 { label: "Product", title: "What the reports include and how to use them", href: "/reports-and-outputs" },
               ].map((r) => (
                 <Link key={r.title} href={r.href} style={{ textDecoration: "none", display: "block", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "1.25rem 1.5rem", background: "rgba(255,255,255,0.02)" }}>
-                  <p style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.label}</p>
-                  <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
+                  <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.5rem" }}>{r.label}</p>
+                  <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.65)", lineHeight: 1.5 }}>{r.title}</p>
                 </Link>
               ))}
             </div>
           </div>
 
           <div style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
+            <Link href="/resources" style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)", textDecoration: "none", letterSpacing: "0.08em" }}>
               ← Back to Resources
             </Link>
           </div>

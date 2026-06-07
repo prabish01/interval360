@@ -167,7 +167,7 @@ export default function HowToRunA360Page() {
         <div className="content-wrap page-gutter">
 
           {/* Breadcrumb */}
-          <nav style={{ marginBottom: "2.5rem", fontSize: "0.75rem", color: "rgba(255,255,255,0.35)" }}>
+          <nav style={{ marginBottom: "2.5rem", fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.35)" }}>
             <Link href="/resources" style={{ color: "rgba(255,255,255,0.35)", textDecoration: "none" }}>
               Resources
             </Link>
@@ -178,7 +178,7 @@ export default function HowToRunA360Page() {
           {/* Eyebrow */}
           <p style={{
             display: "flex", alignItems: "center", gap: "8px",
-            fontSize: "0.68rem", fontWeight: 700,
+            fontSize: "var(--text-xs)", fontWeight: 700,
             letterSpacing: "0.2em", textTransform: "uppercase",
             color: homeTheme.blue, marginBottom: "1.25rem",
           }}>
@@ -201,7 +201,7 @@ export default function HowToRunA360Page() {
 
           {/* Subtitle */}
           <p style={{
-            fontSize: "1.05rem", color: "rgba(255,255,255,0.55)",
+            fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)",
             lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch",
           }}>
             A practical cadence for setup, collection, and close. Designed for HR stakeholders and team leaders running Interval 360 assessments internally, without burning out raters or the participant.
@@ -213,7 +213,7 @@ export default function HowToRunA360Page() {
             background: "rgba(255,255,255,0.05)",
             border: "1px solid rgba(255,255,255,0.1)",
             borderRadius: "8px", padding: "0.6rem 1.1rem",
-            fontSize: "0.68rem", fontWeight: 700,
+            fontSize: "var(--text-xs)", fontWeight: 700,
             letterSpacing: "0.12em", textTransform: "uppercase",
             color: "rgba(255,255,255,0.55)",
           }}>
@@ -240,14 +240,14 @@ export default function HowToRunA360Page() {
         <div className="content-wrap page-gutter">
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "2.5rem", gap: "1rem", flexWrap: "wrap" }}>
             <div>
-              <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.1rem", fontWeight: 700, color: "#fff", marginBottom: "0.4rem" }}>
+              <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "0.4rem" }}>
                 14-Day Mission Cadence
               </h2>
-              <p style={{ fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace", fontSize: "0.82rem", color: "rgba(255,255,255,0.35)" }}>
+              <p style={{ fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.35)" }}>
                 High-level timeline overview.
               </p>
             </div>
-            <div style={{ border: "1px solid rgba(99,102,241,0.5)", borderRadius: "4px", padding: "0.35rem 0.75rem", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(129,140,248,0.9)", whiteSpace: "nowrap" }}>
+            <div style={{ border: "1px solid rgba(99,102,241,0.5)", borderRadius: "4px", padding: "0.35rem 0.75rem", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(129,140,248,0.9)", whiteSpace: "nowrap" }}>
               Status: Active
             </div>
           </div>
@@ -259,12 +259,12 @@ export default function HowToRunA360Page() {
             ].map((card) => (
               <div key={card.phase} style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "1.5rem", background: "rgba(255,255,255,0.02)" }}>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.5rem" }}>
-                  <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1rem", fontWeight: 700, color: "#fff" }}>{card.days}</span>
-                  <span style={{ background: "rgba(99,102,241,0.18)", border: "1px solid rgba(99,102,241,0.3)", borderRadius: "3px", padding: "0.25rem 0.6rem", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(129,140,248,0.9)" }}>{card.phase}</span>
+                  <span style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-base)", fontWeight: 700, color: "#fff" }}>{card.days}</span>
+                  <span style={{ background: "rgba(99,102,241,0.18)", border: "1px solid rgba(99,102,241,0.3)", borderRadius: "3px", padding: "0.25rem 0.6rem", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(129,140,248,0.9)" }}>{card.phase}</span>
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.65rem" }}>
                   {card.items.map((item) => (
-                    <li key={item} style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace", fontSize: "0.82rem", color: "rgba(255,255,255,0.55)" }}>
+                    <li key={item} style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.55)" }}>
                       <span style={{ width: 6, height: 6, borderRadius: "50%", background: "rgba(99,102,241,0.7)", flexShrink: 0 }} />
                       {item}
                     </li>
@@ -283,7 +283,7 @@ export default function HowToRunA360Page() {
 
             {/* LEFT — intro text */}
             <div>
-              <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.5rem" }}>
                 Overview
               </p>
               <div style={{ borderLeft: "2px solid rgba(99,102,241,0.4)", paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "1.1rem" }}>
@@ -292,7 +292,7 @@ export default function HowToRunA360Page() {
                   "This playbook walks through a three-phase cadence: configure the project and work through the rater nomination and approval process before launch, give raters a clean collection window, and let the project close on schedule with reports ready the same day. Each phase includes the most common failure point and how to avoid it.",
                   "Interval 360 generates reports automatically when the project end date arrives, so your primary job after setup is context-setting and light coordination. The platform handles the rest.",
                 ].map((p, i) => (
-                  <p key={i} style={{ fontSize: "0.97rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
                 ))}
               </div>
 
@@ -305,8 +305,8 @@ export default function HowToRunA360Page() {
                   { val: "Same day", label: "Report delivery" },
                 ].map((s) => (
                   <div key={s.label} style={{ padding: "1.1rem 1.25rem", background: "#080808" }}>
-                    <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.4rem", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "0.2rem" }}>{s.val}</p>
-                    <p style={{ fontSize: "0.68rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>{s.label}</p>
+                    <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-xl)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "0.2rem" }}>{s.val}</p>
+                    <p style={{ fontSize: "var(--text-xs)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>{s.label}</p>
                   </div>
                 ))}
               </div>
@@ -314,14 +314,14 @@ export default function HowToRunA360Page() {
 
             {/* RIGHT — reference table */}
             <div>
-              <p style={{ fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.5rem" }}>
+              <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "1.5rem" }}>
                 14-Day Cadence at a Glance
               </p>
               <div style={{ border: "1px solid rgba(255,255,255,0.08)", borderRadius: "8px", overflow: "hidden" }}>
                 {/* Table header */}
                 <div style={{ display: "grid", gridTemplateColumns: "90px 1fr 140px", padding: "0.7rem 1.25rem", background: "rgba(99,102,241,0.12)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
                   {["Day", "Action", "Owner"].map((h) => (
-                    <span key={h} style={{ fontSize: "0.58rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>{h}</span>
+                    <span key={h} style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>{h}</span>
                   ))}
                 </div>
                 {quickRef.map((row, i) => (
@@ -335,9 +335,9 @@ export default function HowToRunA360Page() {
                       alignItems: "center",
                     }}
                   >
-                    <span style={{ fontFamily: "ui-monospace, monospace", fontSize: "0.7rem", fontWeight: 700, color: "rgba(99,102,241,0.9)", textTransform: "uppercase", letterSpacing: "0.08em" }}>{row.day}</span>
-                    <span style={{ fontSize: "0.84rem", color: "rgba(255,255,255,0.7)", paddingRight: "1rem", lineHeight: 1.5 }}>{row.action}</span>
-                    <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", lineHeight: 1.4 }}>{row.owner}</span>
+                    <span style={{ fontFamily: "ui-monospace, monospace", fontSize: "var(--text-xs)", fontWeight: 700, color: "rgba(99,102,241,0.9)", textTransform: "uppercase", letterSpacing: "0.08em" }}>{row.day}</span>
+                    <span style={{ fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.7)", paddingRight: "1rem", lineHeight: 1.5 }}>{row.action}</span>
+                    <span style={{ fontSize: "var(--text-xs)", color: "rgba(255,255,255,0.3)", lineHeight: 1.4 }}>{row.owner}</span>
                   </div>
                 ))}
               </div>
@@ -352,19 +352,19 @@ export default function HowToRunA360Page() {
       {/* ── BODY — day-by-day cadence ── */}
       <section style={{ paddingTop: "clamp(4rem, 8vw, 6rem)", paddingBottom: "clamp(4rem, 8vw, 7rem)" }}>
         <div className="content-wrap page-gutter" style={{ maxWidth: "860px" }}>
-          <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "3rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "3rem" }}>
             The cadence
           </p>
           <div>
             {days.map((d, i) => (
               <div key={i} style={{ display: "grid", gridTemplateColumns: "120px 1fr", gap: "2rem", padding: "2rem 0", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
                 <div>
-                  <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>{d.range}</span>
+                  <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: homeTheme.blue }}>{d.range}</span>
                 </div>
                 <div>
-                  <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "1.05rem", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.2 }}>{d.title}</h3>
+                  <h3 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-base)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.2 }}>{d.title}</h3>
                   {d.body.map((p, j) => (
-                    <p key={j} style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.75, marginBottom: j < d.body.length - 1 ? "0.75rem" : 0 }}>{p}</p>
+                    <p key={j} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.75, marginBottom: j < d.body.length - 1 ? "0.75rem" : 0 }}>{p}</p>
                   ))}
                 </div>
               </div>
@@ -376,20 +376,20 @@ export default function HowToRunA360Page() {
       {/* ── CTA ── */}
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.08)", padding: "clamp(3rem, 6vw, 5rem) 0" }}>
         <div className="content-wrap page-gutter" style={{ maxWidth: "860px" }}>
-          <p style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
+          <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", marginBottom: "1rem" }}>
             Ready to run your first assessment?
           </p>
           <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 700, color: "#fff", marginBottom: "0.75rem", lineHeight: 1.15 }}>
             Individual assessments are $150. A pack of ten starts at $125 each.
           </h2>
-          <p style={{ fontSize: "0.95rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "52ch" }}>
+          <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.45)", lineHeight: 1.65, marginBottom: "2rem", maxWidth: "52ch" }}>
             Reports generate automatically on your project close date, no waiting.
           </p>
           <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", background: homeTheme.blue, color: "#fff", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/buy" style={{ display: "inline-flex", alignItems: "center", background: homeTheme.blue, color: "#fff", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Buy an Assessment
             </Link>
-            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
+            <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
               Talk to the team
             </Link>
           </div>
