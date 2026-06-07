@@ -50,7 +50,7 @@ export const marketingTypography = {
   /** Hero / dark-band lead paragraph */
   heroLead: "text-[clamp(1rem,1.7vw,1.25rem)] leading-[1.7]",
   /** Eyebrow / kicker above hero or section titles */
-  heroEyebrow: "text-[0.7rem] font-semibold tracking-[0.26em] uppercase",
+  heroEyebrow: "text-xs font-semibold tracking-[0.26em] uppercase",
   /** Large section title on light backgrounds — e.g. `HomeWhySection` */
   sectionDisplayLight:
     "text-[clamp(2.8rem,6vw,5rem)] font-extrabold uppercase leading-[0.92] tracking-tight",

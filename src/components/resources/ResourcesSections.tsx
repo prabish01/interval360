@@ -219,7 +219,7 @@ export default function ResourcesSections() {
                   </div>
                 </div>
 
-                <h3 className="mb-6 max-w-[20ch] text-[1.5rem] font-bold leading-[1.15] tracking-tight text-white mt-2" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                <h3 className="mb-6 max-w-[20ch] text-xl font-bold leading-[1.15] tracking-tight text-white mt-2" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                   {fieldNotesSection.cards[1].title}
                 </h3>
                 <p className="text-base leading-[1.65] text-white/50 max-w-[32ch]">
@@ -276,7 +276,7 @@ export default function ResourcesSections() {
                       </p>
                     </div>
                     
-                    <h3 className="mb-6 text-[2rem] font-bold leading-[1.1] tracking-tight text-white mt-2" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                    <h3 className="mb-6 text-2xl font-bold leading-[1.1] tracking-tight text-white mt-2" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                       {fieldNotesSection.cards[3].title}
                     </h3>
                     

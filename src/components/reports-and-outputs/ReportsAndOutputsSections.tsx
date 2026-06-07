@@ -39,15 +39,15 @@ export default function ReportsAndOutputsSections() {
           ].map((stat, i) => (
             <div key={i} className={`flex flex-col gap-3 px-6 py-5 ${i < 2 ? "border-r border-white/6" : ""}`}>
               <div className="flex items-center justify-between">
-                <span className="text-[0.6rem] font-semibold tracking-[0.2em] uppercase text-white/40">{stat.label}</span>
-                <span className="text-[0.75rem] font-bold text-[#2d6cff]">{stat.tag}</span>
+                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40">{stat.label}</span>
+                <span className="text-xs font-bold text-[#2d6cff]">{stat.tag}</span>
               </div>
               <span className="text-[2.6rem] font-extrabold leading-none text-white">{stat.value}</span>
               <div className="flex flex-col gap-1.5">
                 <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                   <div className="h-full bg-[#2d6cff] rounded-full" style={{ width: `${stat.pct}%` }} />
                 </div>
-                <span className="text-[0.58rem] font-semibold tracking-[0.18em] uppercase text-white/30">{stat.benchmark}</span>
+                <span className="text-xs font-semibold tracking-[0.18em] uppercase text-white/30">{stat.benchmark}</span>
               </div>
             </div>
           ))}
