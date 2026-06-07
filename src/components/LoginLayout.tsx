@@ -137,7 +137,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
               }} aria-hidden />
             )}
             <span style={{
-              fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.28em",
+              fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.28em",
               textTransform: "uppercase", color: "rgba(79,110,247,0.85)",
             }}>
               {cfg.eyebrow}
@@ -146,7 +146,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 
           {/* Heading */}
           <h2 style={{
-            fontSize: "clamp(2.8rem,5.5vw,5rem)",
+            fontSize: "var(--text-display)",
             fontWeight: 900,
             lineHeight: 0.92,
             letterSpacing: "-0.04em",
@@ -164,7 +164,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 
           {/* Tagline */}
           <p style={{
-            fontSize: "0.82rem", color: "rgba(234,239,243,0.45)",
+            fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.45)",
             lineHeight: 1.75, maxWidth: "38ch",
             textTransform: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "uppercase" : "none",
             letterSpacing: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "0.04em" : "0",
@@ -213,7 +213,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 
           {/* Form title */}
           <h1 style={{
-            fontSize: "clamp(1.6rem,2.5vw,2rem)",
+            fontSize: "var(--text-2xl)",
             fontWeight: 700,
             color: "#fff",
             fontFamily: "var(--font-space-grotesk), sans-serif",
@@ -224,7 +224,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
             {cfg.formTitle}
           </h1>
           <p style={{
-            fontSize: "0.855rem", color: "rgba(234,239,243,0.42)",
+            fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.42)",
             marginBottom: "2.5rem", lineHeight: 1.6, maxWidth: "34ch",
           }}>
             {cfg.formSubtitle}
@@ -254,7 +254,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
                 <label style={{ ...labelStyle, marginBottom: 0 }}>{cfg.passwordLabel}</label>
                 {cfg.forgotPassword && (
                   <Link href="#" style={{
-                    fontSize: "0.7rem", color: "rgba(79,110,247,0.75)",
+                    fontSize: "var(--text-xs)", color: "rgba(79,110,247,0.75)",
                     textDecoration: "none", letterSpacing: "0.01em",
                     transition: "color 0.15s",
                   }}>
@@ -301,7 +301,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
                 width: "100%", height: "50px",
                 background: "linear-gradient(110deg, #2563eb 0%, #4f46e5 100%)",
                 color: "#fff", border: "none", borderRadius: "8px",
-                fontSize: "0.855rem", fontWeight: 600, letterSpacing: "0.02em",
+                fontSize: "var(--text-sm)", fontWeight: 600, letterSpacing: "0.02em",
                 cursor: "pointer",
                 boxShadow: "0 4px 24px rgba(45,108,255,0.3), 0 1px 0 rgba(255,255,255,0.08) inset",
                 transition: "opacity 0.2s, transform 0.15s, box-shadow 0.2s",
@@ -319,12 +319,12 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
           {/* Divider */}
           <div style={{ display: "flex", alignItems: "center", gap: "12px", margin: "1.5rem 0" }}>
             <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.06)" }} />
-            <span style={{ fontSize: "0.68rem", color: "rgba(234,239,243,0.2)", letterSpacing: "0.1em" }}>OR</span>
+            <span style={{ fontSize: "var(--text-xs)", color: "rgba(234,239,243,0.2)", letterSpacing: "0.1em" }}>OR</span>
             <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.06)" }} />
           </div>
 
           {/* Alt link */}
-          <p style={{ fontSize: "0.8rem", color: "rgba(234,239,243,0.35)", textAlign: "center" }}>
+          <p style={{ fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.35)", textAlign: "center" }}>
             {cfg.altText}{" "}
             <Link href={cfg.altLink.href} style={{
               color: "rgba(234,239,243,0.7)", textDecoration: "none",
@@ -338,7 +338,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
           {/* Back to site */}
           <p style={{ marginTop: "2.5rem", textAlign: "center" }}>
             <Link href="/" style={{
-              fontSize: "0.72rem", color: "rgba(234,239,243,0.2)",
+              fontSize: "var(--text-xs)", color: "rgba(234,239,243,0.2)",
               textDecoration: "none", transition: "color 0.15s",
             }}
               onMouseEnter={e => (e.currentTarget.style.color = "rgba(234,239,243,0.5)")}
@@ -356,7 +356,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 /* ── Shared field styles ───────────────────────────────────────── */
 const labelStyle: React.CSSProperties = {
   display: "block",
-  fontSize: "0.68rem",
+  fontSize: "var(--text-xs)",
   fontWeight: 600,
   letterSpacing: "0.08em",
   textTransform: "uppercase",
@@ -372,7 +372,7 @@ const inputStyle: React.CSSProperties = {
   background: "rgba(255,255,255,0.03)",
   border: "1px solid rgba(255,255,255,0.08)",
   borderRadius: "8px",
-  fontSize: "0.9rem",
+  fontSize: "var(--text-sm)",
   color: "rgba(234,239,243,0.88)",
   outline: "none",
   marginBottom: "0",
