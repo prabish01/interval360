@@ -19,22 +19,22 @@ export default function HowItWorksSections() {
           }}
         />
         <div className="content-wrap relative z-10 max-w-4xl">
-          <p className="mb-5 text-[0.68rem] font-semibold tracking-[0.28em] uppercase" style={{ color: homeTheme.blue }}>
+          <p className="mb-5 text-xs font-semibold tracking-[0.28em] uppercase" style={{ color: homeTheme.blue }}>
             How it works
           </p>
-          <h1 className="mb-6 text-[clamp(2rem,5vw,3.25rem)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+          <h1 className="mb-6 text-[clamp(3rem,7vw,5.5rem)] font-extrabold leading-[1.08] tracking-[-0.02em] uppercase" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             From launch to insight in <span style={{ color: homeTheme.blueBright }}>days — not weeks.</span>
           </h1>
-          <p className="mb-10 max-w-[52ch] text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.textBody }}>
+          <p className="mb-10 max-w-[52ch] text-base leading-[1.75]" style={{ color: homeTheme.textBody }}>
             Interval 360 is designed to reduce friction at every stage of the 360 process — for the people providing feedback, for the leader receiving it, and for the HR team or coach running it.
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-[0.82rem] font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
+            <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
               Buy an assessment
             </Link>
             <Link
               href="/company#contact"
-              className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-[0.82rem] font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
+              className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
               style={{
                 borderColor: homeTheme.outlineButtonBorder,
                 background: homeTheme.outlineButtonBg,
@@ -42,7 +42,7 @@ export default function HowItWorksSections() {
             >
               Book a call
             </Link>
-            <Link href="#conversation" className="inline-flex items-center gap-1.5 border-b border-current px-0.5 py-3 text-[0.82rem] font-medium no-underline transition-opacity hover:opacity-80 uppercase" style={{ color: homeTheme.linkMuted }}>
+            <Link href="#conversation" className="inline-flex items-center gap-1.5 border-b border-current px-0.5 py-3 text-sm font-medium no-underline transition-opacity hover:opacity-80 uppercase" style={{ color: homeTheme.linkMuted }}>
               See the conversation <span aria-hidden>→</span>
             </Link>
           </div>
@@ -57,7 +57,7 @@ export default function HowItWorksSections() {
               <span className="text-[clamp(1.35rem,2.8vw,1.85rem)] font-extrabold tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.blue }}>
                 {stat.num}
               </span>
-              <span className="max-w-[18ch] text-[0.65rem] font-semibold uppercase leading-snug tracking-[0.14em]" style={{ color: homeTheme.lightBody }}>
+              <span className="max-w-[18ch] text-xs font-semibold uppercase leading-snug tracking-[0.14em]" style={{ color: homeTheme.lightBody }}>
                 {stat.label}
               </span>
             </div>
@@ -78,13 +78,13 @@ export default function HowItWorksSections() {
                   {step.num}
                 </span>
                 <div className="relative z-10 flex h-full flex-col pt-10">
-                  <h3 className="mb-3 text-[0.78rem] font-bold uppercase leading-snug tracking-[0.12em]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  <h3 className="mb-3 text-sm font-bold uppercase leading-snug tracking-[0.12em]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                     {step.title}
                   </h3>
-                  <p className="mb-4 text-[0.88rem] leading-[1.7]" style={{ color: homeTheme.textMuted }}>
+                  <p className="mb-4 text-base leading-[1.7]" style={{ color: homeTheme.textMuted }}>
                     {step.body}
                   </p>
-                  <span className="mt-auto inline-block w-fit rounded px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.1em]" style={{ background: homeTheme.blueTint12, color: homeTheme.blue }}>
+                  <span className="mt-auto inline-block w-fit rounded px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.1em]" style={{ background: homeTheme.blueTint12, color: homeTheme.blue }}>
                     {step.time}
                   </span>
                 </div>
@@ -101,10 +101,10 @@ export default function HowItWorksSections() {
             <h2 className="mb-6 text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase" style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}>
               The conversation
             </h2>
-            <p className="mb-6 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+            <p className="mb-6 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
               The AI starts with structured opening questions designed to elicit useful, specific input. When a response is general, it follows up with a targeted probe — the same way a skilled interviewer would.
             </p>
-            <p className="mb-8 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+            <p className="mb-8 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
               The result is feedback that is richer, more specific, and more useful than anything a static survey can produce — in the same amount of time.
             </p>
           </div>
@@ -116,13 +116,13 @@ export default function HowItWorksSections() {
                 <span className="size-2.5 rounded-full bg-[#febc2e]/90" />
                 <span className="size-2.5 rounded-full bg-[#28c840]/90" />
               </div>
-              <span className="ml-2 text-[0.72rem] text-white/35">Interval 360 — Feedback Conversation</span>
+              <span className="ml-2 text-xs text-white/35">Interval 360 — Feedback Conversation</span>
             </div>
             <div className="flex max-h-[min(28rem,70vh)] flex-col gap-4 overflow-y-auto p-5 md:p-6">
               {conversationExample.map((msg, i) => (
                 <div key={i} className={`flex ${msg.speaker === "rater" ? "justify-end" : "justify-start"}`}>
                   <div
-                    className={`max-w-[92%] rounded-2xl px-4 py-3 text-[0.86rem] leading-[1.65] md:max-w-[88%] ${msg.speaker === "ai" ? "rounded-bl-md border text-white/90" : "rounded-br-md bg-white/7 text-white/80"}`}
+                    className={`max-w-[92%] rounded-2xl px-4 py-3 text-base leading-[1.65] md:max-w-[88%] ${msg.speaker === "ai" ? "rounded-bl-md border text-white/90" : "rounded-br-md bg-white/7 text-white/80"}`}
                     style={
                       msg.speaker === "ai"
                         ? {
@@ -133,7 +133,7 @@ export default function HowItWorksSections() {
                     }
                   >
                     {msg.speaker === "ai" && (
-                      <span className="mb-1.5 block text-[0.62rem] font-bold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
+                      <span className="mb-1.5 block text-xs font-bold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
                         Interval 360 AI
                       </span>
                     )}
@@ -144,7 +144,7 @@ export default function HowItWorksSections() {
             </div>
             <div className="flex items-center gap-2 border-t border-white/8 px-4 py-3">
               <div className="flex flex-1 items-center rounded-lg border border-white/10 bg-black/40 px-3 py-2.5">
-                <span className="text-[0.78rem] text-white/25">Type a response…</span>
+                <span className="text-sm text-white/25">Type a response…</span>
               </div>
               <button type="button" className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/12 bg-white/6 text-white/50" aria-label="Send (illustration)">
                 <Send className="size-4" aria-hidden />
@@ -160,20 +160,20 @@ export default function HowItWorksSections() {
           <h2 className="mx-auto mb-14 text-center text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase md:mb-16" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             What you receive
           </h2>
-          <p className="mx-auto mb-12 max-w-[56ch] text-center text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.textFaint }}>
+          <p className="mx-auto mb-12 max-w-[56ch] text-center text-base leading-[1.75]" style={{ color: homeTheme.textFaint }}>
             Every Interval 360 assessment produces two distinct reports — one for the organization and one for the leader. Both are designed to be used directly, without additional interpretation.
           </p>
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
             {receiveReports.map((report) => (
               <div key={report.label} className="flex flex-col overflow-hidden rounded-2xl border border-white/9 bg-[#0c0c0c]">
                 <div className="p-8 pb-6">
-                  <p className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.18em]">{report.label}</p>
-                  <p className="mb-6 text-[0.72rem] font-semibold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em]">{report.label}</p>
+                  <p className="mb-6 text-xs font-semibold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
                     {report.subtitle}
                   </p>
                   <ul className="flex flex-col gap-2.5">
                     {report.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[0.88rem] leading-[1.55]" style={{ color: homeTheme.textMuted }}>
+                      <li key={item} className="flex items-start gap-2.5 text-base leading-[1.55]" style={{ color: homeTheme.textMuted }}>
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: homeTheme.blue }} aria-hidden />
                         {item}
                       </li>
@@ -188,7 +188,7 @@ export default function HowItWorksSections() {
             ))}
           </div>
           <div className="mt-10 flex justify-center">
-            <Link href="/reports-and-outputs" className="text-[0.88rem] font-semibold no-underline border-b pb-0.5 transition-opacity hover:opacity-70 uppercase" style={{ color: homeTheme.blue, borderColor: homeTheme.blue }}>
+            <Link href="/reports-and-outputs" className="text-base font-semibold no-underline border-b pb-0.5 transition-opacity hover:opacity-70 uppercase" style={{ color: homeTheme.blue, borderColor: homeTheme.blue }}>
               See report structure →
             </Link>
           </div>
@@ -211,16 +211,16 @@ export default function HowItWorksSections() {
           <h2 className="mb-6 text-[clamp(1.65rem,3.2vw,2.35rem)] font-bold leading-[1.2] uppercase" style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}>
             Ready to see the process in action?
           </h2>
-          <p className="mb-10 text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+          <p className="mb-10 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
             Buy a single assessment and experience the full process — from setup to report.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.85rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
+            <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
               Buy an assessment
             </Link>
             <Link
               href="/company#contact"
-              className="inline-flex items-center justify-center rounded-sm border-2 border-transparent bg-transparent px-8 py-3.5 text-[0.85rem] font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
+              className="inline-flex items-center justify-center rounded-sm border-2 border-transparent bg-transparent px-8 py-3.5 text-sm font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
               style={{
                 color: homeTheme.lightHeading,
                 borderColor: homeTheme.lightHeading,
