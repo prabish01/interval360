@@ -49,7 +49,7 @@ export default function ForCoachesSections() {
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-stretch">
               <Link
                 href="/company#contact"
-                className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+                className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
                 Talk to partnerships
@@ -63,16 +63,16 @@ export default function ForCoachesSections() {
                   background: "rgba(0,0,0,0.35)",
                 }}
               >
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em]" style={{ color: homeTheme.textFaint }}>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: homeTheme.textFaint }}>
                   See pricing
                 </span>
                 <span
-                  className="my-0.5 text-[2.25rem] font-extrabold leading-none tracking-tight"
+                  className="my-0.5 text-2xl font-extrabold leading-none tracking-tight"
                   style={{ fontFamily: "var(--font-space-grotesk)", color: "#fff" }}
                 >
                   Zero
                 </span>
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.18em]" style={{ color: homeTheme.textMuted }}>
+                <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: homeTheme.textMuted }}>
                   set up fees
                 </span>
               </Link>
@@ -81,7 +81,7 @@ export default function ForCoachesSections() {
             <div className="mt-8">
               <Link
                 href="/reports-and-outputs"
-                className="inline-flex items-center gap-2 text-[0.9rem] font-medium no-underline transition-opacity hover:opacity-80"
+                className="inline-flex items-center gap-2 text-sm font-medium no-underline transition-opacity hover:opacity-80"
                 style={{ color: homeTheme.linkMuted }}
               >
                 Download sample report
@@ -118,7 +118,7 @@ export default function ForCoachesSections() {
               </div>
               <div className="p-8 md:p-10">
                 <blockquote
-                  className="mb-6 text-[1.05rem] font-medium italic leading-[1.65] text-[#334155]"
+                  className="mb-6 text-base font-medium italic leading-[1.65] text-[#334155]"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   &ldquo;{forCoachesCopy.testimonialQuote}&rdquo;
@@ -129,8 +129,8 @@ export default function ForCoachesSections() {
                     aria-hidden
                   />
                   <div>
-                    <p className="text-[0.9rem] font-semibold text-[#0b1733]">{forCoachesCopy.testimonialName}</p>
-                    <p className="text-[0.82rem]" style={{ color: homeTheme.lightBody }}>
+                    <p className="text-sm font-semibold text-[#0b1733]">{forCoachesCopy.testimonialName}</p>
+                    <p className="text-sm" style={{ color: homeTheme.lightBody }}>
                       {forCoachesCopy.testimonialOrg}
                     </p>
                   </div>
@@ -170,10 +170,10 @@ export default function ForCoachesSections() {
                   }}
                 >
                   <Icon className="mb-5 size-7 shrink-0" style={{ color: homeTheme.blue }} aria-hidden />
-                  <h3 className="mb-3 text-[1.02rem] font-bold uppercase leading-snug tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  <h3 className="mb-3 text-base font-bold uppercase leading-snug tracking-wide" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                     {item.title}
                   </h3>
-                  <p className="text-[0.9rem] leading-[1.65]" style={{ color: homeTheme.textMuted }}>
+                  <p className="text-base leading-[1.65]" style={{ color: homeTheme.textMuted }}>
                     {item.body}
                   </p>
                 </div>
@@ -198,20 +198,20 @@ export default function ForCoachesSections() {
           >
             {forCoachesCopy.ctaTitle}
           </h2>
-          <p className="mx-auto mb-10 max-w-[52ch] text-[1.05rem] leading-[1.75] text-white/90">
+          <p className="mx-auto mb-10 max-w-[52ch] text-base leading-[1.75] text-white/90">
             {forCoachesCopy.ctaSub}
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/company#contact"
-              className="inline-flex min-w-[200px] items-center justify-center rounded-sm bg-white px-8 py-3.5 text-[0.82rem] font-semibold uppercase no-underline transition-opacity hover:opacity-95"
+              className="inline-flex min-w-[200px] items-center justify-center rounded-sm bg-white px-8 py-3.5 text-sm font-semibold uppercase no-underline transition-opacity hover:opacity-95"
               style={{ color: homeTheme.blue }}
             >
               Join our partner network
             </Link>
             <Link
               href="/buy"
-              className="inline-flex min-w-[200px] items-center justify-center rounded-sm border-2 border-white px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline uppercase transition-colors hover:bg-white/10"
+              className="inline-flex min-w-[200px] items-center justify-center rounded-sm border-2 border-white px-8 py-3.5 text-sm font-semibold text-white no-underline uppercase transition-colors hover:bg-white/10"
             >
               Start your first assessment
             </Link>
