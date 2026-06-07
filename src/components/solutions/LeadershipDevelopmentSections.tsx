@@ -82,7 +82,7 @@ export default function LeadershipDevelopmentSections() {
 
         <div className="relative z-10 flex min-h-[85vh] flex-col justify-end pb-16 md:min-h-[78vh] md:justify-center md:pb-0 page-gutter">
           <div className="content-wrap max-w-3xl md:py-12">
-            <nav className="mb-8 text-[0.78rem]" aria-label="Breadcrumb">
+            <nav className="mb-8 text-sm" aria-label="Breadcrumb">
               <Link href="/solutions" className="font-medium text-white/50 no-underline transition-colors hover:text-white">
                 Solutions
               </Link>
@@ -112,7 +112,7 @@ export default function LeadershipDevelopmentSections() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/company#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
                 Book a call
@@ -120,7 +120,7 @@ export default function LeadershipDevelopmentSections() {
               </Link>
               <Link
                 href="/reports-and-outputs"
-                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
+                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
                 style={{
                   borderColor: homeTheme.outlineButtonBorder,
                   background: homeTheme.outlineButtonBg,
@@ -151,7 +151,7 @@ export default function LeadershipDevelopmentSections() {
               </div>
             </div>
             <div>
-              <p className="mb-10 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              <p className="mb-10 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
                 Leadership development programs often invest heavily in curriculum, coaching, and cohort experiences — but the feedback layer is an afterthought. When 360 assessments are included at all, they are typically run once, using traditional survey tools that produce long reports few participants actually read and use.
               </p>
               <div className="grid gap-8 sm:grid-cols-2">
@@ -159,13 +159,13 @@ export default function LeadershipDevelopmentSections() {
                   <div className="mb-3 flex items-center gap-2">
                     <AlertTriangle className="size-5 shrink-0 text-red-500" aria-hidden />
                     <h3
-                      className="text-[0.82rem] font-bold uppercase tracking-[0.12em]"
+                      className="text-sm font-bold uppercase tracking-[0.12em]"
                       style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
                     >
                       Friction heavy
                     </h3>
                   </div>
-                  <p className="text-[0.9rem] leading-[1.65]" style={{ color: homeTheme.lightBody }}>
+                  <p className="text-base leading-[1.65]" style={{ color: homeTheme.lightBody }}>
                     Coordination, follow-up, and long surveys burn participant goodwill. Program teams spend weeks chasing completion instead of facilitating development.
                   </p>
                 </div>
@@ -173,18 +173,18 @@ export default function LeadershipDevelopmentSections() {
                   <div className="mb-3 flex items-center gap-2">
                     <AlertTriangle className="size-5 shrink-0 text-red-500" aria-hidden />
                     <h3
-                      className="text-[0.82rem] font-bold uppercase tracking-[0.12em]"
+                      className="text-sm font-bold uppercase tracking-[0.12em]"
                       style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
                     >
                       Stale data
                     </h3>
                   </div>
-                  <p className="text-[0.9rem] leading-[1.65]" style={{ color: homeTheme.lightBody }}>
+                  <p className="text-base leading-[1.65]" style={{ color: homeTheme.lightBody }}>
                     Without a reliable baseline and progress signal, coaches lack structured context and sponsors cannot show what changed — so impact stays anecdotal.
                   </p>
                 </div>
               </div>
-              <p className="mt-10 text-[1rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              <p className="mt-10 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
                 Interval 360 is designed to close that gap — by making high-quality feedback fast enough, low-burden enough, and affordable enough to use as a consistent, repeatable layer within any leadership development program.
               </p>
             </div>
@@ -204,7 +204,7 @@ export default function LeadershipDevelopmentSections() {
               <br />a development program
             </h2>
             <div className="mx-auto h-1 w-14 rounded-full" style={{ background: homeTheme.blue }} />
-            <p className="mx-auto mt-6 max-w-[56ch] text-[0.95rem] leading-[1.75]" style={{ color: homeTheme.textMuted }}>
+            <p className="mx-auto mt-6 max-w-[56ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
               Interval 360 can be used at any point in a development program. These are the three moments where it most consistently adds value.
             </p>
           </div>
@@ -226,16 +226,16 @@ export default function LeadershipDevelopmentSections() {
                   {item.num}
                 </span>
                 <item.Icon className="relative z-10 mb-6 size-7" style={{ color: homeTheme.blue }} aria-hidden />
-                <p className="relative z-10 mb-2 text-[0.72rem] font-bold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
+                <p className="relative z-10 mb-2 text-xs font-bold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
                   {item.moment}
                 </p>
                 <h3
-                  className="relative z-10 mb-4 text-[1rem] font-bold uppercase leading-snug tracking-wide"
+                  className="relative z-10 mb-4 text-base font-bold uppercase leading-snug tracking-wide"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="relative z-10 text-[0.88rem] leading-[1.65]" style={{ color: homeTheme.textMuted }}>
+                <p className="relative z-10 text-base leading-[1.65]" style={{ color: homeTheme.textMuted }}>
                   {item.body}
                 </p>
               </div>
@@ -260,20 +260,20 @@ export default function LeadershipDevelopmentSections() {
                 <br />
                 program scale
               </h2>
-              <p className="mb-8 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              <p className="mb-8 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
                 Traditional 360 programs require significant coordination, follow-up, and processing time. Interval 360 handles all of that automatically — so program managers can run a full cohort assessment with a fraction of the effort.
               </p>
               <div className="flex flex-wrap items-center gap-4">
                 <Link
                   href="/company#contact"
-                  className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-opacity hover:opacity-90 uppercase"
+                  className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-opacity hover:opacity-90 uppercase"
                   style={{ background: homeTheme.sectionBlack }}
                 >
                   Talk to us
                 </Link>
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center gap-1.5 border-b border-current pb-0.5 text-[0.82rem] font-semibold no-underline transition-opacity hover:opacity-75 uppercase"
+                  className="inline-flex items-center gap-1.5 border-b border-current pb-0.5 text-sm font-semibold no-underline transition-opacity hover:opacity-75 uppercase"
                   style={{ color: homeTheme.lightHeading }}
                 >
                   See pricing
@@ -293,12 +293,12 @@ export default function LeadershipDevelopmentSections() {
                 >
                   <card.Icon className="mb-4 size-6 shrink-0 text-[#111]" aria-hidden />
                   <p
-                    className="mb-2 text-[0.68rem] font-bold uppercase tracking-[0.14em]"
+                    className="mb-2 text-xs font-bold uppercase tracking-[0.14em]"
                     style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
                   >
                     {card.label}
                   </p>
-                  <p className="text-[0.82rem] leading-[1.55]" style={{ color: homeTheme.lightBody }}>
+                  <p className="text-sm leading-[1.55]" style={{ color: homeTheme.lightBody }}>
                     {card.body}
                   </p>
                 </div>
@@ -329,20 +329,20 @@ export default function LeadershipDevelopmentSections() {
             <br />
             from the start.
           </h2>
-          <p className="mx-auto mb-10 max-w-[48ch] text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.textMuted }}>
+          <p className="mx-auto mb-10 max-w-[48ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
             Talk to us about how to integrate Interval 360 into your development program design.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/company#contact"
-              className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.85rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
               style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
             >
               Book a call
             </Link>
             <Link
               href="/buy"
-              className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-[0.85rem] font-medium text-white no-underline transition-colors hover:border-white/45 uppercase"
+              className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-medium text-white no-underline transition-colors hover:border-white/45 uppercase"
               style={{
                 borderColor: homeTheme.outlineButtonBorder,
                 background: homeTheme.outlineButtonBg,

@@ -105,7 +105,7 @@ export default function TalentDecisionsSections() {
 
         <div className="relative z-10 flex min-h-[85vh] flex-col justify-end pb-16 md:min-h-[78vh] md:justify-center md:pb-0 page-gutter">
           <div className="content-wrap max-w-3xl md:py-12">
-            <nav className="mb-8 text-[0.78rem]" aria-label="Breadcrumb">
+            <nav className="mb-8 text-sm" aria-label="Breadcrumb">
               <Link href="/solutions" className="font-medium text-white/50 no-underline transition-colors hover:text-white">
                 Solutions
               </Link>
@@ -129,7 +129,7 @@ export default function TalentDecisionsSections() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/company#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
                 Book a call
@@ -137,7 +137,7 @@ export default function TalentDecisionsSections() {
               </Link>
               <Link
                 href="/reports-and-outputs"
-                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
+                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
                 style={{
                   borderColor: homeTheme.outlineButtonBorder,
                   background: homeTheme.outlineButtonBg,
@@ -166,7 +166,7 @@ export default function TalentDecisionsSections() {
               <div className="mt-6 h-1 w-14 rounded-full" style={{ background: homeTheme.blue }} />
             </div>
             <div>
-              <p className="text-[1.05rem] leading-[1.8]" style={{ color: "#4a5877" }}>
+              <p className="text-base leading-[1.8]" style={{ color: "#4a5877" }}>
                 Promotion and succession calls are among the most consequential choices an organization makes. When the feedback layer is thin, decisions default to visibility, politics, and last quarter's story — not how a leader is actually experienced by the people around them.
               </p>
             </div>
@@ -183,12 +183,12 @@ export default function TalentDecisionsSections() {
                   {item.num}
                 </span>
                 <h3
-                  className="relative z-10 mb-3 text-[1.05rem] font-bold uppercase tracking-[0.02em] leading-[1.3]"
+                  className="relative z-10 mb-3 text-base font-bold uppercase tracking-[0.02em] leading-[1.3]"
                   style={{ fontFamily: "var(--font-space-grotesk)", color: "#0b1733" }}
                 >
                   {item.title}
                 </h3>
-                <p className="relative z-10 text-[0.9rem] leading-[1.7]" style={{ color: "#4a5877" }}>
+                <p className="relative z-10 text-base leading-[1.7]" style={{ color: "#4a5877" }}>
                   {item.body}
                 </p>
               </div>
@@ -209,7 +209,7 @@ export default function TalentDecisionsSections() {
               <br />
               Framework
             </h2>
-            <p className="max-w-[56ch] text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.textMuted }}>
+            <p className="max-w-[56ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
               Interval 360 surfaces the two dimensions that matter most for talent decisions: what leaders deliver, and how they are experienced as leaders. Together they replace one-dimensional anecdotes with a complete picture.
             </p>
           </div>
@@ -223,17 +223,17 @@ export default function TalentDecisionsSections() {
                   background: "rgba(255,255,255,0.03)",
                 }}
               >
-                <p className="mb-4 text-[0.72rem] font-bold uppercase tracking-[0.14em]" style={{ color: homeTheme.blue }}>
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em]" style={{ color: homeTheme.blue }}>
                   {card.label}
                 </p>
-                <h3 className="mb-4 text-[1.1rem] font-bold leading-snug" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                <h3 className="mb-4 text-lg font-bold leading-snug" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                   {card.title}
                 </h3>
-                <p className="mb-8 flex-1 text-[0.92rem] leading-[1.7]" style={{ color: homeTheme.textMuted }}>
+                <p className="mb-8 flex-1 text-base leading-[1.7]" style={{ color: homeTheme.textMuted }}>
                   {card.body}
                 </p>
                 <div className="flex items-center gap-2 border-t border-white/10 pt-6">
-                  <span className="text-[0.72rem] font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.eyebrow }}>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.eyebrow }}>
                     {card.linkLabel}
                   </span>
                   <span className="h-px flex-1 max-w-[120px] bg-linear-to-r from-white/40 to-transparent" aria-hidden />
@@ -278,7 +278,7 @@ export default function TalentDecisionsSections() {
                     aria-hidden
                   />
                   <h3
-                    className="mb-3 min-h-11 text-[0.8125rem] font-bold uppercase leading-tight tracking-[0.06em] sm:min-h-12 lg:min-h-13"
+                    className="mb-3 min-h-11 text-sm font-bold uppercase leading-tight tracking-[0.06em] sm:min-h-12 lg:min-h-13"
                     style={{ fontFamily: "var(--font-space-grotesk)", color: "#0b1733" }}
                   >
                     {Array.isArray(m.title) ? (
@@ -291,7 +291,7 @@ export default function TalentDecisionsSections() {
                       m.title
                     )}
                   </h3>
-                  <p className="text-[0.8125rem] leading-[1.55]" style={{ color: homeTheme.lightBody }}>
+                  <p className="text-sm leading-[1.55]" style={{ color: homeTheme.lightBody }}>
                     {m.body}
                   </p>
                 </div>
@@ -322,12 +322,12 @@ export default function TalentDecisionsSections() {
             <br />
             talent architecture?
           </h2>
-          <p className="mx-auto mb-10 max-w-[48ch] text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.textMuted }}>
+          <p className="mx-auto mb-10 max-w-[48ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
             Talk to us about integrating Interval 360 into promotion, succession, and calibration workflows.
           </p>
           <Link
             href="/company#contact"
-            className="inline-flex min-w-[min(100%,320px)] items-center justify-center rounded-sm px-10 py-4 text-[0.78rem] font-bold tracking-[0.18em] text-white no-underline uppercase transition-opacity hover:opacity-95"
+            className="inline-flex min-w-[min(100%,320px)] items-center justify-center rounded-sm px-10 py-4 text-sm font-bold tracking-[0.18em] text-white no-underline uppercase transition-opacity hover:opacity-95"
             style={{
               background: "linear-gradient(90deg, #2d6cff 0%, #7c3aed 100%)",
               boxShadow: "0 12px 40px rgba(45, 108, 255, 0.35)",

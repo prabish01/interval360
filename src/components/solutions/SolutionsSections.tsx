@@ -40,7 +40,7 @@ export default function SolutionsSections() {
         />
         <div className="content-wrap relative z-10 max-w-4xl">
           <p
-            className="mb-5 text-[0.68rem] font-semibold tracking-[0.32em] uppercase"
+            className="mb-5 text-xs font-semibold tracking-[0.32em] uppercase"
             style={{ color: homeTheme.blue }}
           >
             Precision intelligence
@@ -52,13 +52,13 @@ export default function SolutionsSections() {
             Solutions: Better leadership feedback for the{" "}
             <span style={{ color: "#2d6cff" }}>moments that matter most.</span>
           </h1>
-          <p className="mb-10 max-w-[52ch] text-[1.05rem] leading-[1.75]" style={{ color: homeTheme.textBody }}>
+          <p className="mb-10 max-w-[52ch] text-base leading-[1.75]" style={{ color: homeTheme.textBody }}>
             Interval 360 is built for the specific moments where leadership insight is most valuable — talent decisions, development programs, and practitioners who need client-ready feedback. Find your use case below.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="#use-cases"
-              className="inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3 text-[0.8rem] font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              className="inline-flex items-center justify-center gap-2 rounded-sm px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
               style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
             >
               Explore methodology
@@ -66,7 +66,7 @@ export default function SolutionsSections() {
             </Link>
             <Link
               href="/company#contact"
-              className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-[0.8rem] font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
+              className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
               style={{
                 borderColor: homeTheme.outlineButtonBorder,
                 background: homeTheme.outlineButtonBg,
@@ -86,7 +86,7 @@ export default function SolutionsSections() {
       >
         <div className="content-wrap page-gutter">
           <p
-            className="mb-4 text-[0.68rem] font-semibold tracking-[0.28em] uppercase"
+            className="mb-4 text-xs font-semibold tracking-[0.28em] uppercase"
             style={{ color: homeTheme.lightBody }}
           >
             Use cases
@@ -108,23 +108,23 @@ export default function SolutionsSections() {
               >
                 <UseCaseImage index={i} />
                 <div className="flex flex-1 flex-col p-8">
-                  <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em]" style={{ color: homeTheme.lightBody }}>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: homeTheme.lightBody }}>
                     {uc.num}
                   </p>
                   <h3
-                    className="mb-4 text-[1.05rem] font-bold uppercase leading-snug tracking-wide"
+                    className="mb-4 text-base font-bold uppercase leading-snug tracking-wide"
                     style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
                   >
                     {uc.title}
                   </h3>
-                  <p className="mb-6 flex-1 text-[0.92rem] leading-[1.7]" style={{ color: homeTheme.lightBody }}>
+                  <p className="mb-6 flex-1 text-base leading-[1.7]" style={{ color: homeTheme.lightBody }}>
                     {uc.body}
                   </p>
                   <div className="mb-6 flex flex-wrap gap-2">
                     {uc.who.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[0.62rem] font-semibold uppercase tracking-[0.12em]"
+                        className="text-xs font-semibold uppercase tracking-[0.12em]"
                         style={{
                           color: homeTheme.lightBody,
                           background: homeTheme.sectionPaper,
@@ -138,7 +138,7 @@ export default function SolutionsSections() {
                   </div>
                   <Link
                     href={uc.href}
-                    className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold no-underline transition-opacity hover:opacity-75 uppercase"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold no-underline transition-opacity hover:opacity-75 uppercase"
                     style={{ color: homeTheme.blue }}
                   >
                     See how it works
@@ -158,7 +158,7 @@ export default function SolutionsSections() {
       >
         <div className="content-wrap page-gutter">
           <p
-            className="mb-4 text-[0.68rem] font-semibold tracking-[0.28em] uppercase"
+            className="mb-4 text-xs font-semibold tracking-[0.28em] uppercase"
             style={{ color: homeTheme.blue }}
           >
             Partner ecosystem
@@ -170,7 +170,7 @@ export default function SolutionsSections() {
             For coaches: A repeatable, client-ready 360 process —{" "}
             <span style={{ color: homeTheme.blueBright }}>without building one yourself.</span>
           </h2>
-          <p className="mb-14 max-w-[56ch] text-[1.02rem] leading-[1.75] md:mb-16" style={{ color: homeTheme.textMuted }}>
+          <p className="mb-14 max-w-[56ch] text-base leading-[1.75] md:mb-16" style={{ color: homeTheme.textMuted }}>
             Interval 360 gives coaches and consultants a fast, reliable way to run a structured leadership 360 for any client — with professional-quality outputs ready to use in a debrief conversation the same day they arrive.
           </p>
 
@@ -186,12 +186,12 @@ export default function SolutionsSections() {
               >
                 <div className="mb-5 size-3 shrink-0" style={{ background: homeTheme.blue }} aria-hidden />
                 <h3
-                  className="mb-3 text-[0.95rem] font-bold uppercase leading-snug tracking-wide"
+                  className="mb-3 text-base font-bold uppercase leading-snug tracking-wide"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-[0.88rem] leading-[1.65]" style={{ color: homeTheme.textMuted }}>
+                <p className="text-base leading-[1.65]" style={{ color: homeTheme.textMuted }}>
                   {item.body}
                 </p>
               </div>
@@ -201,7 +201,7 @@ export default function SolutionsSections() {
           <div className="mt-12">
             <Link
               href="/for-coaches"
-              className="inline-flex items-center gap-2 text-[0.88rem] font-semibold text-white no-underline transition-opacity hover:opacity-80 uppercase"
+              className="inline-flex items-center gap-2 text-base font-semibold text-white no-underline transition-opacity hover:opacity-80 uppercase"
             >
               Become a certified partner
               <ArrowRight className="size-4" aria-hidden />
@@ -225,7 +225,7 @@ export default function SolutionsSections() {
             </p>
             <Link
               href="/buy"
-              className="inline-flex w-fit items-center justify-center rounded-sm px-8 py-3 text-[0.8rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              className="inline-flex w-fit items-center justify-center rounded-sm px-8 py-3 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
               style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
             >
               Get started
@@ -243,7 +243,7 @@ export default function SolutionsSections() {
                 backgroundImage: `radial-gradient(circle at 50% 50%, ${homeTheme.blueGlowSoft}, transparent 65%)`,
               }}
             />
-            <p className="relative z-10 px-6 text-center text-[0.72rem] font-semibold uppercase tracking-[0.35em] text-white/45">
+            <p className="relative z-10 px-6 text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
               Interval 360
             </p>
           </div>
@@ -255,8 +255,8 @@ export default function SolutionsSections() {
             >
               98%
             </p>
-            <p className="mt-3 text-[0.85rem] font-bold uppercase tracking-[0.2em] text-white/80">User satisfaction</p>
-            <p className="mt-4 max-w-[28ch] text-[0.78rem] leading-[1.6] text-white/45">
+            <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-white/80">User satisfaction</p>
+            <p className="mt-4 max-w-[28ch] text-xs leading-[1.6] text-white/45">
               Based on post-assessment feedback from raters and leaders across pilot programs.
             </p>
           </div>
@@ -272,20 +272,20 @@ export default function SolutionsSections() {
           >
             Find the use case that fits your organization.
           </h2>
-          <p className="mx-auto mb-10 max-w-[48ch] text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+          <p className="mx-auto mb-10 max-w-[48ch] text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
             All use cases start with the same process. Talk to us about which one fits your immediate need.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/company#contact"
-              className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-[0.85rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+              className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
               style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
             >
               Book a call
             </Link>
             <Link
               href="/buy"
-              className="inline-flex items-center justify-center rounded-sm border-2 border-transparent px-8 py-3.5 text-[0.85rem] font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
+              className="inline-flex items-center justify-center rounded-sm border-2 border-transparent px-8 py-3.5 text-sm font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
               style={{
                 color: homeTheme.lightHeading,
                 borderColor: homeTheme.lightHeading,
