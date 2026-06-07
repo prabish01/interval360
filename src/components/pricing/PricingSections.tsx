@@ -14,7 +14,7 @@ function Cell({ value }: { value: "check" | "dash" | "limited" }) {
   }
   if (value === "limited") {
     return (
-      <span className="text-[0.65rem] font-bold uppercase tracking-[0.14em]" style={{ color: homeTheme.lightHeading }}>
+      <span className="text-xs font-bold uppercase tracking-[0.14em]" style={{ color: homeTheme.lightHeading }}>
         Limited
       </span>
     );
@@ -51,7 +51,7 @@ export default function PricingSections() {
               {pricingHero.title}
             </h1>
             <p className="text-[clamp(1.05rem,2vw,1.35rem)] font-medium text-white/90">{pricingHero.sub}</p>
-            <p className="mx-auto mt-6 max-w-[62ch] text-[0.98rem] leading-[1.75]" style={{ color: homeTheme.textMuted }}>
+            <p className="mx-auto mt-6 max-w-[62ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
               {pricingHero.body}
             </p>
           </div>
@@ -67,28 +67,28 @@ export default function PricingSections() {
                 }}
               >
                 {plan.badge && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white" style={{ background: homeTheme.blue }}>
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-white" style={{ background: homeTheme.blue }}>
                     {plan.badge}
                   </span>
                 )}
-                <h2 className="mb-3 text-[1.15rem] font-bold uppercase tracking-wide text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                <h2 className="mb-3 text-lg font-bold uppercase tracking-wide text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                   {plan.title}
                 </h2>
-                <p className="mb-8 min-h-14 flex-1 text-[0.88rem] leading-[1.6]" style={{ color: homeTheme.textMuted }}>
+                <p className="mb-8 min-h-14 flex-1 text-base leading-[1.6]" style={{ color: homeTheme.textMuted }}>
                   {plan.description}
                 </p>
                 <div className="mb-8">
-                  <span className="text-[2.25rem] font-extrabold tabular-nums text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  <span className="text-2xl font-extrabold tabular-nums text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                     {plan.price}
                   </span>
-                  <span className="text-[0.95rem] font-medium" style={{ color: homeTheme.textFaint }}>
+                  <span className="text-base font-medium" style={{ color: homeTheme.textFaint }}>
                     {" "}
                     {plan.priceSuffix}
                   </span>
                 </div>
                 <Link
                   href={plan.href}
-                  className={`mt-auto inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white no-underline transition-opacity hover:opacity-90`}
+                  className={`mt-auto inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-white no-underline transition-opacity hover:opacity-90`}
                   style={
                     plan.variant === "gradient"
                       ? {
@@ -117,7 +117,7 @@ export default function PricingSections() {
             <h2 className="mb-3 text-[clamp(1.75rem,4vw,2.5rem)] font-extrabold uppercase leading-tight tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>
               {protocolCopy.title}
             </h2>
-            <p className="text-[0.98rem]" style={{ color: homeTheme.textMuted }}>
+            <p className="text-base" style={{ color: homeTheme.textMuted }}>
               {protocolCopy.sub}
             </p>
           </div>
@@ -136,12 +136,12 @@ export default function PricingSections() {
         <div className="content-wrap page-gutter">
           <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-8 md:flex-row md:gap-10">
             <div className="max-w-xl text-center md:text-left">
-              <p className="text-[1.15rem] font-bold uppercase leading-snug tracking-tight text-white md:text-[1.25rem]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              <p className="text-lg font-bold uppercase leading-snug tracking-tight text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                 {pricingCta.title}
               </p>
-              <p className="mt-1 text-[0.98rem] font-medium leading-snug text-white/90">{pricingCta.sub}</p>
+              <p className="mt-1 text-base font-medium leading-snug text-white/90">{pricingCta.sub}</p>
             </div>
-            <Link href={pricingCta.href} className="inline-flex shrink-0 items-center justify-center rounded-sm bg-white px-8 py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.16em] no-underline transition-opacity hover:opacity-95" style={{ color: homeTheme.blue }}>
+            <Link href={pricingCta.href} className="inline-flex shrink-0 items-center justify-center rounded-sm bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.16em] no-underline transition-opacity hover:opacity-95" style={{ color: homeTheme.blue }}>
               {pricingCta.button}
             </Link>
           </div>

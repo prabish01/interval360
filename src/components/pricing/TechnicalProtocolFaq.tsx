@@ -55,7 +55,7 @@ export function TechnicalProtocolFaq({ items }: { items: readonly Item[] }) {
               }
             }}
           >
-            <div className="flex items-center justify-between gap-4 py-5 text-[0.95rem] font-semibold text-white select-none">
+            <div className="flex items-center justify-between gap-4 py-5 text-base font-semibold text-white select-none">
               {item.q}
               <span
                 className={`text-xl font-light leading-none text-white/60 transition-transform duration-200 ease-out ${open ? "rotate-45" : ""}`}
@@ -70,7 +70,7 @@ export function TechnicalProtocolFaq({ items }: { items: readonly Item[] }) {
             >
               <div className="overflow-hidden">
                 <p
-                  className="border-t border-white/10 pb-5 pr-8 pt-4 text-[0.9rem] leading-[1.65]"
+                  className="border-t border-white/10 pb-5 pr-8 pt-4 text-base leading-[1.65]"
                   style={{ color: homeTheme.textMuted }}
                 >
                   {item.a}
