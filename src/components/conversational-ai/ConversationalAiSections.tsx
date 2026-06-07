@@ -61,7 +61,7 @@ export default function ConversationalAiSections() {
               <Link
                 href="#followup"
                 id="hero-cta-see-in-action"
-                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
+                className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
                 See it in action
@@ -70,7 +70,7 @@ export default function ConversationalAiSections() {
               <Link
                 href="#governance"
                 id="hero-cta-governance"
-                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
+                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
                 style={{
                   borderColor: homeTheme.outlineButtonBorder,
                   background: homeTheme.outlineButtonBg,
@@ -114,17 +114,17 @@ export default function ConversationalAiSections() {
               </div>
             </div>
             <div className="flex flex-col gap-5 pt-2">
-              <p className="text-[1.02rem] leading-[1.8]" style={{ color: homeTheme.lightBody }}>
+              <p className="text-base leading-[1.8]" style={{ color: homeTheme.lightBody }}>
                 Traditional 360 surveys ask every rater the same fixed questions
                 regardless of what they say. A rating of 4 out of 5 on
                 &ldquo;communicates effectively&rdquo; tells you almost nothing
                 useful — there is no context, no example, no pattern.
               </p>
-              <p className="text-[1.02rem] leading-[1.8]" style={{ color: homeTheme.lightBody }}>
+              <p className="text-base leading-[1.8]" style={{ color: homeTheme.lightBody }}>
                 The issue is not the questions. It is the format. Surveys cannot
                 probe. A conversation can.
               </p>
-              <p className="text-[1.02rem] leading-[1.8]" style={{ color: homeTheme.lightBody }}>
+              <p className="text-base leading-[1.8]" style={{ color: homeTheme.lightBody }}>
                 Interval 360 replaces the static survey with a structured
                 conversation guided by AI — producing richer, more specific
                 feedback with less burden on the rater.
@@ -175,7 +175,7 @@ export default function ConversationalAiSections() {
                 style={{ borderColor: "rgba(255,255,255,0.08)" }}
               >
                 <p
-                  className="text-[0.72rem] font-bold uppercase tracking-[0.2em]"
+                  className="text-xs font-bold uppercase tracking-[0.2em]"
                   style={{ color: "rgba(255,255,255,0.4)" }}
                 >
                   Traditional Survey
@@ -189,12 +189,12 @@ export default function ConversationalAiSections() {
                     style={{ borderColor: "rgba(255,255,255,0.05)" }}
                   >
                     <span
-                      className="mt-0.5 shrink-0 text-[0.95rem] font-bold"
+                      className="mt-0.5 shrink-0 text-base font-bold"
                       style={{ color: "#f87171" }}
                     >
                       ✗
                     </span>
-                    <p className="text-[0.9rem] leading-[1.65]" style={{ color: homeTheme.textMuted }}>
+                    <p className="text-base leading-[1.65]" style={{ color: homeTheme.textMuted }}>
                       {item}
                     </p>
                   </li>
@@ -215,7 +215,7 @@ export default function ConversationalAiSections() {
                 style={{ borderColor: "rgba(45,108,255,0.3)", background: "rgba(45,108,255,0.1)" }}
               >
                 <p
-                  className="text-[0.72rem] font-bold uppercase tracking-[0.2em]"
+                  className="text-xs font-bold uppercase tracking-[0.2em]"
                   style={{ color: homeTheme.blue }}
                 >
                   Interval 360 Conversation
@@ -228,12 +228,12 @@ export default function ConversationalAiSections() {
                     className="flex items-start gap-4 px-8 py-5"
                   >
                     <span
-                      className="mt-0.5 shrink-0 text-[0.95rem] font-bold"
+                      className="mt-0.5 shrink-0 text-base font-bold"
                       style={{ color: homeTheme.blue }}
                     >
                       ✓
                     </span>
-                    <p className="text-[0.9rem] leading-[1.65]" style={{ color: "rgba(234,239,243,0.82)" }}>
+                    <p className="text-base leading-[1.65]" style={{ color: "rgba(234,239,243,0.82)" }}>
                       {item}
                     </p>
                   </li>
@@ -267,7 +267,7 @@ export default function ConversationalAiSections() {
                 <br />
                 in action
               </h2>
-              <p className="mb-8 text-[1.02rem] leading-[1.75]" style={{ color: homeTheme.lightBody }}>
+              <p className="mb-8 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
                 When a rater gives a general answer, the AI probes for the
                 specific example that makes feedback actionable. Every rater
                 gets the same quality of depth — not just the ones who volunteer
@@ -280,7 +280,7 @@ export default function ConversationalAiSections() {
                   aria-hidden
                 />
                 <span
-                  className="text-[0.82rem] font-semibold uppercase tracking-[0.1em]"
+                  className="text-sm font-semibold uppercase tracking-[0.1em]"
                   style={{ color: homeTheme.lightHeading }}
                 >
                   5–8 focused exchanges per rater
@@ -305,11 +305,11 @@ export default function ConversationalAiSections() {
                       {isAi ? (
                         <Bot className="size-4" />
                       ) : (
-                        <span className="text-[0.7rem] font-bold">R</span>
+                        <span className="text-xs font-bold">R</span>
                       )}
                     </div>
                     <div
-                      className="max-w-[82%] rounded border px-5 py-4 text-[0.875rem] leading-[1.65]"
+                      className="max-w-[82%] rounded border px-5 py-4 text-sm leading-[1.65]"
                       style={
                         isAi
                           ? {
@@ -358,7 +358,7 @@ export default function ConversationalAiSections() {
             </h2>
             <div className="h-1 w-14 rounded-full" style={{ background: homeTheme.blue }} />
             <p
-              className="mt-6 max-w-[56ch] text-[0.95rem] leading-[1.75]"
+              className="mt-6 max-w-[56ch] text-base leading-[1.75]"
               style={{ color: homeTheme.textMuted }}
             >
               Our AI is clear about what it does and where it stops. There are
@@ -384,12 +384,12 @@ export default function ConversationalAiSections() {
                   aria-hidden
                 />
                 <h3
-                  className="mb-3 text-[0.82rem] font-bold uppercase tracking-[0.12em] leading-snug"
+                  className="mb-3 text-sm font-bold uppercase tracking-[0.12em] leading-snug"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {item.title}
                 </h3>
-                <p className="text-[0.9rem] leading-[1.7]" style={{ color: homeTheme.textMuted }}>
+                <p className="text-base leading-[1.7]" style={{ color: homeTheme.textMuted }}>
                   {item.body}
                 </p>
               </div>
@@ -421,7 +421,7 @@ export default function ConversationalAiSections() {
                 better outcomes.
               </h2>
             </div>
-            <p className="text-[1.02rem] leading-[1.8]" style={{ color: homeTheme.lightBody }}>
+            <p className="text-base leading-[1.8]" style={{ color: homeTheme.lightBody }}>
               When raters are guided through a structured conversation rather
               than faced with a static form, the quality of the feedback
               changes — and so does the quality of the decisions made from it.
@@ -469,12 +469,12 @@ export default function ConversationalAiSections() {
                   {item.stat}
                 </p>
                 <p
-                  className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.16em]"
+                  className="mb-4 text-xs font-bold uppercase tracking-[0.16em]"
                   style={{ color: homeTheme.blue }}
                 >
                   {item.unit}
                 </p>
-                <p className="text-[0.88rem] leading-[1.6]" style={{ color: homeTheme.lightBody }}>
+                <p className="text-base leading-[1.6]" style={{ color: homeTheme.lightBody }}>
                   {item.body}
                 </p>
               </div>
@@ -505,7 +505,7 @@ export default function ConversationalAiSections() {
             data produces.
           </h2>
           <p
-            className="mx-auto mb-10 max-w-[48ch] text-[1.02rem] leading-[1.75]"
+            className="mx-auto mb-10 max-w-[48ch] text-base leading-[1.75]"
             style={{ color: homeTheme.textMuted }}
           >
             Run a 360 that gives your leaders feedback they can actually use —
@@ -515,7 +515,7 @@ export default function ConversationalAiSections() {
             <Link
               href="/buy"
               id="cta-buy-assessment"
-              className="inline-flex items-center justify-center gap-2 rounded-sm px-10 py-4 text-[0.78rem] font-bold tracking-[0.18em] text-white no-underline uppercase transition-opacity hover:opacity-95"
+              className="inline-flex items-center justify-center gap-2 rounded-sm px-10 py-4 text-xs font-bold tracking-[0.18em] text-white no-underline uppercase transition-opacity hover:opacity-95"
               style={{
                 background: "linear-gradient(90deg, #2d6cff 0%, #7c3aed 100%)",
                 boxShadow: "0 12px 40px rgba(45, 108, 255, 0.35)",
@@ -527,7 +527,7 @@ export default function ConversationalAiSections() {
             <Link
               href="/reports-and-outputs"
               id="cta-see-sample-reports"
-              className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-[0.82rem] font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
+              className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
               style={{
                 borderColor: homeTheme.outlineButtonBorder,
                 background: homeTheme.outlineButtonBg,

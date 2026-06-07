@@ -32,7 +32,7 @@ export default function ReportViewer() {
           <button
             key={r.id}
             onClick={() => setActive(i)}
-            className={`px-6 py-3 text-[0.78rem] font-semibold tracking-[0.1em] uppercase transition-colors duration-200 border-b-2 -mb-px ${
+            className={`px-6 py-3 text-xs font-semibold tracking-[0.1em] uppercase transition-colors duration-200 border-b-2 -mb-px ${
               active === i
                 ? "text-[#2d6cff] border-[#2d6cff]"
                 : "text-white/40 border-transparent hover:text-white/70"
@@ -46,19 +46,19 @@ export default function ReportViewer() {
       {/* Chrome header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 px-8 py-5 border-b border-white/6 bg-[#0a0c14]">
         <div>
-          <p className="text-[0.6rem] font-semibold tracking-[0.25em] uppercase text-[#2d6cff] mb-1">
+          <p className="text-xs font-semibold tracking-[0.25em] uppercase text-[#2d6cff] mb-1">
             Interval 360 — {report.tab}
           </p>
-          <h3 className="text-[1.1rem] font-extrabold uppercase leading-[1.1] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+          <h3 className="text-lg font-extrabold uppercase leading-[1.1] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             {report.title}
           </h3>
-          <p className="text-[0.72rem] text-white/30 italic mt-0.5">{report.label}</p>
+          <p className="text-xs text-white/30 italic mt-0.5">{report.label}</p>
         </div>
         <div className="flex gap-3 shrink-0">
           <a
             href={report.pdf}
             download
-            className="text-[0.72rem] font-semibold tracking-[0.08em] uppercase px-4 py-2 border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors duration-200 no-underline"
+            className="text-xs font-semibold tracking-[0.08em] uppercase px-4 py-2 border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors duration-200 no-underline"
           >
             Download PDF
           </a>
@@ -66,7 +66,7 @@ export default function ReportViewer() {
             href={report.pdf}
             target="_blank"
             rel="noreferrer"
-            className="text-[0.72rem] font-semibold tracking-[0.08em] uppercase px-4 py-2 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors duration-200 no-underline"
+            className="text-xs font-semibold tracking-[0.08em] uppercase px-4 py-2 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors duration-200 no-underline"
           >
             Open Full Screen
           </a>
