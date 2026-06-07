@@ -30,12 +30,12 @@ export function NewsletterSignup({
         placeholder={placeholder}
         required
         disabled={status === "done"}
-        className="w-full rounded-sm border border-white/15 bg-black/30 px-4 py-3.5 text-[0.9rem] text-white placeholder:text-white/35 outline-none focus:border-white/35"
+        className="w-full rounded-sm border border-white/15 bg-black/30 px-4 py-3.5 text-base text-white placeholder:text-white/35 outline-none focus:border-white/35"
       />
       <button
         type="submit"
         disabled={status === "done"}
-        className="w-full rounded-sm py-3.5 text-[0.72rem] font-bold uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-95 disabled:opacity-60"
+        className="w-full rounded-sm py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-95 disabled:opacity-60"
         style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
       >
         {status === "done" ? "Thanks — you're subscribed" : buttonLabel}

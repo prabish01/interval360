@@ -40,7 +40,7 @@ export function ResourceFilterBar({
             key={f.id}
             type="button"
             onClick={() => onSelect(f.id)}
-            className="rounded-full px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.12em] transition-colors"
+            className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] transition-colors"
             style={
               isActive
                 ? { background: homeTheme.blue, color: "#fff" }

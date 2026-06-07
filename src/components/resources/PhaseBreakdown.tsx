@@ -168,10 +168,10 @@ export default function PhaseBreakdown({ phases }: { phases: Phase[] }) {
                     {active.num}
                   </span>
                   <span style={{ display: "block", width: 7, height: 7, borderRadius: "50%", background: "rgba(99,102,241,0.9)", marginBottom: "0.5rem" }} />
-                  <p key={`d-${activePhase}`} className="pb-in" style={{ fontFamily: "ui-monospace, monospace", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(99,102,241,0.9)", marginBottom: "0.3rem" }}>
+                  <p key={`d-${activePhase}`} className="pb-in" style={{ fontFamily: "ui-monospace, monospace", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(99,102,241,0.9)", marginBottom: "0.3rem" }}>
                     {active.days}
                   </p>
-                  <p key={`p-${activePhase}`} className="pb-in" style={{ fontSize: "0.9rem", fontWeight: 700, color: t.label }}>
+                  <p key={`p-${activePhase}`} className="pb-in" style={{ fontSize: "var(--text-sm)", fontWeight: 700, color: t.label }}>
                     {active.phase}
                   </p>
                 </div>
@@ -185,14 +185,14 @@ export default function PhaseBreakdown({ phases }: { phases: Phase[] }) {
               <div style={{ border: `1px solid ${t.cardBorder}`, borderRadius: "6px", background: t.cardBg, overflow: "hidden", position: "relative", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", transition: "border-color 0.45s ease, background 0.45s ease" }}>
                 <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: t.cardGrid, backgroundSize: "52px 52px", opacity: t.cardGridOpacity }} />
                 <div style={{ position: "relative", zIndex: 1, padding: "clamp(1.25rem, 3vw, 2rem)" }}>
-                  <p style={{ fontFamily: "ui-monospace, 'Cascadia Code', monospace", fontSize: "0.82rem", color: t.intro, lineHeight: 1.75, marginBottom: "1.75rem", transition: "color 0.45s ease" }}>
+                  <p style={{ fontFamily: "ui-monospace, 'Cascadia Code', monospace", fontSize: "var(--text-sm)", color: t.intro, lineHeight: 1.75, marginBottom: "1.75rem", transition: "color 0.45s ease" }}>
                     {active.intro}
                   </p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(1rem, 3vw, 2rem)" }}>
                     {active.subsections.map((sub) => (
                       <div key={sub.title}>
-                        <h4 style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: t.subTitle, marginBottom: "0.6rem", transition: "color 0.45s ease" }}>{sub.title}</h4>
-                        <p style={{ fontSize: "0.82rem", color: t.subBody, lineHeight: 1.7, transition: "color 0.45s ease" }}>{sub.body}</p>
+                        <h4 style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: t.subTitle, marginBottom: "0.6rem", transition: "color 0.45s ease" }}>{sub.title}</h4>
+                        <p style={{ fontSize: "var(--text-sm)", color: t.subBody, lineHeight: 1.7, transition: "color 0.45s ease" }}>{sub.body}</p>
                       </div>
                     ))}
                   </div>
@@ -201,13 +201,13 @@ export default function PhaseBreakdown({ phases }: { phases: Phase[] }) {
 
               {/* Alert */}
               <div style={{ borderTopWidth: "1px", borderRightWidth: "1px", borderBottomWidth: "1px", borderLeftWidth: "2px", borderStyle: "solid", borderTopColor: t.alertBorder, borderRightColor: t.alertBorder, borderBottomColor: t.alertBorder, borderLeftColor: t.alertLeft, borderRadius: "0 6px 6px 0", padding: "1.1rem 1.4rem", background: t.alertBg, backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", transition: "background 0.45s ease, border-color 0.45s ease" }}>
-                <p style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: t.alertLabel, marginBottom: "0.5rem", transition: "color 0.45s ease" }}>
+                <p style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: t.alertLabel, marginBottom: "0.5rem", transition: "color 0.45s ease" }}>
                   <WarningIcon />
                   System Alert: Failure Point
                 </p>
-                <p style={{ fontSize: "0.85rem", fontWeight: 700, color: t.alertTitle, marginBottom: "0.5rem", transition: "color 0.45s ease" }}>{active.alert.title}</p>
+                <p style={{ fontSize: "var(--text-sm)", fontWeight: 700, color: t.alertTitle, marginBottom: "0.5rem", transition: "color 0.45s ease" }}>{active.alert.title}</p>
                 {active.alert.body.map((p, j) => (
-                  <p key={j} style={{ fontSize: "0.82rem", color: t.alertBody, lineHeight: 1.65, marginBottom: j < active.alert.body.length - 1 ? "0.6rem" : 0, transition: "color 0.45s ease" }}>{p}</p>
+                  <p key={j} style={{ fontSize: "var(--text-sm)", color: t.alertBody, lineHeight: 1.65, marginBottom: j < active.alert.body.length - 1 ? "0.6rem" : 0, transition: "color 0.45s ease" }}>{p}</p>
                 ))}
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function PhaseBreakdown({ phases }: { phases: Phase[] }) {
             transition: "opacity 0.3s",
             color: t.hint,
           }}>
-            <span style={{ fontFamily: "ui-monospace, monospace", fontSize: "0.58rem", letterSpacing: "0.16em", textTransform: "uppercase" }}>
+            <span style={{ fontFamily: "ui-monospace, monospace", fontSize: "var(--text-xs)", letterSpacing: "0.16em", textTransform: "uppercase" }}>
               {activePhase + 1} / {phases.length}
             </span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
