@@ -4,9 +4,15 @@ import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
   title: "How to Choose the Right Raters — Interval 360",
-  description: "Balance perspective, credibility, and burden so feedback reflects how the leader is actually experienced — not how they wish to be seen.",
-  openGraph: { title: "How to Choose the Right Raters — Interval 360" },
-  twitter: { title: "How to Choose the Right Raters — Interval 360" },
+  description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
+  openGraph: {
+    title: "How to Choose the Right Raters — Interval 360",
+    description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
+  },
+  twitter: {
+    title: "How to Choose the Right Raters — Interval 360",
+    description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
+  },
 };
 
 export default function HowToChooseRatersPage() {

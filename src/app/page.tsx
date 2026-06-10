@@ -3,8 +3,15 @@ import { HomeSections } from "@/components/home";
 
 export const metadata: Metadata = {
   title: "Interval 360 — Conversational AI 360 Feedback",
-  openGraph: { title: "Interval 360 — Conversational AI 360 Feedback" },
-  twitter: { title: "Interval 360 — Conversational AI 360 Feedback" },
+  description: "AI-powered 360 feedback that replaces long surveys with a five-minute conversation. Better input, concise reports, and a process leadership teams actually use.",
+  openGraph: {
+    title: "Interval 360 — Conversational AI 360 Feedback",
+    description: "AI-powered 360 feedback that replaces long surveys with a five-minute conversation. Better input, concise reports, and a process leadership teams actually use.",
+  },
+  twitter: {
+    title: "Interval 360 — Conversational AI 360 Feedback",
+    description: "AI-powered 360 feedback that replaces long surveys with a five-minute conversation. Better input, concise reports, and a process leadership teams actually use.",
+  },
 };
 
 export default function HomePage() {

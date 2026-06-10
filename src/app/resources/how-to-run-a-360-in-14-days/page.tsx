@@ -5,9 +5,15 @@ import PhaseBreakdown from "@/components/resources/PhaseBreakdown";
 
 export const metadata = {
   title: "How to Run a 360 in 14 Days — Interval 360",
-  description: "A practical cadence for setup, collection, and close.",
-  openGraph: { title: "How to Run a 360 in 14 Days — Interval 360" },
-  twitter: { title: "How to Run a 360 in 14 Days — Interval 360" },
+  description: "A three-phase playbook for HR stakeholders: configure the project, run a clean collection window, and close with automated reports delivered the next day. No manual processing.",
+  openGraph: {
+    title: "How to Run a 360 in 14 Days — Interval 360",
+    description: "A three-phase playbook for HR stakeholders: configure the project, run a clean collection window, and close with automated reports delivered the next day. No manual processing.",
+  },
+  twitter: {
+    title: "How to Run a 360 in 14 Days — Interval 360",
+    description: "A three-phase playbook for HR stakeholders: configure the project, run a clean collection window, and close with automated reports delivered the next day. No manual processing.",
+  },
 };
 
 const quickRef = [

@@ -4,10 +4,15 @@ import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
   title: "Using What + How in Promotion Decisions — Interval 360",
-  description:
-    "Pair performance signal with leadership experience so talent conversations stay grounded in evidence rather than instinct.",
-  openGraph: { title: "Using What + How in Promotion Decisions — Interval 360" },
-  twitter: { title: "Using What + How in Promotion Decisions — Interval 360" },
+  description: "How to combine performance signal with leadership experience data in promotion and succession conversations. A framework for HR leaders and talent teams.",
+  openGraph: {
+    title: "Using What + How in Promotion Decisions — Interval 360",
+    description: "How to combine performance signal with leadership experience data in promotion and succession conversations. A framework for HR leaders and talent teams.",
+  },
+  twitter: {
+    title: "Using What + How in Promotion Decisions — Interval 360",
+    description: "How to combine performance signal with leadership experience data in promotion and succession conversations. A framework for HR leaders and talent teams.",
+  },
 };
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
