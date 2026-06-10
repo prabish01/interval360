@@ -6,6 +6,8 @@ export const metadata = {
   title: "Using What + How in Promotion Decisions — Interval 360",
   description:
     "Pair performance signal with leadership experience so talent conversations stay grounded in evidence rather than instinct.",
+  openGraph: { title: "Using What + How in Promotion Decisions — Interval 360" },
+  twitter: { title: "Using What + How in Promotion Decisions — Interval 360" },
 };
 
 /* ─── DATA ─────────────────────────────────────────────────────────────────── */
@@ -13,7 +15,7 @@ export const metadata = {
 const introParagraphs = [
   "Most promotion decisions fail in a predictable way. Someone delivers strong results, earns visibility, and builds advocates in the right places. The case for promoting them seems obvious. Then six months into the new role, the wheels come off: their team is disengaged, cross-functional partners are frustrated, and the results that made them look ready turn out to have been built on dynamics that don't scale.",
   "The problem is not that organizations promote bad people. The problem is that they promote on incomplete evidence. Results data is almost always present in promotion conversations. Leadership experience data, meaning how the person is actually experienced by the people around them, is usually absent, anecdotal, or handled through informal reputation rather than structured signal.",
-  "The What + How framework gives you both dimensions in a single assessment. This playbook explains what each score captures, how to interpret the four quadrant placements that result from combining them, and how to bring that data into a promotion conversation in a way that is useful rather than mechanical.",
+  "The What and the How gives you both dimensions in a single assessment. This playbook explains what each score captures, how to interpret the four quadrant placements that result from combining them, and how to bring that data into a promotion conversation in a way that is useful rather than mechanical.",
 ];
 
 const dimensions = [
@@ -168,9 +170,9 @@ const section03 = [
 ];
 
 const section04Paragraphs = [
-  "The What + How framework does not evaluate potential, predict future performance, assess culture fit, or account for the specific demands of the role being considered. A Performer placement means someone is delivering results and leading well in their current context. Whether that translates to a more senior, more complex, or fundamentally different scope requires judgment that the data cannot substitute for.",
+  "The What and the How does not evaluate potential, predict future performance, assess culture fit, or account for the specific demands of the role being considered. A Performer placement means someone is delivering results and leading well in their current context. Whether that translates to a more senior, more complex, or fundamentally different scope requires judgment that the data cannot substitute for.",
   "The framework is also style-agnostic by design. A high How score does not mean a leader leads in a particular way. It means that however they lead, it is landing. This is intentional. The goal is to measure whether a leader's approach is working, not whether it matches a prescribed model. Different organizations, teams, and contexts call for different leadership behaviors. The Intelligent NPS captures effectiveness, not style conformity.",
-  "What the data does well is sharpen the conversation. It surfaces signal that would otherwise depend on who spoke up in a calibration meeting. It gives the people in the room something concrete to react to rather than trading impressions. And it creates a shared vocabulary (What, How, quadrant placement) that makes it easier to compare candidates consistently rather than letting each one be evaluated through a different informal lens.",
+  "What the data does well is sharpen the conversation. It surfaces signal that would otherwise depend on who spoke up in a calibration meeting. It gives the people in the room something concrete to react to rather than trading impressions. And it creates a shared vocabulary (the What, the How, and quadrant placement) that makes it easier to compare candidates consistently rather than letting each one be evaluated through a different informal lens.",
   "Used that way, it makes promotion decisions better. Not by replacing the judgment of the people making them, but by giving that judgment better material to work with.",
 ];
 
@@ -214,7 +216,7 @@ export default function UsingWhatAndHowPage() {
           </p>
 
           <h1 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "clamp(3rem, 9vw, 6.5rem)", fontWeight: 800, lineHeight: 0.95, letterSpacing: "-0.03em", color: "#fff", marginBottom: "1.5rem", maxWidth: "18ch" }}>
-            Using <span style={{ color: homeTheme.blue }}>What + How</span> in Promotion Decisions
+            Using <span style={{ color: homeTheme.blue }}>the What and the How</span> in Promotion Decisions
           </h1>
 
           <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.55)", lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "58ch" }}>
@@ -430,7 +432,7 @@ export default function UsingWhatAndHowPage() {
               <ArrowRight size={14} />
             </Link>
             <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
-              Talk to the team
+              Talk to Us
             </Link>
           </div>
 

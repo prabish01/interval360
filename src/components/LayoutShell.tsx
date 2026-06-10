@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
-const NO_SHELL_ROUTES = ["/particle/chat", "/login", "/admin/login"];
+const NO_SHELL_ROUTES = ["/login", "/admin/login"];
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

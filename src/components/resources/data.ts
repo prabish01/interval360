@@ -73,78 +73,22 @@ export const playbooksSection = {
   num: "01",
   items: [
     {
-      title: "How to Run a 360 in 14 Days",
-      body: "A practical cadence for launch, reminders, and completion — without burning out raters or the participant.",
-      href: "/resources/how-to-run-a-360-in-14-days",
-    },
-    {
       title: "How to Choose the Right Raters",
       body: "Balance perspective, credibility, and burden so feedback reflects how the leader is actually experienced.",
       href: "/resources/how-to-choose-the-right-raters",
     },
     {
-      title: "Using What + How in Promotion Decisions",
+      title: "How to Run a 360 in 14 Days",
+      body: "A practical cadence for launch, reminders, and completion — without burning out raters or the participant.",
+      href: "/resources/how-to-run-a-360-in-14-days",
+    },
+    {
+      title: "Using the What and the How in Promotion Decisions",
       body: "Pair performance signal with leadership experience so talent conversations stay grounded in evidence.",
       href: "/resources/using-what-and-how-in-promotion-decisions",
     },
   ],
 } as const;
-
-export const fieldNotesSection = {
-  header: {
-    title: "FIELD NOTES",
-    subtitle: "INTERNAL ARCHIVE / INTELLIGENCE",
-  },
-  cards: [
-    {
-      id: "card-1",
-      tag: "Talent Decisions",
-      readTime: "4 min read",
-      number: "01",
-      title: "Why \"He's ready\" is not a succession plan",
-      body: "Succession decisions made on gut and tenure are among the most expensive mistakes organizations make. The problem is not bad intent — it's that the feedback loop is broken. Here's what decision-ready data actually looks like.",
-      cta: "ACCESS ARTIFACT",
-    },
-    {
-      id: "card-2",
-      number: "02",
-      tag: "Feedback Quality",
-      readTime: "3 min read",
-      title: "The survey says 4.2 out of 5. What does that mean?",
-      body: "Likert scale averages flatten the signal. What looks like a solid score often hides variance that matters — a 4.2 where three raters gave 3s and three gave 5s tells a different story than six people giving 4s. Conversation-based feedback surfaces that difference.",
-    },
-    {
-      id: "card-3",
-      tag: "Leadership Development",
-      readTime: "5 min read",
-      title: "The first 90 days brief: what a good onboarding 360 tells you",
-      body: "Running a 360 at 60–90 days is one of the highest-ROI talent investments a company can make for new leaders. The data comes in when behavior is still being shaped — not after patterns have calcified.",
-    },
-    {
-      id: "card-4",
-      tag: "AI Governance",
-      readTime: "4 min read",
-      title: "What Interval 360's AI actually does — and doesn't do",
-      body: "We're deliberate about what we ask AI to do in the feedback process. It asks follow-up questions. It synthesizes themes. It does not generate feedback on behalf of raters, make promotion recommendations, or share data across organizations.",
-      iconLabel: "PROTOCOL V.02",
-    },
-    {
-      id: "card-5",
-      tag: "Talent Decisions",
-      readTime: "3 min read",
-      title: "Intent vs. impact: the gap that 360s are built to close",
-      body: "Most leaders believe they are doing more or less what they intend to do. Their raters often see something different. The What + How framework makes that gap visible in a way that is specific enough to act on.",
-    },
-    {
-      id: "card-6",
-      tag: "Leadership Development",
-      readTime: "4 min read",
-      title: "Why coaches prefer conversational 360s to surveys",
-      body: "The best coaching conversations start with specific, quoted observations — not averages. When a coach can point to a rater saying \"she tends to shut down debate once she's made a decision,\" that's material you can actually work with.",
-      cta: "VIEW FULL ANALYSIS",
-    },
-  ],
-};
 
 export const intelligenceFaq = [
   {
@@ -161,7 +105,7 @@ export const intelligenceFaq = [
   },
   {
     q: "How quickly are reports available?",
-    a: "Reports synthesize automatically as rater input completes, typically the same day the assessment closes.",
+    a: "Reports are delivered the day after the assessment closes. Once rater input is complete, synthesis runs automatically overnight.",
   },
 ] as const;
 

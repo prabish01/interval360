@@ -27,7 +27,7 @@ const resourcesMenu = [
   { href: "/resources/case-study-global-cohort", label: "Scaling a Global Cohort", sub: "Case study — global leadership feedback" },
   { href: "/reports-and-outputs", label: "Sample Reports", sub: "See a real assessment output" },
   { href: "/resources/how-to-choose-the-right-raters", label: "How to Choose the Right Raters", sub: "Playbook — ~12 min · Participants & HR stakeholders" },
-  { href: "/resources/using-what-and-how-in-promotion-decisions", label: "Using What + How in Promotion Decisions", sub: "Playbook — ~15 min · HR stakeholders" },
+  { href: "/resources/using-what-and-how-in-promotion-decisions", label: "Using the What and the How in Promotion Decisions", sub: "Playbook — ~15 min · HR stakeholders" },
 ];
 
 const companyMenu = [

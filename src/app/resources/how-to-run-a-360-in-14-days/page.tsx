@@ -6,6 +6,8 @@ import PhaseBreakdown from "@/components/resources/PhaseBreakdown";
 export const metadata = {
   title: "How to Run a 360 in 14 Days — Interval 360",
   description: "A practical cadence for setup, collection, and close.",
+  openGraph: { title: "How to Run a 360 in 14 Days — Interval 360" },
+  twitter: { title: "How to Run a 360 in 14 Days — Interval 360" },
 };
 
 const quickRef = [
@@ -14,7 +16,7 @@ const quickRef = [
   { day: "Day 3",      action: "HR reviews and approves rater list; invitations go out automatically",             owner: "HR stakeholder" },
   { day: "Day 7",      action: "Automated reminder to incomplete raters",                                          owner: "Platform" },
   { day: "Days 8–11",  action: "Direct outreach to stragglers, if needed",                                        owner: "HR stakeholder (optional)" },
-  { day: "Day 14",     action: "Project closes automatically; both reports generate the same day",                 owner: "Platform" },
+  { day: "Day 14",     action: "Project closes automatically; both reports generate the next day",                 owner: "Platform" },
 ];
 
 const phases = [
@@ -149,10 +151,10 @@ const days = [
   },
   {
     range: "Day 14",
-    title: "Project closes automatically; reports are ready the same day",
+    title: "Project closes automatically; reports are ready the next day",
     body: [
-      "When the project end date arrives, Interval 360 closes the assessment and synthesizes rater input automatically. No manual close step is required. Both reports generate the same day.",
-      "The Assessment Report goes to you and the participant's manager. It includes the What/How scoring, quadrant placement, and rater themes — formatted for talent decisions and development conversations. The Development Report goes to the participant and is built for coaching and growth work.",
+      "When the project end date arrives, Interval 360 closes the assessment and synthesizes rater input automatically. No manual close step is required. Both reports generate the next day.",
+      "The Assessment Report goes to you and the participant's manager. It includes the What and the How scores, quadrant placement, and rater themes — formatted for talent decisions and development conversations. The Development Report goes to the participant and is built for coaching and growth work.",
       "Schedule the participant's debrief conversation for within a week of report delivery. Feedback that sits unaddressed for several weeks loses context and urgency. The sooner the data is in a structured conversation, the more useful it is.",
     ],
   },
@@ -235,13 +237,13 @@ export default function HowToRunA360Page() {
       {/* ── DIVIDER ── */}
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }} />
 
-      {/* ── 14-DAY MISSION CADENCE ── */}
+      {/* ── 14-DAY PROJECT CADENCE ── */}
       <section style={{ background: "#0d0f14", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(3rem, 6vw, 4.5rem) 0" }}>
         <div className="content-wrap page-gutter">
           <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "2.5rem", gap: "1rem", flexWrap: "wrap" }}>
             <div>
               <h2 style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-lg)", fontWeight: 700, color: "#fff", marginBottom: "0.4rem" }}>
-                14-Day Mission Cadence
+                14-Day Project Cadence
               </h2>
               <p style={{ fontFamily: "ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace", fontSize: "var(--text-sm)", color: "rgba(255,255,255,0.35)" }}>
                 High-level timeline overview.
@@ -289,7 +291,7 @@ export default function HowToRunA360Page() {
               <div style={{ borderLeft: "2px solid rgba(99,102,241,0.4)", paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "1.1rem" }}>
                 {[
                   "Fourteen days is the right window for most 360 assessments. Short enough to maintain momentum and rater goodwill. Long enough to accommodate normal scheduling friction without daily follow-up.",
-                  "This playbook walks through a three-phase cadence: configure the project and work through the rater nomination and approval process before launch, give raters a clean collection window, and let the project close on schedule with reports ready the same day. Each phase includes the most common failure point and how to avoid it.",
+                  "This playbook walks through a three-phase cadence: configure the project and work through the rater nomination and approval process before launch, give raters a clean collection window, and let the project close on schedule with reports ready the next day. Each phase includes the most common failure point and how to avoid it.",
                   "Interval 360 generates reports automatically when the project end date arrives, so your primary job after setup is context-setting and light coordination. The platform handles the rest.",
                 ].map((p, i) => (
                   <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
@@ -302,7 +304,7 @@ export default function HowToRunA360Page() {
                   { val: "14", label: "Days total" },
                   { val: "3", label: "Phases" },
                   { val: "~5 min", label: "Per rater" },
-                  { val: "Same day", label: "Report delivery" },
+                  { val: "Next day", label: "Report delivery" },
                 ].map((s) => (
                   <div key={s.label} style={{ padding: "1.1rem 1.25rem", background: "#080808" }}>
                     <p style={{ fontFamily: "var(--font-space-grotesk), sans-serif", fontSize: "var(--text-xl)", fontWeight: 800, color: "#fff", letterSpacing: "-0.02em", marginBottom: "0.2rem" }}>{s.val}</p>
@@ -390,7 +392,7 @@ export default function HowToRunA360Page() {
               Buy an Assessment
             </Link>
             <Link href="/company#contact" style={{ display: "inline-flex", alignItems: "center", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)", fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none" }}>
-              Talk to the team
+              Talk to Us
             </Link>
           </div>
         </div>

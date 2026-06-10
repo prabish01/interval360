@@ -3,9 +3,11 @@ import { ArrowRight, TrendingUp, Clock, Users } from "lucide-react";
 import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
-  title: "Scaling Feedback Across a Global Leadership Cohort — Interval 360",
+  title: "Scaling a Global Cohort — Interval 360",
   description:
     "Fewer coordination hours, faster cycles, and reports leaders actually use in development conversations.",
+  openGraph: { title: "Scaling a Global Cohort — Interval 360" },
+  twitter: { title: "Scaling a Global Cohort — Interval 360" },
 };
 
 /* ─── DATA ──────────────────────────────────────────────────────────────── */
@@ -122,7 +124,7 @@ const outcomeSections = [
     heading: "How leaders used the reports",
     body: [
       "Perhaps the clearest signal of a changed process was what leaders did with the reports after receiving them. In the previous cycle, the L&D team's informal estimate was that fewer than half of the leaders who received reports brought them into a substantive coaching or development conversation. The rest filed them.",
-      "In the first Interval 360 cycle, the team tracked report usage more deliberately: 68 of the 75 leaders referenced their report in at least one subsequent development conversation, and 41 brought specific data points from their What + How scores into their mid-year talent review discussion with their manager. Several leaders requested a second assessment cycle before the annual process to track progress on specific development areas identified in the first report.",
+      "In the first Interval 360 cycle, the team tracked report usage more deliberately: 68 of the 75 leaders referenced their report in at least one subsequent development conversation, and 41 brought specific data points from their What and the How scores into their mid-year talent review discussion with their manager. Several leaders requested a second assessment cycle before the annual process to track progress on specific development areas identified in the first report.",
     ],
     quote: {
       text: "The reports are specific enough that leaders actually have something to talk about. That sounds like a low bar, but it wasn't where we were before. A number on a scale doesn't give you much to work with. A synthesized pattern with real language from the people you work with every day — that starts a conversation.",
@@ -144,7 +146,7 @@ const outcomeSections = [
     id: "succession",
     heading: "Succession and talent decisions",
     body: [
-      "The alignment of the assessment cycle with the mid-year talent review created an opportunity the L&D team had not fully anticipated. With What + How data available for a significant portion of the leadership population, the talent review conversation shifted in character. Rather than relying primarily on manager impressions and informal reputation, reviewers had a consistent framework and a consistent data format for discussing readiness across leaders. Quadrant placements gave the conversation a shared vocabulary. The data did not replace judgment, but it gave judgment something more structured to work with.",
+      "The alignment of the assessment cycle with the mid-year talent review created an opportunity the L&D team had not fully anticipated. With the What and the How data available for a significant portion of the leadership population, the talent review conversation shifted in character. Rather than relying primarily on manager impressions and informal reputation, reviewers had a consistent framework and a consistent data format for discussing readiness across leaders. Quadrant placements gave the conversation a shared vocabulary. The data did not replace judgment, but it gave judgment something more structured to work with.",
       "Three leaders who had been informally identified as high-potential candidates were confirmed by their Interval 360 data as Performers — high on both dimensions — which supported acceleration of their development investments. Two others showed Driver placements: strong What scores but low How scores that had not previously been visible in the talent data. Both received targeted coaching support as a direct result, with explicit development goals tied to their How score for the following cycle.",
     ],
   },
@@ -171,7 +173,7 @@ const related = [
   },
   {
     label: "Playbook",
-    title: "Using What + How in Promotion Decisions",
+    title: "Using the What and the How in Promotion Decisions",
     href: "/resources/using-what-and-how-in-promotion-decisions",
   },
   {

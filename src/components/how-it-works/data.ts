@@ -1,7 +1,7 @@
 export const stats = [
   { num: "~5 min", label: "Per feedback provider" },
   { num: "5–8", label: "Guided exchanges per conversation" },
-  { num: "Days", label: "From launch to final report" },
+  { num: "2×", label: "Reports per assessment" },
   { num: "100%", label: "Automated synthesis — no manual work" },
 ];
 
@@ -21,7 +21,7 @@ export const steps = [
   {
     num: "03",
     title: "Feedback is synthesized automatically",
-    body: "Once feedback collection is complete, the platform synthesizes all responses into a structured report. There is no manual processing or analysis required. The synthesis identifies themes, strengths, development areas, and actionable next steps — across both the What and How dimensions.",
+    body: "Once feedback collection is complete, the platform synthesizes all responses into a structured report. There is no manual processing or analysis required. The synthesis identifies themes, strengths, development areas, and actionable next steps — across both the What and the How.",
     time: "Automated — no wait time for processing",
   },
   {
@@ -41,19 +41,35 @@ export const steps = [
 export const conversationExample = [
   {
     speaker: "ai" as const,
-    text: "Thank you for taking the time to share feedback. To start, can you describe one or two moments from the last six months where you observed this leader at their best — situations where their leadership made a real difference?",
+    text: "On a scale of 0 to 10, how likely are you to recommend working with Victor Ramirez to a friend or colleague? (0 = Not at all likely, 10 = Extremely likely)",
   },
   {
     speaker: "rater" as const,
-    text: "Yeah, there were a few. The Q3 delivery crunch comes to mind. Everyone was stressed, timelines were slipping, and she just stayed calm, reset expectations with stakeholders really clearly, and kept the team focused. It didn't feel like the wheels were coming off even when they kind of were.",
+    text: "8",
   },
   {
     speaker: "ai" as const,
-    text: "That's a useful example — it speaks to how she manages pressure and stakeholder communication. You mentioned she kept the team focused. How did she do that specifically? Was it through communication, structure, presence, or something else?",
+    text: "Thanks. What factors influenced your rating of 8?",
   },
   {
     speaker: "rater" as const,
-    text: "More communication than anything. She ran a daily standup during that stretch, not to micromanage but just to surface blockers early. People knew what was happening. And she was transparent about what was at risk, which I think actually helped. No one was in the dark.",
+    text: "Vic's a natural leader who sets direction clearly and inspires confidence. He works hard, leads from the front, and makes it clear where the team stands. He's built a group that trusts his leadership, and that's helped us notch some big wins — like becoming a solid third at Monterey and being the only auction house showing growth in recent years. The only challenge is that as we scale, the lack of day-to-day structure sometimes shows. A bit more framework would help without losing the entrepreneurial spirit that's made us successful.",
+  },
+  {
+    speaker: "ai" as const,
+    text: "That's great feedback! What would you say Victor Ramirez's greatest strength as a leader?",
+  },
+  {
+    speaker: "rater" as const,
+    text: "So strategic!",
+  },
+  {
+    speaker: "ai" as const,
+    text: "Could you give me more detail about that?",
+  },
+  {
+    speaker: "rater" as const,
+    text: "I mean, it just feels like he's looking five years out while most of us are focused on today. He's also put the right people in the right roles and isn't afraid to embrace new ideas, like bringing in AI tools to push us forward, while still keeping relationships at the center of what we do.",
   },
 ];
 
@@ -63,23 +79,21 @@ export const receiveReports = [
     subtitle: "For managers, HR, and talent decisions",
     items: [
       "Executive summary across all feedback",
-      "What + How leadership analysis",
+      "Leadership analysis of the What and the How",
       "Strengths and development areas",
-      "Succession and placement signal",
     ],
     image: "/assessment-preview-overview.png",
     imageAlt: "Preview of an Interval 360 assessment report",
   },
   {
     label: "Development Report",
-    subtitle: "For the leader themselves",
+    subtitle: "Written for the leader",
     items: [
       "Structured deep-dive on each theme",
       "Specific examples and patterns",
       "Curated development resources",
-      "Actionable next steps and focus areas",
     ],
-    image: "/assessment-preview-results.png",
-    imageAlt: "Preview of an Interval 360 development report",
+    image: "/development-report-deep-dive.png",
+    imageAlt: "Development report deep-dive: Insight, Impact, and learning resources for a development opportunity",
   },
 ];

@@ -210,58 +210,6 @@ export default function SolutionsSections() {
         </div>
       </section>
 
-      {/* 4 — Dark: triple CTA band */}
-      <section className="border-b py-0 text-white" style={{ borderColor: homeTheme.borderSubtle, background: homeTheme.sectionCharcoal }}>
-        <div className="content-wrap page-gutter grid md:grid-cols-3">
-          <div
-            className="flex flex-col justify-center gap-6 border-b py-14 md:border-b-0 md:border-r md:py-16"
-            style={{ borderColor: homeTheme.borderSubtle }}
-          >
-            <p
-              className="max-w-[22ch] text-[clamp(1.25rem,2.2vw,1.5rem)] font-bold uppercase leading-snug"
-              style={{ fontFamily: "var(--font-space-grotesk)" }}
-            >
-              Start your next leadership cycle today.
-            </p>
-            <Link
-              href="/buy"
-              className="inline-flex w-fit items-center justify-center rounded-sm px-8 py-3 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
-              style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
-            >
-              Get started
-            </Link>
-          </div>
-
-          <div
-            className="relative flex min-h-[14rem] items-center justify-center overflow-hidden border-b py-14 md:border-b-0 md:border-r md:py-16"
-            style={{ borderColor: homeTheme.borderSubtle }}
-          >
-            <div className="absolute inset-0 opacity-40" style={{ background: homeTheme.heroGradient }} />
-            <div
-              className="pointer-events-none absolute inset-0 opacity-20"
-              style={{
-                backgroundImage: `radial-gradient(circle at 50% 50%, ${homeTheme.blueGlowSoft}, transparent 65%)`,
-              }}
-            />
-            <p className="relative z-10 px-6 text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-              Interval 360
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center py-14 md:py-16">
-            <p
-              className="text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold leading-none tracking-tight"
-              style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.blue }}
-            >
-              98%
-            </p>
-            <p className="mt-3 text-sm font-bold uppercase tracking-[0.2em] text-white/80">User satisfaction</p>
-            <p className="mt-4 max-w-[28ch] text-xs leading-[1.6] text-white/45">
-              Based on post-assessment feedback from raters and leaders across pilot programs.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* 5 — Light: closing */}
       <section className="py-20 md:py-24" style={{ background: homeTheme.sectionPaper }}>

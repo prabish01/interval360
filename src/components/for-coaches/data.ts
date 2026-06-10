@@ -7,7 +7,7 @@ export const forCoachesCopy = {
   testimonialOrg: "Global Consulting Agency",
   ctaTitle: "Ready to scale your assessment process?",
   ctaSub:
-    "Join our partner network of elite coaches and consultants. Launch your first client engagement today.",
+    "Join our partner network of coaches and consultants. Launch your first client engagement today.",
 };
 
 export const consultingInfrastructure = [

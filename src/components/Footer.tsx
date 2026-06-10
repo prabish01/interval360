@@ -43,7 +43,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm md:text-base leading-[1.75] max-w-[38ch]" style={{ color: "rgba(255,255,255,0.6)" }}>
-              Leadership feedback, reimagined with conversational AI. Better signal, lower burden, and practical reports teams actually use.
+              Better feedback, lower burden, and practical reports teams actually use.
             </p>
           </div>
 

@@ -9,7 +9,7 @@ export const pricingPlans = [
     id: "single",
     title: "Single Assessment",
     badge: undefined,
-    description: "Surgical precision for independent talent intelligence deep dives.",
+    description: "One assessment, one leader. Pay as you go.",
     price: "$150",
     priceSuffix: "/assessment",
     cta: "Select plan",
@@ -21,9 +21,9 @@ export const pricingPlans = [
     id: "team",
     title: "Team Pack",
     badge: "Most popular",
-    description: "High-velocity, stable systems for growing talent teams and rapid deployment.",
+    description: "For small teams running assessments regularly — better price, same quality.",
     price: "$125",
-    priceSuffix: "/seat",
+    priceSuffix: "/assessment",
     cta: "Select team",
     href: "/buy",
     highlighted: true,
@@ -33,7 +33,7 @@ export const pricingPlans = [
     id: "enterprise",
     title: "Enterprise Custom",
     badge: undefined,
-    description: "Complex structural integration for high-performance global operations.",
+    description: "Volume pricing and custom configuration for organizations running assessments at scale.",
     price: "Custom",
     priceSuffix: "/year",
     cta: "Contact sales",
@@ -92,11 +92,11 @@ export const faqItems = [
     a: "Participants receive a secure link to a conversational flow. Raters complete short input on their own time; results synthesize automatically into your reports.",
   },
   {
-    q: "What constitutes a \"Team\" seat?",
+    q: "How does the 10-pack work?",
     a: "A seat covers one leader receiving a 360 assessment within your team pack. Volume pricing applies when you purchase multiple seats in one transaction.",
   },
   {
-    q: "Is there a multi-year discount protocol?",
+    q: "Do you offer multi-year discounts?",
     a: "Enterprise agreements can include multi-year commitments and volume discounts. Contact sales to scope what fits your organization.",
   },
   {
@@ -106,8 +106,8 @@ export const faqItems = [
 ] as const;
 
 export const pricingCta = {
-  title: "Ready for the next interval?",
-  sub: "Engage our intelligence engine today.",
-  button: "Initiate deployment",
+  title: "Ready to get started?",
+  sub: "No setup fees. Reports delivered the next day.",
+  button: "Buy an Assessment",
   href: "/buy",
 };

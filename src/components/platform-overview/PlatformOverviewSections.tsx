@@ -10,7 +10,7 @@ export default function PlatformOverviewSections() {
         <div className="flex-1 grid lg:grid-cols-2 content-wrap page-gutter w-full pt-28 pb-16 gap-12">
           {/* Left */}
           <div className="flex flex-col justify-center py-10">
-            <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-8">Evolution of Talent Intelligence</p>
+            <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-8">Purpose-Built</p>
             <h1 className="text-[clamp(3rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.92] text-white mb-8" style={{ fontFamily: "var(--font-space-grotesk)" }}>
               Platform
               <br />
@@ -29,19 +29,18 @@ export default function PlatformOverviewSections() {
 
           {/* Right — product mockup */}
           <div className="hidden lg:flex items-center justify-center py-10">
-            <div className="w-full border border-white/6 overflow-hidden">
-              <div className="flex items-center gap-2 px-4 py-2.5 border-b border-white/6 bg-[#0e1220]">
+            <div className="w-full overflow-hidden" style={{ border: "1px solid rgba(45,108,255,0.28)", borderLeft: "3px solid rgba(45,108,255,0.7)", boxShadow: "0 0 56px rgba(45,108,255,0.10), 0 2px 24px rgba(0,0,0,0.4)" }}>
+              <div className="flex items-center gap-2 px-4 py-2.5 border-b" style={{ background: "#0d1535", borderColor: "rgba(45,108,255,0.18)" }}>
                 <div className="w-2 h-2 rounded-full bg-white/10" />
                 <div className="w-2 h-2 rounded-full bg-white/10" />
                 <div className="w-2 h-2 rounded-full bg-white/10" />
-                <span className="text-xs text-white/20 ml-2 tracking-wider">interval360 — platform</span>
               </div>
-              <div className="bg-[#0b0f1a] p-6">
+              <div className="p-6" style={{ background: "#0f1d40" }}>
                 <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] mb-3">A focused assessment layer —</p>
                 <h3 className="text-2xl font-extrabold uppercase leading-[1.05] text-white mb-5" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                  not another HR
+                  Not Another HR
                   <br />
-                  platform.
+                  Platform.
                 </h3>
                 <p className="text-sm leading-[1.7] text-white/50 mb-6 max-w-[38ch]">Interval 360 is purpose-built around the assessment process itself — how feedback is collected, synthesized, and used.</p>
                 <div className="flex flex-col gap-2">
@@ -161,15 +160,14 @@ export default function PlatformOverviewSections() {
       {/* ── CTA — blue ── */}
       <section className="min-h-[50vh] flex items-center bg-[#2d6cff]">
         <div className="content-wrap page-gutter w-full py-24 text-center">
-          <p className="text-xs font-semibold tracking-[0.28em] uppercase text-white/60 mb-6">Ready To Evolve?</p>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold uppercase leading-[0.92] text-white mb-10" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            Ready To See The
+            Ready To
             <br />
-            Platform In Action?
+            Get Started?
           </h2>
           <div className="flex gap-4 justify-center flex-wrap">
             <Link href="/buy" className="text-sm font-bold px-8 py-3.5 bg-white text-[#2d6cff] hover:bg-white/90 transition-colors no-underline">
-              Deploy the Mission
+              Buy an Assessment
             </Link>
             <Link href="/company#contact" className="text-sm font-medium px-8 py-3.5 border border-white/40 text-white hover:border-white/70 transition-colors no-underline">
               Schedule a Demo

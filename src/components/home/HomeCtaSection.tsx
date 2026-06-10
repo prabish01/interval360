@@ -3,7 +3,7 @@ import Link from "next/link";
 const stats = [
   {
     value: "5 Min",
-    label: "Feedback Completion",
+    label: "Completion Time",
     desc: "Most participants finish in around five minutes — no login required, no long rating scales.",
   },
   {
@@ -24,7 +24,7 @@ export function HomeCtaSection() {
             Get Started
           </p>
           <h2 className="text-[clamp(2.6rem,5.5vw,4.5rem)] font-extrabold uppercase leading-[0.92] text-white mb-14" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            Ready To See<br />Better Feedback.
+            Ready To See<br />Better Feedback?
           </h2>
 
           <div className="flex flex-col gap-0">

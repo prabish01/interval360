@@ -3,7 +3,7 @@ import { forCards } from "./data";
 
 export function HomeForSection() {
   return (
-    <section id="for" className="min-h-screen flex flex-col bg-[##fafafa]">
+    <section id="for" className="min-h-screen flex flex-col bg-[#fafafa]">
       <div className="flex-1 flex flex-col content-wrap page-gutter w-full py-20">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
@@ -15,7 +15,7 @@ export function HomeForSection() {
               Relies On Feedback.
             </h2>
           </div>
-          <p className="text-base leading-[1.8] text-[#4a5877] max-w-[38ch] lg:text-right">Built for the people who use and need leadership feedback most.</p>
+          <p className="text-base leading-[1.8] text-[#4a5877] max-w-[30ch] lg:text-right">Built for the people who use and<br />need leadership feedback most.</p>
         </div>
 
         {/* Row list */}

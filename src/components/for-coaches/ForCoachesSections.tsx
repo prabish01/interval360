@@ -52,7 +52,7 @@ export default function ForCoachesSections() {
                 className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
-                Talk to partnerships
+                Contact us
               </Link>
 
               <Link
@@ -73,7 +73,7 @@ export default function ForCoachesSections() {
                   Zero
                 </span>
                 <span className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: homeTheme.textMuted }}>
-                  set up fees
+                  No set up fees
                 </span>
               </Link>
             </div>

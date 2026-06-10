@@ -6,14 +6,14 @@ const reportCards = [
     type: "Assessment Report",
     audience: "For HR, managers & talent decisions",
     title: "Leadership Assessment Report",
-    desc: "A structured summary for managers and HR teams: executive summary, What/How breakdown, strengths, development areas, and succession readiness signal.",
+    desc: "A concise summary for managers and HR teams: executive overview, Results and Intelligent NPS scores, peer and direct report sentiment, and top strengths and development opportunities.",
   },
   {
     num: "02",
     type: "Development Report",
-    audience: "For the leader themselves",
+    audience: "Written for the leader",
     title: "Leadership Development Report",
-    desc: "A personal development guide for the leader: deep-dive analysis on each strength and development area, curated resources, and a structured action plan.",
+    desc: "A personal development guide for the leader: starts with a full executive overview and score summary, then goes deep on each top strength and development opportunity with Insight and Impact analysis and curated learning resources.",
   },
 ];
 

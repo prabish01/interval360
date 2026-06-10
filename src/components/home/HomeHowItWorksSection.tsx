@@ -10,7 +10,7 @@ export function HomeHowItWorksSection() {
             Operational Blueprint
           </p>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-extrabold leading-[1.1] mb-6" style={{ fontFamily: "var(--font-space-grotesk)", color: "#fff" }}>
-            HOW IT WORKS
+            HOW IT WORKS.
           </h2>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 sm:gap-6">
             <p className="text-base leading-[1.6] max-w-xl" style={{ color: "rgba(234,239,243,0.7)" }}>

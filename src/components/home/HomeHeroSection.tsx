@@ -16,7 +16,7 @@ export function HomeHeroSection() {
             Leadership Feedback, Reimagined
           </p>
           <h1 className="text-[clamp(2.35rem,8.6vw,6.3rem)] font-extrabold leading-[0.98] tracking-[-0.03em] text-white uppercase mb-7" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            <span className="text-[#006af5]">360</span> Feedback That Powers <span className="text-[#006af5]">Leadership</span> Strategy
+            <span className="text-[#006af5]">360</span> Feedback That Powers <span className="text-[#006af5]">Leadership</span> Strategy.
           </h1>
           <p className="text-lg leading-[1.7] mb-11 mx-auto max-w-[62ch]" style={{ color: "rgba(234,239,243,0.72)" }}>
             Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.

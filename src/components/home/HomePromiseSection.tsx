@@ -6,11 +6,11 @@ export function HomePromiseSection() {
       <div className="flex-1 grid lg:grid-cols-[2fr_3fr] content-wrap page-gutter w-full">
         {/* Left — heading */}
         <div className="flex flex-col justify-center py-20 lg:pr-16" style={{ borderRight: "1px solid rgba(187,220,251,0.08)" }}>
-          <p className="text-xs font-semibold tracking-[0.28em] uppercase mb-8 text-[#2d6cff]">Visionary Outcome</p>
+          <p className="text-xs font-semibold tracking-[0.28em] uppercase mb-8 text-[#2d6cff]">What You Get</p>
           <h2 className="text-[clamp(3.5rem,7vw,5.5rem)] font-extrabold uppercase leading-[0.92] mb-10" style={{ fontFamily: "var(--font-space-grotesk)", color: "#fff" }}>
             The
             <br />
-            Promise
+            Promise.
           </h2>
           <p className="text-lg font-semibold leading-normal mb-5" style={{ color: "#fff" }}>
             Clear visibility. Smarter decisions. Stronger leaders.

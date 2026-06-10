@@ -30,11 +30,11 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Interval 360 — Leadership Assessment, Reimagined",
+  title: "Interval 360 — AI-Driven 360° Leadership Feedback",
   description:
     "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
   openGraph: {
-    title: "Interval 360 — Leadership Assessment, Reimagined",
+    title: "Interval 360 — AI-Driven 360° Leadership Feedback",
     description:
       "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
     url: "https://interval360.com",
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         url: "/interval360-og-image.png",
         width: 1200,
         height: 630,
-        alt: "Interval 360 — Leadership Assessment",
+        alt: "Interval 360 — AI-Driven 360° Leadership Feedback",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Interval 360 — Leadership Assessment, Reimagined",
+    title: "Interval 360 — AI-Driven 360° Leadership Feedback",
     description:
       "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",
     images: ["/interval360-og-image.png"],

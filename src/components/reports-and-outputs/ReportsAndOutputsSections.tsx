@@ -68,7 +68,7 @@ export default function ReportsAndOutputsSections() {
           <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">Report Structure</p>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-extrabold uppercase leading-[0.92] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-              Six Sections.
+              Five Sections.
               <br />
               Nothing Extra.
             </h2>

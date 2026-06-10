@@ -5,6 +5,8 @@ import { homeTheme } from "@/lib/homeTheme";
 export const metadata = {
   title: "How to Choose the Right Raters — Interval 360",
   description: "Balance perspective, credibility, and burden so feedback reflects how the leader is actually experienced — not how they wish to be seen.",
+  openGraph: { title: "How to Choose the Right Raters — Interval 360" },
+  twitter: { title: "How to Choose the Right Raters — Interval 360" },
 };
 
 export default function HowToChooseRatersPage() {
@@ -448,7 +450,7 @@ export default function HowToChooseRatersPage() {
                 textDecoration: "none",
               }}
             >
-              Talk to the team
+              Talk to Us
             </Link>
           </div>
 
@@ -457,7 +459,7 @@ export default function HowToChooseRatersPage() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem" }}>
               {[
                 { label: "Playbook", title: "How to Run a 360 in 14 Days", href: "/resources/how-to-run-a-360-in-14-days" },
-                { label: "Playbook", title: "Using What + How in Promotion Decisions", href: "#" },
+                { label: "Playbook", title: "Using the What and the How in Promotion Decisions", href: "#" },
                 { label: "Product", title: "What the reports include and how to use them", href: "/reports-and-outputs" },
               ].map((r) => (
                 <Link key={r.title} href={r.href} style={{ textDecoration: "none", display: "block", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "6px", padding: "1.25rem 1.5rem", background: "rgba(255,255,255,0.02)" }}>

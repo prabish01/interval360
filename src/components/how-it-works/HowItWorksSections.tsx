@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Send } from "lucide-react";
 import { homeTheme } from "@/lib/homeTheme";
-import { conversationExample, receiveReports, stats, steps } from "./data";
+import { receiveReports, stats, steps } from "./data";
+import { ConversationSection } from "./ConversationSection";
 
 export default function HowItWorksSections() {
   return (
@@ -30,7 +30,7 @@ export default function HowItWorksSections() {
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
-              Buy an assessment
+              Buy an Assessment
             </Link>
             <Link
               href="/company#contact"
@@ -40,7 +40,7 @@ export default function HowItWorksSections() {
                 background: homeTheme.outlineButtonBg,
               }}
             >
-              Book a call
+              Book a Call
             </Link>
             <Link href="#conversation" className="inline-flex items-center gap-1.5 border-b border-current px-0.5 py-3 text-sm font-medium no-underline transition-opacity hover:opacity-80 uppercase" style={{ color: homeTheme.linkMuted }}>
               See the conversation <span aria-hidden>→</span>
@@ -95,64 +95,7 @@ export default function HowItWorksSections() {
       </section>
 
       {/* 4 — Light: Conversation */}
-      <section id="conversation" className="scroll-mt-24 border-b py-20 md:py-28" style={{ borderColor: homeTheme.lightRule, background: homeTheme.sectionPaper }}>
-        <div className="content-wrap page-gutter grid items-start gap-14 lg:grid-cols-2 lg:gap-20">
-          <div>
-            <h2 className="mb-6 text-[clamp(1.75rem,3vw,2.5rem)] font-bold tracking-tight uppercase" style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}>
-              The conversation
-            </h2>
-            <p className="mb-6 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
-              The AI starts with structured opening questions designed to elicit useful, specific input. When a response is general, it follows up with a targeted probe — the same way a skilled interviewer would.
-            </p>
-            <p className="mb-8 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
-              The result is feedback that is richer, more specific, and more useful than anything a static survey can produce — in the same amount of time.
-            </p>
-          </div>
-
-          <div className="overflow-hidden rounded-xl border border-black/10 bg-[#101010] text-white shadow-[0_24px_80px_rgba(0,0,0,0.18)]">
-            <div className="flex items-center gap-2 border-b border-white/8 px-4 py-3">
-              <div className="flex gap-1.5">
-                <span className="size-2.5 rounded-full bg-[#ff5f57]/90" />
-                <span className="size-2.5 rounded-full bg-[#febc2e]/90" />
-                <span className="size-2.5 rounded-full bg-[#28c840]/90" />
-              </div>
-              <span className="ml-2 text-xs text-white/35">Interval 360 — Feedback Conversation</span>
-            </div>
-            <div className="flex max-h-[min(28rem,70vh)] flex-col gap-4 overflow-y-auto p-5 md:p-6">
-              {conversationExample.map((msg, i) => (
-                <div key={i} className={`flex ${msg.speaker === "rater" ? "justify-end" : "justify-start"}`}>
-                  <div
-                    className={`max-w-[92%] rounded-2xl px-4 py-3 text-base leading-[1.65] md:max-w-[88%] ${msg.speaker === "ai" ? "rounded-bl-md border text-white/90" : "rounded-br-md bg-white/7 text-white/80"}`}
-                    style={
-                      msg.speaker === "ai"
-                        ? {
-                            borderColor: "rgba(187,220,251,0.22)",
-                            background: `linear-gradient(165deg, ${homeTheme.blueTint35} 0%, ${homeTheme.blueTint12} 100%)`,
-                          }
-                        : undefined
-                    }
-                  >
-                    {msg.speaker === "ai" && (
-                      <span className="mb-1.5 block text-xs font-bold uppercase tracking-[0.16em]" style={{ color: homeTheme.blue }}>
-                        Interval 360 AI
-                      </span>
-                    )}
-                    {msg.text}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-2 border-t border-white/8 px-4 py-3">
-              <div className="flex flex-1 items-center rounded-lg border border-white/10 bg-black/40 px-3 py-2.5">
-                <span className="text-sm text-white/25">Type a response…</span>
-              </div>
-              <button type="button" className="flex size-10 shrink-0 items-center justify-center rounded-lg border border-white/12 bg-white/6 text-white/50" aria-label="Send (illustration)">
-                <Send className="size-4" aria-hidden />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ConversationSection />
 
       {/* 5 — Dark: What you receive */}
       <section className="py-20 text-white md:py-28" style={{ background: homeTheme.sectionCharcoal }}>
@@ -216,7 +159,7 @@ export default function HowItWorksSections() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
-              Buy an assessment
+              Buy an Assessment
             </Link>
             <Link
               href="/company#contact"
@@ -226,7 +169,7 @@ export default function HowItWorksSections() {
                 borderColor: homeTheme.lightHeading,
               }}
             >
-              Book a call
+              Book a Call
             </Link>
           </div>
         </div>

@@ -115,7 +115,7 @@ export default function LeadershipDevelopmentSections() {
                 className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
-                Book a call
+                Book a Call
                 <ArrowRight className="size-4 shrink-0" aria-hidden />
               </Link>
               <Link
@@ -176,11 +176,11 @@ export default function LeadershipDevelopmentSections() {
                       className="text-sm font-bold uppercase tracking-[0.12em]"
                       style={{ fontFamily: "var(--font-space-grotesk)", color: homeTheme.lightHeading }}
                     >
-                      Stale data
+                      One and done
                     </h3>
                   </div>
                   <p className="text-base leading-[1.65]" style={{ color: homeTheme.lightBody }}>
-                    Without a reliable baseline and progress signal, coaches lack structured context and sponsors cannot show what changed — so impact stays anecdotal.
+                     Most programs run a single 360 at the start and never revisit it. Without a progress signal, coaches are working from a snapshot — not a picture of what’s actually changing.
                   </p>
                 </div>
               </div>
@@ -338,7 +338,7 @@ export default function LeadershipDevelopmentSections() {
               className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
               style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
             >
-              Book a call
+              Book a Call
             </Link>
             <Link
               href="/buy"
@@ -348,7 +348,7 @@ export default function LeadershipDevelopmentSections() {
                 background: homeTheme.outlineButtonBg,
               }}
             >
-              Buy an assessment
+              Buy an Assessment
             </Link>
           </div>
         </div>

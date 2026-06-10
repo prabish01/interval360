@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Buy an Assessment — Interval 360",
+  openGraph: { title: "Buy an Assessment — Interval 360" },
+  twitter: { title: "Buy an Assessment — Interval 360" },
+};
+
 export default function BuyPage() {
   return (
     <div

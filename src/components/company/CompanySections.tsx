@@ -5,7 +5,8 @@ import {
   companyHero,
   reimaginingSection,
   corePrinciplesSection,
-  practitionerRoots,
+  leadershipTeam,
+  boardOfAdvisors,
   definitionOfScope,
   joinIntelligence,
 } from "./data";
@@ -50,8 +51,9 @@ export default function CompanySections() {
               {reimaginingSection.title}
             </h2>
             <div className="flex flex-col gap-6 text-base leading-[1.65] text-white/50 max-w-[48ch]">
-              <p>{reimaginingSection.body1}</p>
-              <p>{reimaginingSection.body2}</p>
+              {reimaginingSection.paragraphs.map((p, idx) => (
+                <p key={idx}>{p}</p>
+              ))}
             </div>
           </div>
           <div className="relative aspect-square md:aspect-[4/3] lg:aspect-square w-full rounded-sm overflow-hidden bg-[#111218] border border-white/5">
@@ -107,45 +109,64 @@ export default function CompanySections() {
         </div>
       </section>
 
-      {/* 4. Practitioner Roots */}
+      {/* 4. Leadership Team */}
       <section className="py-24 md:py-32 border-b border-white/5 text-white" style={{ background: "#16171b" }}>
         <div className="content-wrap page-gutter">
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-16 lg:gap-8">
-            <div className="flex flex-col gap-6">
-              <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.blue }}>
-                {practitionerRoots.tag}
-              </p>
-              <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {practitionerRoots.title}
+          <div className="flex flex-col gap-6 mb-16">
+            <p className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: homeTheme.blue }}>
+              {leadershipTeam.tag}
+            </p>
+            <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight whitespace-pre-line" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+              {leadershipTeam.title}
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {leadershipTeam.cards.map((member, i) => (
+              <div key={i} className="bg-[#121316] border border-white/5 p-8 md:p-10 flex flex-col group hover:bg-[#15161a] transition-all duration-300 relative overflow-hidden rounded-sm h-full">
+                {/* Subtle top accent line */}
+                <div className="absolute top-0 left-0 w-full h-[2px] opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: homeTheme.blue }} />
+                
+                <h3 className="text-xl font-bold mb-1 tracking-tight text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  {member.name}
+                </h3>
+                <p className="text-xs font-semibold uppercase tracking-wider mb-6" style={{ color: homeTheme.blue }}>
+                  {member.role}
+                </p>
+                <p className="text-sm leading-[1.6] text-white/50">
+                  {member.body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Board of Advisors */}
+      <section className="py-24 md:py-32 border-b border-black/10 text-black" style={{ background: "#ffffff" }}>
+        <div className="content-wrap page-gutter">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-12 border-b border-black/10">
+            <div>
+              <h2 className="text-[clamp(2.5rem,4.5vw,3.5rem)] font-bold leading-[1.05] tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)", color: "#111" }}>
+                Board of Advisors
               </h2>
-              <p className="text-base leading-[1.65] text-white/50 max-w-[35ch] mt-2">
-                {practitionerRoots.body}
-              </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-[1px] bg-white/5 border border-white/5 rounded-sm overflow-hidden auto-rows-fr">
-              {practitionerRoots.cards.map((c, i) => (
-                <div key={i} className="bg-[#121316] p-8 md:p-10 flex flex-col group hover:bg-[#15161a] transition-colors relative overflow-hidden h-full">
-                  {/* Subtle top accent line */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] opacity-0 group-hover:opacity-100 transition-opacity" style={{ background: homeTheme.blue }} />
-                  
-                  {/* Decorative Icon */}
-                  <div className="w-10 h-10 rounded bg-white/5 flex items-center justify-center mb-10 border border-white/5 group-hover:border-white/10 transition-colors">
-                    {i === 0 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>}
-                    {i === 1 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>}
-                    {i === 2 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>}
-                    {i === 3 && <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-white/70"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>}
-                  </div>
-                  
-                  <h3 className="text-lg font-bold mb-4 tracking-tight" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                    {c.title}
-                  </h3>
-                  <p className="text-base leading-[1.65] text-white/50">
-                    {c.body}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p className="text-base leading-[1.6] text-black/60 max-w-[40ch]">
+              {boardOfAdvisors.intro}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {boardOfAdvisors.members.map((member, i) => (
+              <div key={i} className="border border-black/5 hover:border-black/10 transition-colors p-8 rounded-sm bg-[#f9fafc] flex flex-col justify-center min-h-[120px]">
+                <h3 className="text-lg font-bold text-[#111] mb-1" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  {member.name}
+                </h3>
+                <p className="text-sm text-black/60 leading-snug">
+                  {member.title}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -212,8 +233,8 @@ export default function CompanySections() {
         </div>
       </section>
 
-      {/* 6. Join the Intelligence */}
-      <section className="py-24 md:py-32 text-black" style={{ background: "#ffffff" }}>
+      {/* 6. Contact Section */}
+      <section id="contact" className="py-24 md:py-32 text-black scroll-mt-24" style={{ background: "#ffffff" }}>
         <div className="content-wrap page-gutter">
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             <div className="flex flex-col gap-8 lg:max-w-[40ch]">

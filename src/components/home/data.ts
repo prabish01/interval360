@@ -27,7 +27,7 @@ export const whyItems = [
   { num: "02", title: "Less burden on participants", body: "Five minutes, no login required, no long rating scales. Completion rates go up. Response quality goes up." },
   { num: "03", title: "Concise, actionable outputs", body: "Reports are built to be read in one sitting and used immediately — not filed away." },
   { num: "04", title: "Scalable across more leaders", body: "Fast enough and affordable enough to run across a full leadership population, not just a handful of senior leaders." },
-  { num: "05", title: "What and How — both matter", body: "Every assessment covers both performance against expectations and leadership experience — the two dimensions that drive talent decisions." },
+  { num: "05", title: "The What and the How — both matter", body: "Every assessment covers both performance against expectations and leadership experience — the two dimensions that drive talent decisions." },
   { num: "06", title: "Style-agnostic by design", body: "Works across all leadership styles. The assessment measures whether a leader's approach is working, not whether it fits a type." },
 ];
 
@@ -46,7 +46,7 @@ export const forCards = [
     href: "/solutions/talent-decisions",
   },
   {
-    label: "For Managers and Leaders",
+    label: "For Managers & Leaders",
     title: "Feedback you can actually use for development",
     body: "Whether coaching a direct report, investing in your own development, or trying to understand how your leadership is landing — get specific, contextualized feedback.",
     href: "/solutions/leadership-development",

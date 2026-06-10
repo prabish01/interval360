@@ -124,7 +124,7 @@ export default function TalentDecisionsSections() {
               <span style={{ color: homeTheme.blue }}>Decisions</span>
             </h1>
             <p className={`mb-10 max-w-[62ch] ${marketingTypography.heroLead}`} style={{ color: homeTheme.textBody }}>
-              Move from guesswork to signal-driven certainty. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes.
+              Move from guesswork to signal-driven confidence. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -132,7 +132,7 @@ export default function TalentDecisionsSections() {
                 className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
-                Book a call
+                Book a Call
                 <ArrowRight className="size-4 shrink-0" aria-hidden />
               </Link>
               <Link
@@ -333,7 +333,7 @@ export default function TalentDecisionsSections() {
               boxShadow: "0 12px 40px rgba(45, 108, 255, 0.35)",
             }}
           >
-            Initiate Interval phase
+            Book a Call
           </Link>
         </div>
       </section>
