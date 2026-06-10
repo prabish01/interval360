@@ -297,10 +297,10 @@ export default function HowToRunA360Page() {
               <div style={{ borderLeft: "2px solid rgba(99,102,241,0.4)", paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "1.1rem" }}>
                 {[
                   "Fourteen days is the right window for most 360 assessments. Short enough to maintain momentum and rater goodwill. Long enough to accommodate normal scheduling friction without daily follow-up.",
-                  "This playbook walks through a three-phase cadence: configure the project and work through the rater nomination and approval process before launch, give raters a clean collection window, and let the project close on schedule with reports ready the next day. Each phase includes the most common failure point and how to avoid it.",
+                  <p key="1" style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>This playbook walks through a three-phase cadence: configure the project and work through the rater nomination and approval process before launch, give raters a clean collection window, and let the project close on schedule with reports ready the next day. Each phase includes the most common failure point and how to avoid it. For more details, see <Link href="/how-it-works" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.7)" }}>the step-by-step process</Link>.</p>,
                   "Interval 360 generates reports automatically when the project end date arrives, so your primary job after setup is context-setting and light coordination. The platform handles the rest.",
                 ].map((p, i) => (
-                  <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p>
+                  typeof p === 'string' ? <p key={i} style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{p}</p> : p
                 ))}
               </div>
 

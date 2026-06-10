@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { whyItems } from "./data";
 
 export function HomeWhySection() {
@@ -6,7 +7,7 @@ export function HomeWhySection() {
       <div className="flex-1 flex flex-col content-wrap page-gutter w-full py-20">
         {/* Header */}
         <div className="grid lg:grid-cols-2 gap-12 items-end mb-12">
-          <p className="text-base leading-[1.8] text-[#4a5877] max-w-[44ch] lg:order-1">Every design decision in Interval 360 was made to solve a specific failure mode of traditional 360 tools.</p>
+          <p className="text-base leading-[1.8] text-[#4a5877] max-w-[44ch] lg:order-1">Every design decision in Interval 360 was made to solve a specific failure mode of traditional 360 tools. Discover <Link href="/conversational-ai" className="underline hover:opacity-80" style={{ color: "#2d6cff" }}>why a conversation beats a survey</Link>.</p>
           <div className="lg:order-2 lg:justify-self-end lg:text-right">
             <p className="text-xs font-semibold tracking-[0.28em] uppercase mb-6 text-[#2d6cff]">Why Interval 360</p>
             <h2 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold uppercase leading-[0.92] text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>

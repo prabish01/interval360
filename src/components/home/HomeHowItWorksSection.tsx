@@ -14,7 +14,7 @@ export function HomeHowItWorksSection() {
           </h2>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-4 sm:gap-6">
             <p className="text-base leading-[1.6] max-w-xl" style={{ color: "rgba(234,239,243,0.7)" }}>
-              A better process creates better inputs and more impactful outputs.
+              A better process creates better inputs and more impactful outputs. Learn <Link href="/how-it-works" className="underline hover:opacity-80" style={{ color: "rgba(234,239,243,0.9)" }}>the step-by-step process</Link>.
             </p>
           </div>
         </div>

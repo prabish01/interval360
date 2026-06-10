@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { promises } from "./data";
 
 export function HomePromiseSection() {
@@ -16,7 +17,7 @@ export function HomePromiseSection() {
             Clear visibility. Smarter decisions. Stronger leaders.
           </p>
           <p className="text-base leading-[1.8]" style={{ color: "rgba(234,239,243,0.55)" }}>
-            Interval 360 is built to help organizations understand leadership more clearly and use feedback more effectively.
+            Interval 360 is built to help organizations understand leadership more clearly and use feedback more effectively. See <Link href="/platform-overview" className="underline hover:opacity-80" style={{ color: "rgba(234,239,243,0.85)" }}>how the platform works</Link>.
           </p>
         </div>
 

@@ -16,7 +16,7 @@ export default function PlatformOverviewSections() {
               <br />
               <span style={{ color: "#2d6cff" }}>Overview</span>
             </h1>
-            <p className="text-base leading-[1.8] text-white/60 mb-10 max-w-[44ch]">A leadership assessment platform built for repeatable, organization-wide 360 assessments.</p>
+            <p className="text-base leading-[1.8] text-white/60 mb-10 max-w-[44ch]">A leadership assessment platform built for repeatable, organization-wide 360 assessments. Learn <Link href="/how-it-works" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.8)" }}>the step-by-step process</Link>.</p>
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/buy" className="text-sm font-semibold px-7 py-3 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors no-underline">
                 Buy an Assessment
@@ -69,7 +69,7 @@ export default function PlatformOverviewSections() {
               <br />
               <span className="text-[#2d6cff]">Less Burden.</span>
             </h2>
-            <p className="text-base leading-[1.8] text-[#4a5877] max-w-[42ch] lg:self-end">Traditional 360 tools rely on long static surveys and produce exhaustive reports. Interval 360 was built to fix both problems — at the collection stage and the output stage.</p>
+            <p className="text-base leading-[1.8] text-[#4a5877] max-w-[42ch] lg:self-end">Traditional 360 tools rely on long static surveys and produce exhaustive reports. Interval 360 was built to fix both problems — at the collection stage and the output stage. See <Link href="/reports-and-outputs" className="underline hover:opacity-80" style={{ color: "#2d6cff" }}>the two reports you receive</Link>.</p>
           </div>
 
           {/* 4-col differentiator grid */}
@@ -104,7 +104,7 @@ export default function PlatformOverviewSections() {
                 <br />
                 <span className="text-[#2d6cff]">One Complete Picture.</span>
               </h2>
-              <p className="text-base leading-[1.8] text-white/50 max-w-[40ch] lg:text-right">Interval 360 evaluates leadership across two dimensions — what a leader delivers and how they lead. Both are required for a complete view.</p>
+              <p className="text-base leading-[1.8] text-white/50 max-w-[40ch] lg:text-right">Interval 360 evaluates leadership across two dimensions — what a leader delivers and how they lead. Both are required for a complete view. Explore <Link href="/resources/case-study-global-cohort" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.7)" }}>how this scaled across a global cohort</Link>.</p>
             </div>
           </div>
 

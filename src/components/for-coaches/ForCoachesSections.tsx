@@ -64,7 +64,7 @@ export default function ForCoachesSections() {
                 }}
               >
                 <span className="text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: homeTheme.textFaint }}>
-                  See pricing
+                  what it costs
                 </span>
                 <span
                   className="my-0.5 text-2xl font-extrabold leading-none tracking-tight"

@@ -124,7 +124,7 @@ export default function TalentDecisionsSections() {
               <span style={{ color: homeTheme.blue }}>Decisions</span>
             </h1>
             <p className={`mb-10 max-w-[62ch] ${marketingTypography.heroLead}`} style={{ color: homeTheme.textBody }}>
-              Move from guesswork to signal-driven confidence. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes.
+              Move from guesswork to signal-driven confidence. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes. See <Link href="/resources/using-what-and-how-in-promotion-decisions" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>our playbook on the What vs. the How in promotions</Link>.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link

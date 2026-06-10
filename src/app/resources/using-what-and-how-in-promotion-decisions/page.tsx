@@ -248,7 +248,9 @@ export default function UsingWhatAndHowPage() {
         <div className="content-wrap page-gutter">
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "clamp(3rem, 6vw, 6rem)" }}>
             <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[0]}</p>
-            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>{introParagraphs[1]}</p>
+            <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85 }}>
+              {introParagraphs[1]} Explore <Link href="/solutions/talent-decisions" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.7)" }}>talent and succession decisions</Link> in depth.
+            </p>
             <p style={{ fontSize: "var(--text-base)", color: "rgba(255,255,255,0.5)", lineHeight: 1.85, gridColumn: "1 / -1" }}>{introParagraphs[2]}</p>
           </div>
         </div>

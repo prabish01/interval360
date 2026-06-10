@@ -26,7 +26,7 @@ export default function HowItWorksSections() {
             From launch to insight in <span style={{ color: homeTheme.blueBright }}>days — not weeks.</span>
           </h1>
           <p className="mb-10 max-w-[52ch] text-base leading-[1.75]" style={{ color: homeTheme.textBody }}>
-            Interval 360 is designed to reduce friction at every stage of the 360 process — for the people providing feedback, for the leader receiving it, and for the HR team or coach running it.
+            Interval 360 is designed to reduce friction at every stage of the 360 process — for the people providing feedback, for the leader receiving it, and for the HR team or coach running it. For a full overview, see <Link href="/platform-overview" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>how the platform works</Link>.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
@@ -155,7 +155,7 @@ export default function HowItWorksSections() {
             Ready to see the process in action?
           </h2>
           <p className="mb-10 text-base leading-[1.75]" style={{ color: homeTheme.lightBody }}>
-            Buy a single assessment and experience the full process — from setup to report.
+            Buy a single assessment and experience the full process — from setup to report. Check <Link href="/pricing" className="underline hover:opacity-80" style={{ color: homeTheme.blue }}>what it costs</Link>.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>

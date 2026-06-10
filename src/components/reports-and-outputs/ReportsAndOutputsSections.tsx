@@ -15,7 +15,7 @@ export default function ReportsAndOutputsSections() {
             <span style={{ color: "#2d6cff" }}>One Assessment.</span>
           </h1>
           <div className="flex flex-col gap-4 max-w-[40ch] lg:text-right">
-            <p className="text-base leading-[1.8] text-white/50">Every assessment produces two reports — one for the organization, one for the leader. Both designed to be used directly, not filed away.</p>
+            <p className="text-base leading-[1.8] text-white/50">Every assessment produces two reports — one for the organization, one for the leader. Both designed to be used directly, not filed away. Learn about <Link href="/solutions/talent-decisions" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.7)" }}>using these in talent and succession decisions</Link>.</p>
             <div className="flex gap-3 lg:justify-end flex-wrap">
               <Link href="/buy" className="text-sm font-semibold px-6 py-2.5 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors no-underline">
                 Buy an Assessment
@@ -65,7 +65,7 @@ export default function ReportsAndOutputsSections() {
       {/* Report anatomy */}
       <div className="content-wrap page-gutter w-full pb-24">
         <div className="border-t border-white/6 pt-16">
-          <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">Report Structure</p>
+          <p className="text-xs font-semibold tracking-[0.28em] uppercase text-[#2d6cff] mb-6">Report Structure &nbsp;<Link href="/solutions/leadership-development" className="text-white/40 hover:text-white/70 transition-colors" style={{ fontSize: "0.75rem", letterSpacing: "0.18em" }}>inside a development program</Link></p>
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-extrabold uppercase leading-[0.92] text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
               Five Sections.

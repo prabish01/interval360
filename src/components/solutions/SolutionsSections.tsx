@@ -53,7 +53,7 @@ export default function SolutionsSections() {
             <span style={{ color: "#2d6cff" }}>moments that matter most.</span>
           </h1>
           <p className="mb-10 max-w-[52ch] text-base leading-[1.75]" style={{ color: homeTheme.textBody }}>
-            Interval 360 is built for the specific moments where leadership insight is most valuable — talent decisions, development programs, and practitioners who need client-ready feedback. Find your use case below.
+            Interval 360 is built for the specific moments where leadership insight is most valuable — <Link href="/solutions/talent-decisions" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>talent and succession decisions</Link>, <Link href="/solutions/leadership-development" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>leadership development programs</Link>, and practitioners who need client-ready feedback. Find your use case below.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
@@ -167,7 +167,7 @@ export default function SolutionsSections() {
             className="mb-6 max-w-[42ch] text-[clamp(1.75rem,3.2vw,2.5rem)] font-bold leading-[1.15] tracking-tight uppercase"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            For coaches: A repeatable, client-ready 360 process —{" "}
+            For coaches: <Link href="/for-coaches" className="underline hover:opacity-80" style={{ color: homeTheme.blueBright }}>A client-ready 360 for coaches</Link> —{" "}
             <span style={{ color: homeTheme.blueBright }}>without building one yourself.</span>
           </h2>
           <p className="mb-14 max-w-[56ch] text-base leading-[1.75] md:mb-16" style={{ color: homeTheme.textMuted }}>

@@ -107,7 +107,7 @@ export default function LeadershipDevelopmentSections() {
               className={`mb-10 max-w-[62ch] ${marketingTypography.heroLead}`}
               style={{ color: homeTheme.textBody }}
             >
-              Leadership development programs work better when they are anchored to real feedback. Interval 360 makes it practical to run meaningful 360 assessments as a core part of your program — at a cost and scale that makes a recurring cadence feasible.
+              Leadership development programs work better when they are anchored to real feedback. Interval 360 makes it practical to run meaningful 360 assessments as a core part of your program — at a cost and scale that makes a recurring cadence feasible. Learn <Link href="/resources/case-study-global-cohort" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>how this scaled across a global cohort</Link>.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
