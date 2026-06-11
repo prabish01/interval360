@@ -3,8 +3,12 @@ import TalentDecisionsSections from "@/components/solutions/TalentDecisionsSecti
 export const metadata = {
   title: "Talent Decisions & Succession — Interval 360",
   description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment.",
-  openGraph: { title: "Talent Decisions & Succession — Interval 360", description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment." },
-  twitter: { title: "Talent Decisions & Succession — Interval 360", description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment." },
+  openGraph: { title: "Talent Decisions & Succession — Interval 360", description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment.",
+    image: "/interval360-og-image.png"
+  },
+  twitter: { title: "Talent Decisions & Succession — Interval 360", description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment." ,
+    image: "/interval360-og-image.png"
+  },
 };
 
 export default function TalentDecisionsPage() {

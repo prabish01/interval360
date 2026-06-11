@@ -9,10 +9,13 @@ export const metadata = {
   openGraph: {
     title: "How to Run a 360 in 14 Days — Interval 360",
     description: "A three-phase playbook for HR stakeholders: configure the project, run a clean collection window, and close with automated reports delivered the next day. No manual processing.",
+    image: "/interval360-og-image.png"
   },
   twitter: {
     title: "How to Run a 360 in 14 Days — Interval 360",
     description: "A three-phase playbook for HR stakeholders: configure the project, run a clean collection window, and close with automated reports delivered the next day. No manual processing.",
+  ,
+    image: "/interval360-og-image.png"
   },
 };
 

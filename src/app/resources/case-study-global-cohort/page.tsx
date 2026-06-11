@@ -8,10 +8,13 @@ export const metadata = {
   openGraph: {
     title: "Scaling a Global Cohort — Interval 360",
     description: "How a mid-size consulting firm ran 360 assessments across 75 leaders in 12 countries — reducing cycle time from 12 weeks to 14 days and cutting coordination hours by 87%.",
+    image: "/interval360-og-image.png"
   },
   twitter: {
     title: "Scaling a Global Cohort — Interval 360",
     description: "How a mid-size consulting firm ran 360 assessments across 75 leaders in 12 countries — reducing cycle time from 12 weeks to 14 days and cutting coordination hours by 87%.",
+  ,
+    image: "/interval360-og-image.png"
   },
 };
 

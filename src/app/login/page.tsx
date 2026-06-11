@@ -7,10 +7,12 @@ export const metadata = {
   openGraph: {
     title: "Login — Interval 360",
     description: "Log in to your Interval 360 assessment account.",
+    image: "/interval360-og-image.png"
   },
   twitter: {
     title: "Login — Interval 360",
     description: "Log in to your Interval 360 assessment account.",
+    image: "/interval360-og-image.png"
   },
 };
 

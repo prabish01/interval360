@@ -8,10 +8,13 @@ export const metadata = {
   openGraph: {
     title: "How to Choose the Right Raters — Interval 360",
     description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
+    image: "/interval360-og-image.png"
   },
   twitter: {
     title: "How to Choose the Right Raters — Interval 360",
     description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
+  ,
+    image: "/interval360-og-image.png"
   },
 };
 
