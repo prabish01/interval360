@@ -8,7 +8,6 @@ const SECTION_IDS: Record<string, string | null> = {
   "sample-reports": "featured-sample",
   playbooks: "playbooks",
   "case-studies": "case-studies",
-  "field-notes": "field-notes",
 };
 
 type FilterId = keyof typeof SECTION_IDS;

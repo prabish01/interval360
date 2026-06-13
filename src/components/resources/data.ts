@@ -12,7 +12,6 @@ export const resourceFilters = [
   { id: "sample-reports", label: "Sample reports" },
   { id: "playbooks", label: "Playbooks" },
   { id: "case-studies", label: "Case studies" },
-  { id: "field-notes", label: "Field notes" },
 ] as const;
 
 export const featuredSample = {
