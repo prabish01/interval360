@@ -13,7 +13,6 @@ export const metadata = {
   twitter: {
     title: "Using What + How in Promotion Decisions — Interval 360",
     description: "How to combine performance signal with leadership experience data in promotion and succession conversations. A framework for HR leaders and talent teams.",
-  ,
     image: "/interval360-og-image.png"
   },
 };

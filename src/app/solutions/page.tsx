@@ -11,7 +11,6 @@ export const metadata = {
   twitter: {
     title: "Solutions — Interval 360",
     description: "Interval 360 for talent decisions, leadership development programs, and coaching engagements. Find the use case that fits your organization.",
-  ,
     image: "/interval360-og-image.png"
   },
 };

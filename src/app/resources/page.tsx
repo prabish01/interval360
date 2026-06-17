@@ -11,7 +11,6 @@ export const metadata = {
   twitter: {
     title: "Resources — Interval 360",
     description: "Playbooks, case studies, and sample reports on leadership feedback, 360 assessment design, and talent decisions. Practical thinking for HR, coaches, and talent leaders.",
-  ,
     image: "/interval360-og-image.png"
   },
 };

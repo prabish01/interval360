@@ -5,20 +5,20 @@ import Image from "next/image";
 import { useState } from "react";
 
 /* ── SVG icons ─────────────────────────────────────────────────── */
-const EyeOpen = () => (
+export const EyeOpen = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
     <circle cx="12" cy="12" r="3" />
   </svg>
 );
-const EyeOff = () => (
+export const EyeOff = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
     <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
     <line x1="1" y1="1" x2="23" y2="23" />
   </svg>
 );
-const ArrowRight = () => (
+export const ArrowRight = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <path d="M5 12h14M12 5l7 7-7 7" />
   </svg>
@@ -44,18 +44,18 @@ const configs = {
     backgroundAlt: "Abstract terrain wireframe",
   },
   admin: {
-    eyebrow: "SYSTEM ONLINE",
-    eyebrowDot: true,
-    leftHeading: ["Access the", "Archive"],
-    leftTagline: "INITIALIZE COGNITIVE STREAM. SECURE CONNECTION ESTABLISHED TO CORE INTELLIGENCE MATRIX.",
-    formTitle: "Administrator",
-    formSubtitle: "Authorized personnel only. Use your system credentials.",
-    emailLabel: "OPERATOR ID",
-    emailPlaceholder: "enter operational email",
-    passwordLabel: "ACCESS CODE",
-    submitLabel: "Initialize Sequence",
+    eyebrow: "",
+    eyebrowDot: false,
+    leftHeading: null,
+    leftTagline: "",
+    formTitle: "Admin login",
+    formSubtitle: "",
+    emailLabel: "EMAIL",
+    emailPlaceholder: "you@company.com",
+    passwordLabel: "PASSWORD",
+    submitLabel: "Sign In",
     forgotPassword: true,
-    altText: "New operator?",
+    altText: "Not an admin?",
     altLink: { href: "/login", label: "User login →" },
     backgroundImage: "/admin%20login%20bg.png",
     backgroundAlt: "Admin login background",
@@ -122,56 +122,58 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
           <Image src="/white_logologo.svg" alt="Interval 360" width={130} height={30} style={{ height: 24, width: "auto" }} priority />
         </div>
 
-        {/* ── Bottom copy ── */}
-        <div style={{
-          position: "absolute", bottom: 0, left: 0, right: 0,
-          padding: "clamp(2rem,4vw,3.5rem)",
-          zIndex: 10,
-        }}>
-          {/* Eyebrow */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "1rem" }}>
-            {cfg.eyebrowDot && (
+        {cfg.leftHeading && (
+          /* ── Bottom copy ── */
+          <div style={{
+            position: "absolute", bottom: 0, left: 0, right: 0,
+            padding: "clamp(2rem,4vw,3.5rem)",
+            zIndex: 10,
+          }}>
+            {/* Eyebrow */}
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "1rem" }}>
+              {cfg.eyebrowDot && (
+                <span style={{
+                  display: "inline-block", width: "7px", height: "7px", borderRadius: "50%",
+                  background: "#4f6ef7", boxShadow: "0 0 8px rgba(79,110,247,1)", flexShrink: 0,
+                }} aria-hidden />
+              )}
               <span style={{
-                display: "inline-block", width: "7px", height: "7px", borderRadius: "50%",
-                background: "#4f6ef7", boxShadow: "0 0 8px rgba(79,110,247,1)", flexShrink: 0,
-              }} aria-hidden />
-            )}
-            <span style={{
-              fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.28em",
-              textTransform: "uppercase", color: "rgba(79,110,247,0.85)",
+                fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.28em",
+                textTransform: "uppercase", color: "rgba(79,110,247,0.85)",
+              }}>
+                {cfg.eyebrow}
+              </span>
+            </div>
+
+            {/* Heading */}
+            <h2 style={{
+              fontSize: "var(--text-display)",
+              fontWeight: 900,
+              lineHeight: 0.92,
+              letterSpacing: "-0.04em",
+              color: "#fff",
+              fontFamily: "var(--font-space-grotesk), sans-serif",
+              marginBottom: "1.25rem",
             }}>
-              {cfg.eyebrow}
-            </span>
+              {cfg.leftHeading[0]}
+              <br />
+              {cfg.leftHeading[1]}
+            </h2>
+
+            {/* Thin rule */}
+            <div style={{ width: "40px", height: "2px", background: "rgba(45,108,255,0.7)", marginBottom: "1.1rem", borderRadius: "2px" }} />
+
+            {/* Tagline */}
+            <p style={{
+              fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.45)",
+              lineHeight: 1.75, maxWidth: "38ch",
+              textTransform: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "uppercase" : "none",
+              letterSpacing: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "0.04em" : "0",
+            }}>
+              {cfg.leftTagline}
+            </p>
           </div>
-
-          {/* Heading */}
-          <h2 style={{
-            fontSize: "var(--text-display)",
-            fontWeight: 900,
-            lineHeight: 0.92,
-            letterSpacing: "-0.04em",
-            color: "#fff",
-            fontFamily: "var(--font-space-grotesk), sans-serif",
-            marginBottom: "1.25rem",
-          }}>
-            {cfg.leftHeading[0]}
-            <br />
-            {cfg.leftHeading[1]}
-          </h2>
-
-          {/* Thin rule */}
-          <div style={{ width: "40px", height: "2px", background: "rgba(45,108,255,0.7)", marginBottom: "1.1rem", borderRadius: "2px" }} />
-
-          {/* Tagline */}
-          <p style={{
-            fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.45)",
-            lineHeight: 1.75, maxWidth: "38ch",
-            textTransform: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "uppercase" : "none",
-            letterSpacing: cfg.leftTagline === cfg.leftTagline.toUpperCase() ? "0.04em" : "0",
-          }}>
-            {cfg.leftTagline}
-          </p>
-        </div>
+        )}
       </div>
 
       {/* Thin luminous divider */}
@@ -218,17 +220,19 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
             color: "#fff",
             fontFamily: "var(--font-space-grotesk), sans-serif",
             letterSpacing: "-0.025em",
-            marginBottom: "0.5rem",
+            marginBottom: cfg.formSubtitle ? "0.5rem" : "2.5rem",
             lineHeight: 1.1,
           }}>
             {cfg.formTitle}
           </h1>
-          <p style={{
-            fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.42)",
-            marginBottom: "2.5rem", lineHeight: 1.6, maxWidth: "34ch",
-          }}>
-            {cfg.formSubtitle}
-          </p>
+          {cfg.formSubtitle && (
+            <p style={{
+              fontSize: "var(--text-sm)", color: "rgba(234,239,243,0.42)",
+              marginBottom: "2.5rem", lineHeight: 1.6, maxWidth: "34ch",
+            }}>
+              {cfg.formSubtitle}
+            </p>
+          )}
 
           {/* ── Form ── */}
           <form onSubmit={e => e.preventDefault()} noValidate style={{ display: "flex", flexDirection: "column", gap: "0" }}>
@@ -354,7 +358,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 }
 
 /* ── Shared field styles ───────────────────────────────────────── */
-const labelStyle: React.CSSProperties = {
+export const labelStyle: React.CSSProperties = {
   display: "block",
   fontSize: "var(--text-xs)",
   fontWeight: 600,
@@ -364,7 +368,7 @@ const labelStyle: React.CSSProperties = {
   marginBottom: "8px",
 };
 
-const inputStyle: React.CSSProperties = {
+export const inputStyle: React.CSSProperties = {
   display: "block",
   width: "100%",
   height: "48px",
