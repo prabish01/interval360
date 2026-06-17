@@ -6,12 +6,12 @@ export const metadata = {
   openGraph: {
     title: "Buy an Assessment — Interval 360",
     description: "Purchase individual or team 360 assessments. Single assessments at $150, team packs at $125 each. No setup fees, reports delivered next day.",
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
   twitter: {
     title: "Buy an Assessment — Interval 360",
     description: "Purchase individual or team 360 assessments. Single assessments at $150, team packs at $125 each. No setup fees, reports delivered next day.",
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
 };
 

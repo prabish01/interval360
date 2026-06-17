@@ -4,10 +4,10 @@ export const metadata = {
   title: "Pricing — Interval 360",
   description: "Single assessments at $150, team packs at $125 each, and enterprise pricing via sales. No setup fees. Reports delivered the next day.",
   openGraph: { title: "Pricing — Interval 360", description: "Single assessments at $150, team packs at $125 each, and enterprise pricing via sales. No setup fees. Reports delivered the next day.",
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
   twitter: { title: "Pricing — Interval 360", description: "Single assessments at $150, team packs at $125 each, and enterprise pricing via sales. No setup fees. Reports delivered the next day." ,
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
 };
 

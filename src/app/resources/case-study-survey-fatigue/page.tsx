@@ -8,12 +8,12 @@ export const metadata = {
   openGraph: {
     title: "Overcoming Survey Fatigue — Interval 360",
     description: "How a healthcare services group moved from annual survey fatigue to a quarterly 360 signal — with a 91% rater completion rate and 78% reduction in HR administration time.",
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
   twitter: {
     title: "Overcoming Survey Fatigue — Interval 360",
     description: "How a healthcare services group moved from annual survey fatigue to a quarterly 360 signal — with a 91% rater completion rate and 78% reduction in HR administration time.",
-    image: "/interval360-og-image.png"
+    images: "/interval360-og-image.png"
   },
 };
 

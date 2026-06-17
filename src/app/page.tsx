@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Interval 360 — Conversational AI 360 Feedback",
     description: "AI-powered 360 feedback that replaces long surveys with a five-minute conversation. Better input, concise reports, and a process leadership teams actually use.",
-    image: "/interval360-og-image.png",
+    images: "/interval360-og-image.png",
   },
   twitter: {
     title: "Interval 360 — Conversational AI 360 Feedback",
     description: "AI-powered 360 feedback that replaces long surveys with a five-minute conversation. Better input, concise reports, and a process leadership teams actually use.",
-    image: "/interval360-og-image.png",
+    images: "/interval360-og-image.png",
   },
 };
 
