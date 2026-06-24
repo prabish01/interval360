@@ -30,6 +30,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://interval360.com"),
   title: "Interval 360 — AI-Driven 360° Leadership Feedback",
   description:
     "Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.",

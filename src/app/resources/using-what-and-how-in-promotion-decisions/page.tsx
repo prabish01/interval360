@@ -3,6 +3,9 @@ import { ArrowRight, Clock, TrendingUp } from "lucide-react";
 import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
+  alternates: {
+    canonical: "/resources/using-what-and-how-in-promotion-decisions",
+  },
   title: "Using What + How in Promotion Decisions — Interval 360",
   description: "How to combine performance signal with leadership experience data in promotion and succession conversations. A framework for HR leaders and talent teams.",
   openGraph: {

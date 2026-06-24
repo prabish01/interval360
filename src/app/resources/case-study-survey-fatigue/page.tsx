@@ -3,6 +3,9 @@ import { ArrowRight, BarChart2, TrendingUp, Users } from "lucide-react";
 import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
+  alternates: {
+    canonical: "/resources/case-study-survey-fatigue",
+  },
   title: "Overcoming Survey Fatigue — Interval 360",
   description: "How a healthcare services group moved from annual survey fatigue to a quarterly 360 signal — with a 91% rater completion rate and 78% reduction in HR administration time.",
   openGraph: {

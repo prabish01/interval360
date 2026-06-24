@@ -1,6 +1,9 @@
 import TalentDecisionsSections from "@/components/solutions/TalentDecisionsSections";
 
 export const metadata = {
+  alternates: {
+    canonical: "/solutions/talent-decisions",
+  },
   title: "Talent Decisions & Succession — Interval 360",
   description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment.",
   openGraph: { title: "Talent Decisions & Succession — Interval 360", description: "Make promotion, succession, and HiPo decisions on structured multi-perspective feedback — not anecdotes. The What and the How in a single assessment.",

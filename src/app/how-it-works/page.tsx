@@ -1,6 +1,9 @@
 import HowItWorksSections from "@/components/how-it-works";
 
 export const metadata = {
+  alternates: {
+    canonical: "/how-it-works",
+  },
   title: "How It Works — Interval 360",
   description: "From setup to final report in days. Raters complete a five-minute AI-guided conversation. Feedback synthesizes automatically into two structured leadership reports.",
   openGraph: {

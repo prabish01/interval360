@@ -1,6 +1,9 @@
 import LoginLayout from "@/components/LoginLayout";
 
 export const metadata = {
+  alternates: {
+    canonical: "/admin/login",
+  },
   title: "Admin Login — Interval 360",
   description: "Interval 360 platform administration login.",
   robots: "noindex, nofollow",

@@ -3,6 +3,9 @@ import { ArrowRight, Clock, Users, TrendingUp } from "lucide-react";
 import { homeTheme } from "@/lib/homeTheme";
 
 export const metadata = {
+  alternates: {
+    canonical: "/resources/how-to-choose-the-right-raters",
+  },
   title: "How to Choose the Right Raters — Interval 360",
   description: "A practical guide to building a 360 rater list that produces credible, useful feedback. What to look for in peers, direct reports, and managers — and what to avoid.",
   openGraph: {

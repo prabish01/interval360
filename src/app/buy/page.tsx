@@ -1,6 +1,9 @@
 import BuyLayout from "@/components/BuyLayout";
 
 export const metadata = {
+  alternates: {
+    canonical: "/buy",
+  },
   title: "Buy an Assessment — Interval 360",
   description: "Purchase individual or team 360 assessments. Single assessments at $150, team packs at $125 each. No setup fees, reports delivered next day.",
   openGraph: {

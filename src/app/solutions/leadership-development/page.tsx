@@ -1,6 +1,9 @@
 import LeadershipDevelopmentSections from "@/components/solutions/LeadershipDevelopmentSections";
 
 export const metadata = {
+  alternates: {
+    canonical: "/solutions/leadership-development",
+  },
   title: "Leadership Development — Interval 360",
   description: "Build repeatable 360 feedback into your leadership development program. Low rater burden, automated synthesis, and cohort-level analytics — without the overhead of traditional tools.",
   openGraph: {

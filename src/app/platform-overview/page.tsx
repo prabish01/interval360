@@ -1,6 +1,9 @@
 import PlatformOverviewSections from "@/components/platform-overview";
 
 export const metadata = {
+  alternates: {
+    canonical: "/platform-overview",
+  },
   title: "Platform Overview — Interval 360",
   description: "A leadership assessment platform built for repeatable 360s at scale. Conversational AI collection, automated synthesis, and two reports per assessment — no manual work required.",
   openGraph: {

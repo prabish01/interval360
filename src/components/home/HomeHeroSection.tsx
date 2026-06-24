@@ -11,10 +11,6 @@ export function HomeHeroSection() {
       <div className="absolute inset-0 pointer-events-none hero-vignette" />
       <div className="relative z-10 content-wrap w-full page-gutter pt-28 pb-16">
         <div className="max-w-5xl mx-auto">
-          <p className="inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.26em] uppercase mb-6" style={{ color: "rgba(187,220,251,0.78)" }}>
-            <span className="block w-7 h-px" style={{ background: "rgba(187,220,251,0.65)" }} />
-            Leadership Feedback, Reimagined
-          </p>
           <h1 className="text-[clamp(2.35rem,8.6vw,6.3rem)] font-extrabold leading-[0.98] tracking-[-0.03em] text-white uppercase mb-7" style={{ fontFamily: "var(--font-space-grotesk)" }}>
             <span className="text-[#006af5]">360</span> Feedback That Powers <span className="text-[#006af5]">Leadership</span> Strategy.
           </h1>
