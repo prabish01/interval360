@@ -114,9 +114,23 @@ export default function Footer() {
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
             &copy; {year} Interval 360. All rights reserved.
           </p>
-          <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-            Built for leadership teams, coaches, and talent decision-makers.
-          </p>
+          <div className="flex items-center gap-5">
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+              Built for leadership teams, coaches, and talent decision-makers.
+            </p>
+            <a
+              href="https://www.linkedin.com/company/interval360/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Interval 360 on LinkedIn"
+              className="shrink-0 transition-colors hover:opacity-80"
+              style={{ color: "rgba(255,255,255,0.5)" }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.85 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
