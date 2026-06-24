@@ -8,7 +8,7 @@ const reports = [
     tab: "Assessment Report",
     label: "For HR, managers & talent decisions",
     title: "Leadership Assessment Report",
-    pdf: "/George_Burdell_assessment_report_20260127125454.pdf",
+    pdf: "/interval360-leadership-report-10-10.pdf",
   },
   {
     id: "development",
@@ -76,7 +76,7 @@ export default function ReportViewer() {
       {/* PDF iframe */}
       <div className="flex-1 min-h-[80vh] bg-[#0a0c14]">
         <iframe
-          src={`${report.pdf}#toolbar=0&navpanes=0`}
+          src={`${report.pdf}#toolbar=0&navpanes=0&zoom=page-fit`}
           className="w-full h-full min-h-[80vh] border-0"
           title={report.title}
         />

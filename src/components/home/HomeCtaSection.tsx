@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookACallButton } from "@/components/BookACallButton";
 
 const stats = [
   {
@@ -68,12 +69,11 @@ export function HomeCtaSection() {
               Try a single assessment, buy a team pack, or talk to us about an enterprise rollout.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link
-                href="/company#contact"
+              <BookACallButton
                 className="text-sm font-semibold px-8 py-3.5 no-underline bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors duration-200"
               >
                 Book a Call
-              </Link>
+              </BookACallButton>
               <Link
                 href="/buy"
                 className="text-sm font-medium px-8 py-3.5 no-underline border border-white/20 text-white hover:border-white/40 transition-colors duration-200"

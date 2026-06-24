@@ -1,31 +1,10 @@
-export const companyHero = {
+export const ourStory = {
   eyebrow: "BUILT BY PRACTITIONERS",
-  titlePart1: "THE ARCHIVE",
-  titlePart2: "OF MOTION.",
-  body: "We didn't build another SaaS tool. We built a high-performance neural stream for talent intelligence, designed by the people who lead the industry."
-};
-
-export const reimaginingSection = {
   title: "REIMAGINING\nTHE 360.",
   paragraphs: [
     "A well-run 360 is one of the most useful instruments in leadership development, and one of the hardest to deploy at scale. Expensive and burdensome, most companies historically reserved 360s for their most senior executives and skipped them for everyone else.",
     "We spent the better part of two decades doing this work at the top end of the industry, advising CEOs and senior teams across early-stage companies and the global Fortune 500 on succession, assessment, coaching, and team effectiveness. The same problem kept surfacing: clients wanted rigorous feedback on more of their leaders, and the traditional model couldn't deliver it without doubling the budget.",
     "Interval 360 is what we built to close that gap. The rater experience is a five-minute conversation, the synthesis runs automatically, and the report is short enough that a busy executive will actually read it. The rigor of a high-end 360 stays intact while the cost and burden come down, which is what finally makes it practical to run this kind of assessment on the rest of the leadership population, not just the top tier."
-  ],
-  overlayTag: "PURE INTENT",
-  overlayText: "“INTERVAL 360 WAS SPECIFICALLY BUILT TO FIX PERFORMANCE MEASUREMENT.”"
-};
-
-export const corePrinciplesSection = {
-  title: "THE CORE\nPRINCIPLES",
-  subtitle: "SHAPING INTERVAL 360 INTELLIGENCE",
-  principles: [
-    { num: "01", title: "Absolute\nTransparency", body: "The math is clear. Thoughts must be traceable, verifiable, and clear to every stakeholder." },
-    { num: "02", title: "Context Over Code", body: "Intelligence is useless without the human element of the why, the how, and the context." },
-    { num: "03", title: "Real-Time Pulse", body: "Feedback isn't an annual event, it's a continuous stream of data points." },
-    { num: "04", title: "Inherent Bias Shield", body: "Systems must actively identify and neutralize unconscious bias in performance data." },
-    { num: "05", title: "Dynamic Growth", body: "We think and move faster. We ship the fastest paths to the next level of capability." },
-    { num: "06", title: "The Expert Loop", body: "Our zero constraint architecture ensuring it speaks in the language of leadership." },
   ]
 };
 
@@ -60,21 +39,6 @@ export const boardOfAdvisors = {
     { name: "Rand Harbert", title: "Retired EVP and Chief Agency, Sales & Marketing Officer, State Farm" },
     { name: "Jerry Hunter", title: "Retired COO, Snap" },
     { name: "Stephen Subasic", title: "Retired CHRO, Stanley Black & Decker" }
-  ]
-};
-
-export const definitionOfScope = {
-  title: "DEFINITION OF SCOPE",
-  subtitle: "WHERE INTERVAL 360 FITS IN YOUR ECOSYSTEM",
-  whatItIs: [
-    { title: "A Predictive Engine", body: "Forecasting future performance based on velocity and trajectory." },
-    { title: "A High-Performance Cockpit", body: "Giving managers the controls to steer team growth in real-time." },
-    { title: "A Behavioral Layer", body: "An architectural element that sits above your existing HR data." }
-  ],
-  whatItIsNot: [
-    { title: "A Legacy HRIS", body: "We don't manage payroll, benefits, or basic personnel records." },
-    { title: "A Survey Tool", body: "We collect data through active and interactive, not just passive means." },
-    { title: "A Replacement for Judgment", body: "Our intelligence augments human leaders, it doesn't replace them." }
   ]
 };
 

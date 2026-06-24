@@ -237,7 +237,7 @@ const relatedResources = [
   {
     type: "Playbook",
     title: "Using the What and the How in Promotion Decisions",
-    href: "/resources/playbook-what-plus-how",
+    href: "/resources/using-what-and-how-in-promotion-decisions",
   },
   {
     type: "Product",
@@ -719,7 +719,7 @@ export default function SurveyFatigueCaseStudy() {
         </div>
       </section>
 
-      {/* ── WHAT COMES NEXT / ORGANISATIONAL INTELLIGENCE ── */}
+      {/* ── WHAT COMES NEXT / ORGANIZATIONAL INTELLIGENCE ── */}
       <section style={{ background: "#0c0e12", borderBottom: "1px solid rgba(255,255,255,0.07)", padding: "clamp(4rem, 7vw, 6rem) 0" }}>
         <div className="content-wrap page-gutter">
           <p style={{ fontSize: "var(--text-xs)", fontWeight: 700, letterSpacing: "0.2em", textTransform: "uppercase", color: homeTheme.blue, marginBottom: "0.75rem" }}>

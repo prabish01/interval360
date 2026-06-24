@@ -7,7 +7,7 @@ import {
   Zap,
 } from "lucide-react";
 import { homeTheme, marketingTypography } from "@/lib/homeTheme";
-import { surveyVsConvo, followUpExample, governanceItems } from "./data";
+import { surveyVsConvo, followUpExample } from "./data";
 
 export default function ConversationalAiSections() {
   return (
@@ -66,17 +66,6 @@ export default function ConversationalAiSections() {
               >
                 See it in action
                 <ArrowRight className="size-4 shrink-0" aria-hidden />
-              </Link>
-              <Link
-                href="#governance"
-                id="hero-cta-governance"
-                className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
-                style={{
-                  borderColor: homeTheme.outlineButtonBorder,
-                  background: homeTheme.outlineButtonBg,
-                }}
-              >
-                AI governance ↓
               </Link>
             </div>
           </div>
@@ -334,70 +323,6 @@ export default function ConversationalAiSections() {
         </div>
       </section>
 
-      {/* ── Trust & Governance — dark ── */}
-      <section
-        id="governance"
-        className="border-b py-20 text-white md:py-28"
-        style={{ borderColor: homeTheme.borderSubtle, background: homeTheme.sectionBlack }}
-      >
-        <div className="content-wrap page-gutter">
-          <div className="mb-14 md:mb-16">
-            <p
-              className={`mb-4 ${marketingTypography.heroEyebrow}`}
-              style={{ color: homeTheme.eyebrow }}
-            >
-              Trust & Governance
-            </p>
-            <h2
-              className={`mb-5 max-w-[24ch] ${marketingTypography.sectionDisplayDark}`}
-              style={{ fontFamily: "var(--font-space-grotesk)" }}
-            >
-              High-quality intelligence
-              <br />
-              starts with transparency.
-            </h2>
-            <div className="h-1 w-14 rounded-full" style={{ background: homeTheme.blue }} />
-            <p
-              className="mt-6 max-w-[56ch] text-base leading-[1.75]"
-              style={{ color: homeTheme.textMuted }}
-            >
-              Our AI is clear about what it does and where it stops. There are
-              no hidden interpretations and no opaque recommendations. The rater
-              always knows they are talking to an AI, and the process is
-              designed to remain transparent throughout.
-            </p>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            {governanceItems.map((item, i) => (
-              <div
-                key={i}
-                className="relative overflow-hidden border p-8 transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
-                style={{
-                  borderColor: "rgba(255,255,255,0.08)",
-                  background: "rgba(255,255,255,0.03)",
-                }}
-              >
-                <ShieldCheck
-                  className="mb-5 size-6 shrink-0"
-                  style={{ color: homeTheme.blue }}
-                  aria-hidden
-                />
-                <h3
-                  className="mb-3 text-sm font-bold uppercase tracking-[0.12em] leading-snug"
-                  style={{ fontFamily: "var(--font-space-grotesk)" }}
-                >
-                  {item.title}
-                </h3>
-                <p className="text-base leading-[1.7]" style={{ color: homeTheme.textMuted }}>
-                  {item.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Why it matters — light, 3-column stats ── */}
       <section
         className="py-20 md:py-28"
@@ -443,7 +368,7 @@ export default function ConversationalAiSections() {
                 Icon: MessageSquareText,
                 stat: "3×",
                 unit: "more specific",
-                body: "Conversational probing consistently yields more specific examples and behavioural context than free-text survey fields.",
+                body: "Conversational probing consistently yields more specific examples and behavioral context than free-text survey fields.",
               },
               {
                 Icon: ShieldCheck,

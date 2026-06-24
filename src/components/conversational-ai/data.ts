@@ -18,10 +18,12 @@ export const surveyVsConvo = {
 };
 
 export const followUpExample = [
-  { speaker: "ai", text: "You mentioned that Sarah tends to communicate well. Can you give me a specific example of a situation in the last few months where you saw that play out — what happened, and what made her communication particularly effective in that moment?" },
-  { speaker: "rater", text: "Yeah, there was that product roadmap meeting where there were some real tensions between engineering and product. She came in with a clear framing of the tradeoffs, didn't oversimplify things, but also made it easy for people to understand what we were actually deciding. She got everyone aligned within the hour." },
-  { speaker: "ai", text: "That's useful context. Was this a one-time thing, or do you see this kind of structured clarity show up consistently when there's tension or ambiguity in a room?" },
-  { speaker: "rater", text: "Consistently. She's actually one of the few people I've worked with who seems to get calmer when things get more complicated. It's like the complexity helps her focus." },
+  { speaker: "ai", text: "What would you say is Emily's greatest strength as a leader?" },
+  { speaker: "rater", text: "She is the best manager I have had at this company. She always takes the time to give me feedback and is invested in my development and not just my performance." },
+  { speaker: "ai", text: "That's a helpful perspective. What would you say is Emily's most important opportunity for growth as a leader?" },
+  { speaker: "rater", text: "Communication" },
+  { speaker: "ai", text: "Can you say a bit more about how communication shows up in practice?" },
+  { speaker: "rater", text: "Sometimes she can be a bit all over the place. Emails can ramble a bit, and it can sometimes take a bit for us to \"get going\" in our all-hands meetings." },
 ];
 
 export const governanceItems = [

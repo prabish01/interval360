@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SoftAurora from "@/components/SoftAurora";
+import { BookACallButton } from "@/components/BookACallButton";
 
 export function HomeHeroSection() {
   return (
@@ -18,9 +19,9 @@ export function HomeHeroSection() {
             Interval 360 uses conversational AI to gather better leadership feedback with less burden, then turns it into concise, actionable insight for development and talent decisions.
           </p>
           <div className="flex gap-4 flex-wrap justify-center items-center">
-            <Link href="/company#contact" className="text-sm font-semibold px-10 py-3.5 rounded-sm no-underline transition-transform hover:-translate-y-0.5" style={{ background: "#2d6cff", color: "#fff", boxShadow: "0 10px 36px rgba(45,108,255,0.35)" }}>
+            <BookACallButton className="text-sm font-semibold px-10 py-3.5 rounded-sm no-underline transition-transform hover:-translate-y-0.5" style={{ background: "#2d6cff", color: "#fff", boxShadow: "0 10px 36px rgba(45,108,255,0.35)" }}>
               Book a Call
-            </Link>
+            </BookACallButton>
             <Link href="/buy" className="text-sm font-semibold px-10 py-3.5 rounded-sm border no-underline transition-colors" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.22)", background: "rgba(255,255,255,0.02)" }}>
               Buy an Assessment
             </Link>

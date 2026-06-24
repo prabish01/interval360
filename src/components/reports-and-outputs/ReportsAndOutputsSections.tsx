@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { anatomySections } from "./data";
 import ReportViewer from "./ReportViewer";
+import { BookACallButton } from "@/components/BookACallButton";
 
 export default function ReportsAndOutputsSections() {
   return (
@@ -20,9 +21,9 @@ export default function ReportsAndOutputsSections() {
               <Link href="/buy" className="text-sm font-semibold px-6 py-2.5 bg-[#2d6cff] text-white hover:bg-[#1a57e8] transition-colors no-underline">
                 Buy an Assessment
               </Link>
-              <Link href="/company#contact" className="text-sm font-medium px-6 py-2.5 border border-white/20 text-white hover:border-white/40 transition-colors no-underline">
+              <BookACallButton className="text-sm font-medium px-6 py-2.5 border border-white/20 text-white hover:border-white/40 transition-colors no-underline">
                 Book a Call
-              </Link>
+              </BookACallButton>
             </div>
           </div>
         </div>

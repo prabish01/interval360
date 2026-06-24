@@ -22,33 +22,6 @@ export const featuredSample = {
   href: "/reports-and-outputs",
 };
 
-/** Right-column preview card on the featured sample section */
-export const sampleReportPreview = {
-  headerTitle: "Interval 360 — Leadership Assessment",
-  headerMeta: "Sample Report · Confidential",
-  executiveSummaryLabel: "Executive Summary",
-  executiveSummaryBody:
-    "Strong operational credibility and consistent follow-through. The most consistent theme across raters is that this leader delivers reliably. Growth edge: creating space for others to lead — raters observe a tendency to stay too close to execution rather than delegating with confidence.",
-  whatScore: "4.2",
-  howScore: "3.6",
-  raters: "8",
-  topThemesLabel: "Top Themes",
-  themes: [
-    {
-      line: "Operational reliability",
-      detail: "mentioned by 7 of 8 raters",
-    },
-    {
-      line: "Strong under pressure",
-      detail: "consistent across manager and peer feedback",
-    },
-    {
-      line: "Delegation gap",
-      detail: "noted in 5 of 8 conversations as a growth area",
-    },
-  ],
-} as const;
-
 export const caseStudiesSection = {
   title: "Case studies.",
   sub: "How teams deploy Interval 360 in the wild.",

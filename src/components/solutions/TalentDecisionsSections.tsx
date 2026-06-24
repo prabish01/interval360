@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookACallButton } from "@/components/BookACallButton";
 import {
   ArrowRight,
   BadgeCheck,
@@ -127,14 +128,13 @@ export default function TalentDecisionsSections() {
               Move from guesswork to signal-driven confidence. Interval 360 gives you structured, multi-perspective leadership feedback for the moments where talent decisions matter most — so promotion, succession, and placement calls rest on evidence, not anecdotes. See <Link href="/resources/using-what-and-how-in-promotion-decisions" className="underline hover:opacity-80" style={{ color: "rgba(255,255,255,0.9)" }}>our playbook on the What vs. the How in promotions</Link>.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link
-                href="/company#contact"
+              <BookACallButton
                 className="inline-flex items-center justify-center gap-2 rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase"
                 style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}
               >
                 Book a Call
                 <ArrowRight className="size-4 shrink-0" aria-hidden />
-              </Link>
+              </BookACallButton>
               <Link
                 href="/reports-and-outputs"
                 className="inline-flex items-center justify-center rounded-sm border px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:border-white/45 uppercase"
@@ -325,8 +325,7 @@ export default function TalentDecisionsSections() {
           <p className="mx-auto mb-10 max-w-[48ch] text-base leading-[1.75]" style={{ color: homeTheme.textMuted }}>
             Talk to us about integrating Interval 360 into promotion, succession, and calibration workflows.
           </p>
-          <Link
-            href="/company#contact"
+          <BookACallButton
             className="inline-flex min-w-[min(100%,320px)] items-center justify-center rounded-sm px-10 py-4 text-sm font-bold tracking-[0.18em] text-white no-underline uppercase transition-opacity hover:opacity-95"
             style={{
               background: "linear-gradient(90deg, #2d6cff 0%, #7c3aed 100%)",
@@ -334,7 +333,7 @@ export default function TalentDecisionsSections() {
             }}
           >
             Book a Call
-          </Link>
+          </BookACallButton>
         </div>
       </section>
     </div>

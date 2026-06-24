@@ -3,6 +3,7 @@ import Link from "next/link";
 import { homeTheme } from "@/lib/homeTheme";
 import { receiveReports, stats, steps } from "./data";
 import { ConversationSection } from "./ConversationSection";
+import { BookACallButton } from "@/components/BookACallButton";
 
 export default function HowItWorksSections() {
   return (
@@ -32,8 +33,7 @@ export default function HowItWorksSections() {
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
               Buy an Assessment
             </Link>
-            <Link
-              href="/company#contact"
+            <BookACallButton
               className="inline-flex items-center justify-center rounded-sm border px-7 py-3 text-sm font-semibold tracking-wide text-white no-underline transition-colors hover:border-white/40 uppercase"
               style={{
                 borderColor: homeTheme.outlineButtonBorder,
@@ -41,7 +41,7 @@ export default function HowItWorksSections() {
               }}
             >
               Book a Call
-            </Link>
+            </BookACallButton>
             <Link href="#conversation" className="inline-flex items-center gap-1.5 border-b border-current px-0.5 py-3 text-sm font-medium no-underline transition-opacity hover:opacity-80 uppercase" style={{ color: homeTheme.linkMuted }}>
               See the conversation <span aria-hidden>→</span>
             </Link>
@@ -161,8 +161,7 @@ export default function HowItWorksSections() {
             <Link href="/buy" className="inline-flex items-center justify-center rounded-sm px-8 py-3.5 text-sm font-semibold text-white no-underline transition-colors hover:bg-[#1a57e8] uppercase" style={{ background: homeTheme.blue, boxShadow: homeTheme.blueShadow }}>
               Buy an Assessment
             </Link>
-            <Link
-              href="/company#contact"
+            <BookACallButton
               className="inline-flex items-center justify-center rounded-sm border-2 border-transparent bg-transparent px-8 py-3.5 text-sm font-medium no-underline transition-colors hover:bg-black/[0.03] uppercase"
               style={{
                 color: homeTheme.lightHeading,
@@ -170,7 +169,7 @@ export default function HowItWorksSections() {
               }}
             >
               Book a Call
-            </Link>
+            </BookACallButton>
           </div>
         </div>
       </section>

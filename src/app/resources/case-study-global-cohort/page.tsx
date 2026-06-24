@@ -684,7 +684,7 @@ export default function GlobalCohortCaseStudy() {
                 padding: "0.75rem 1.75rem", borderRadius: "4px", textDecoration: "none",
               }}
             >
-              Talk to the team
+              Talk to Us
               <ArrowRight size={14} />
             </Link>
             <Link

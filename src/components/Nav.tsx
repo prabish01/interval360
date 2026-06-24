@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
+import { BookACallButton } from "@/components/BookACallButton";
 
 const solutionsMenu = [
   { href: "/solutions", label: "Solutions Overview", sub: "All use cases at a glance", hub: true },
@@ -288,8 +289,7 @@ export default function Nav() {
                 >
                   BUY ASSESSMENT
                 </Link>
-                <Link
-                  href="/company#contact"
+                <BookACallButton
                   className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-[2px] no-underline whitespace-nowrap transition-all duration-200 hover:-translate-y-px hover:shadow-sm hover:opacity-90"
                   style={{ background: callBg, color: "#fff" }}
                 >
@@ -298,7 +298,7 @@ export default function Nav() {
                     <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                   </svg>
                   GET STARTED
-                </Link>
+                </BookACallButton>
               </div>
             </div>
 
@@ -379,13 +379,13 @@ export default function Nav() {
                 <Link href="/buy" onClick={() => setMobileOpen(false)} className="inline-flex w-full items-center justify-center text-sm font-semibold py-2.5 rounded-lg border no-underline" style={{ color: buyTextColor, borderColor: buyBorderColor, background: buyBg }}>
                   Buy
                 </Link>
-                <Link href="/company#contact" onClick={() => setMobileOpen(false)} className="inline-flex w-full items-center justify-center gap-1.5 text-sm font-semibold py-2.5 rounded-lg no-underline" style={{ background: callBg, color: "#fff" }}>
+                <BookACallButton onClick={() => setMobileOpen(false)} className="inline-flex w-full items-center justify-center gap-1.5 text-sm font-semibold py-2.5 rounded-lg no-underline" style={{ background: callBg, color: "#fff" }}>
                   <svg className="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                     <rect x="3.5" y="4.5" width="13" height="12" rx="2.2" stroke="currentColor" strokeWidth="1.6" />
                     <path d="M6.5 2.8v3.1M13.5 2.8v3.1M3.5 8.2h13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
                   </svg>
                   Book a Call
-                </Link>
+                </BookACallButton>
               </div>
             </div>
           )}

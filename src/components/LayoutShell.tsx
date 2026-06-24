@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CalEmbedInit from "@/components/CalEmbedInit";
 
 const NO_SHELL_ROUTES = ["/login", "/admin/login"];
 
@@ -14,6 +15,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
 
   return (
     <>
+      <CalEmbedInit />
       <Nav />
       {children}
       <Footer />
