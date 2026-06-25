@@ -107,12 +107,12 @@ export default function ForCoachesSections() {
               className="overflow-hidden border"
               style={{ borderColor: homeTheme.lightRule, background: homeTheme.sectionPaper }}
             >
-              <div className="relative aspect-[1336/1544] w-full bg-[#e8ecf2]">
+              <div className="relative aspect-16/10 w-full bg-[#e8ecf2]">
                 <Image
                   src="/assessment-preview-overview.png"
                   alt=""
                   fill
-                  className="object-contain object-top opacity-90"
+                  className="object-cover object-top opacity-90"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
