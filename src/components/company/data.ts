@@ -34,8 +34,8 @@ export const boardOfAdvisors = {
   tag: "BOARD OF ADVISORS",
   intro: "Interval 360 is shaped by a board of advisors with deep operating experience across finance, technology, insurance, and HR leadership at scale.",
   members: [
-    { name: "Ethan Fassett", title: "Founder, Glystn" },
     { name: "David Ducommun", title: "SVP Corporate Finance, Fidelity National Financial" },
+    { name: "Ethan Fassett", title: "Founder, Glystn" },
     { name: "Rand Harbert", title: "Retired EVP and Chief Agency, Sales & Marketing Officer, State Farm" },
     { name: "Jerry Hunter", title: "Retired COO, Snap" },
     { name: "Stephen Subasic", title: "Retired CHRO, Stanley Black & Decker" }
@@ -45,8 +45,8 @@ export const boardOfAdvisors = {
 export const joinIntelligence = {
   title: "GET IN\nTOUCH.",
   body: "Questions about the platform, pricing, or running an assessment at your company? Send us a note.",
-  email: "intelligence@interval360.com",
-  location: "Incorporated in Arizona. Team based in Atlanta, Phoenix, and San Francisco.",
+  email: "info@interval360.com",
+  location: "Phoenix, AZ",
   form: {
     name: "Full Name",
     email: "Work Email",

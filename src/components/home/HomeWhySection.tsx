@@ -21,72 +21,18 @@ export function HomeWhySection() {
         </div>
 
         {/* Feature Grid */}
-        <div className="flex-1 grid grid-cols-3 grid-rows-2 border-t border-l border-[#e4eaf5]">
-          {/* 01 */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[0].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[0].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[0].body}</p>
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#e4eaf5]">
+          {whyItems.slice(0, 6).map((item) => (
+            <div key={item.num} className="group flex flex-col justify-between p-5 sm:p-6 lg:p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
+              <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{item.num}</p>
+              <div>
+                <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  {item.title}
+                </h3>
+                <p className="text-base leading-[1.7] text-[#4a5877]">{item.body}</p>
+              </div>
             </div>
-          </div>
-
-          {/* 02 */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[1].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[1].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[1].body}</p>
-            </div>
-          </div>
-
-          {/* 03 */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[2].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[2].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[2].body}</p>
-            </div>
-          </div>
-
-          {/* 04 */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[3].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[3].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[3].body}</p>
-            </div>
-          </div>
-
-          {/* 05 — highlighted */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-70 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[4].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[4].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[4].body}</p>
-            </div>
-          </div>
-
-          {/* 06 */}
-          <div className="group flex flex-col justify-between p-8 border-r border-b border-[#e4eaf5] hover:bg-[#f5f8ff] transition-colors duration-300 cursor-default">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase text-[#2d6cff] opacity-60 group-hover:opacity-100 transition-opacity duration-300 mb-6">{whyItems[5].num}</p>
-            <div>
-              <h3 className="text-base font-bold uppercase tracking-[0.02em] leading-[1.3] mb-3 text-[#0b1733]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                {whyItems[5].title}
-              </h3>
-              <p className="text-base leading-[1.7] text-[#4a5877]">{whyItems[5].body}</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

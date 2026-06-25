@@ -13,6 +13,8 @@ const importantLinks = [
   { href: "/company#contact", label: "Contact" },
   { href: "/buy", label: "Buy an Assessment" },
   { href: "/reports-and-outputs", label: "Sample Reports" },
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms & Conditions" },
 ];
 
 export default function Footer() {
