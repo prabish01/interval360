@@ -8,7 +8,7 @@ const reports = [
     tab: "Assessment Report",
     label: "For HR, managers & talent decisions",
     title: "Leadership Assessment Report",
-    pdf: "/interval360-leadership-report-10-10.pdf",
+    pdf: "/v2.2.1_assessment_report_2026-06-17.pdf",
   },
   {
     id: "development",
