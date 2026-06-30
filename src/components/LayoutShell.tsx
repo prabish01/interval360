@@ -5,7 +5,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CalEmbedInit from "@/components/CalEmbedInit";
 
-const NO_SHELL_ROUTES = ["/login", "/admin/login"];
+const NO_SHELL_ROUTES = ["/login", "/admin/login", "/demo"];
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();

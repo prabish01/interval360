@@ -47,3 +47,6 @@ AGENTS.md
 .remember/
 .superpowers/
 docs/
+
+# local reference captures (e.g. saved copies of the live platform UI) — never ship these
+/shared stuff/
