@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NewsletterForm from "./NewsletterForm";
 
 const footerLinks = [
   { href: "/platform-overview", label: "Platform" },
@@ -92,23 +93,7 @@ export default function Footer() {
             <p className="text-base leading-[1.7] mb-4" style={{ color: "rgba(255,255,255,0.58)" }}>
               Monthly ideas on leadership feedback, coaching, and talent decisions.
             </p>
-            <form action="/company#contact" className="flex items-center gap-2">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Work email"
-                className="w-full h-10 px-3 text-base rounded-md bg-transparent border outline-none"
-                style={{ borderColor: "rgba(255,255,255,0.24)", color: "rgba(255,255,255,0.92)" }}
-              />
-              <button
-                type="submit"
-                className="h-10 px-4 text-sm font-semibold rounded-md transition-opacity hover:opacity-90"
-                style={{ background: "#2d6cff", color: "#fff" }}
-              >
-                Join
-              </button>
-            </form>
+            <NewsletterForm />
           </div>
         </div>
 
