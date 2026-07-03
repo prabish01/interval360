@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { login, ApiError } from "@/lib/api";
 
 /* ── SVG icons ─────────────────────────────────────────────────── */
 export const EyeOpen = () => (
@@ -67,7 +68,29 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
   const cfg = configs[variant];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
+    setSubmitting(true);
+    try {
+      const result = await login({ email, password });
+      setSuccess(`Welcome back, ${result?.data?.name ?? "there"}.`);
+      // Dashboard lives in a separate app (code/frontend-admin) that shares
+      // this auth cookie — it bootstraps its own session from the cookie on
+      // load, so a full navigation (not client-side routing) is enough.
+      const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL || "http://localhost:3001";
+      window.location.href = dashboardUrl;
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#06090f", fontFamily: "var(--font-inter), sans-serif" }}>
@@ -235,7 +258,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
           )}
 
           {/* ── Form ── */}
-          <form onSubmit={e => e.preventDefault()} noValidate style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+          <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "0" }}>
 
             {/* Email field */}
             <div style={{ marginBottom: "1.1rem" }}>
@@ -296,17 +319,27 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
               </div>
             </div>
 
+            {/* Error / success messages */}
+            {error && (
+              <p style={{ color: "#f87171", fontSize: "var(--text-xs)", marginBottom: "1rem" }}>{error}</p>
+            )}
+            {success && (
+              <p style={{ color: "#4ade80", fontSize: "var(--text-xs)", marginBottom: "1rem" }}>{success}</p>
+            )}
+
             {/* Submit */}
             <button
               id="login-submit"
               type="submit"
+              disabled={submitting}
               style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
                 width: "100%", height: "50px",
                 background: "linear-gradient(110deg, #2563eb 0%, #4f46e5 100%)",
                 color: "#fff", border: "none", borderRadius: "8px",
                 fontSize: "var(--text-sm)", fontWeight: 600, letterSpacing: "0.02em",
-                cursor: "pointer",
+                cursor: submitting ? "default" : "pointer",
+                opacity: submitting ? 0.7 : 1,
                 boxShadow: "0 4px 24px rgba(45,108,255,0.3), 0 1px 0 rgba(255,255,255,0.08) inset",
                 transition: "opacity 0.2s, transform 0.15s, box-shadow 0.2s",
               }}
@@ -315,7 +348,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
               onMouseDown={e => (e.currentTarget.style.transform = "scale(0.988)")}
               onMouseUp={e => (e.currentTarget.style.transform = "scale(1)")}
             >
-              {cfg.submitLabel}
+              {submitting ? "Signing in…" : cfg.submitLabel}
               <ArrowRight />
             </button>
           </form>

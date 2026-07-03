@@ -3,7 +3,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { EyeOpen, EyeOff, ArrowRight, labelStyle, inputStyle } from "./LoginLayout";
+import { signup, ApiError } from "@/lib/api";
 
 const steps = [
   {
@@ -26,6 +28,7 @@ const steps = [
 const companyOptions = ["Acme Inc.", "Globex Corporation", "Initech", "Umbrella Corp"];
 
 export default function BuyLayout() {
+  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,6 +36,46 @@ export default function BuyLayout() {
   const [company, setCompany] = useState("");
   const [employees, setEmployees] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+
+  // Mirrors the backend's PASSWORD_REGEX exactly (validation.middleware.js) —
+  // special characters are limited to this set, not any symbol.
+  const passwordRequirements = [
+    { label: "8+ characters", met: password.length >= 8 },
+    { label: "Uppercase letter", met: /[A-Z]/.test(password) },
+    { label: "Lowercase letter", met: /[a-z]/.test(password) },
+    { label: "Number", met: /\d/.test(password) },
+    { label: "Symbol (@$!%*?&)", met: /[@$!%*?&]/.test(password) },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(null);
+
+    if (!agreed) {
+      setError("Please agree to the Terms & Conditions and Privacy Policy.");
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      await signup({
+        name,
+        email,
+        password,
+        company_name: company,
+        total_employees: employees,
+      });
+      setSuccess("Account created. Redirecting to login…");
+      setTimeout(() => router.push("/admin/login"), 1200);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
+      setSubmitting(false);
+    }
+  };
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "#050508", fontFamily: "var(--font-inter), sans-serif" }}>
@@ -171,7 +214,7 @@ export default function BuyLayout() {
           </h1>
 
           {/* ── Form ── */}
-          <form onSubmit={e => e.preventDefault()} noValidate style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+          <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: "0" }}>
 
             {/* Name field */}
             <div style={{ marginBottom: "1.1rem" }}>
@@ -234,6 +277,26 @@ export default function BuyLayout() {
                   {showPassword ? <EyeOff /> : <EyeOpen />}
                 </button>
               </div>
+
+              {/* Live password requirements checklist */}
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px", marginTop: "10px" }}>
+                {passwordRequirements.map(req => (
+                  <span
+                    key={req.label}
+                    style={{
+                      fontSize: "var(--text-xs)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "5px",
+                      color: req.met ? "#4ade80" : "rgba(234,239,243,0.35)",
+                      transition: "color 0.15s",
+                    }}
+                  >
+                    <span style={{ fontSize: "10px" }}>{req.met ? "✓" : "•"}</span>
+                    {req.label}
+                  </span>
+                ))}
+              </div>
             </div>
 
             {/* Company name field */}
@@ -291,17 +354,27 @@ export default function BuyLayout() {
               </span>
             </label>
 
+            {/* Error / success messages */}
+            {error && (
+              <p style={{ color: "#f87171", fontSize: "var(--text-xs)", marginBottom: "1rem" }}>{error}</p>
+            )}
+            {success && (
+              <p style={{ color: "#4ade80", fontSize: "var(--text-xs)", marginBottom: "1rem" }}>{success}</p>
+            )}
+
             {/* Submit */}
             <button
               id="signup-submit"
               type="submit"
+              disabled={submitting}
               style={{
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
                 width: "100%", height: "50px",
                 background: "linear-gradient(110deg, #2563eb 0%, #4f46e5 100%)",
                 color: "#fff", border: "none", borderRadius: "8px",
                 fontSize: "var(--text-sm)", fontWeight: 600, letterSpacing: "0.02em",
-                cursor: "pointer",
+                cursor: submitting ? "default" : "pointer",
+                opacity: submitting ? 0.7 : 1,
                 boxShadow: "0 4px 24px rgba(45,108,255,0.3), 0 1px 0 rgba(255,255,255,0.08) inset",
                 transition: "opacity 0.2s, transform 0.15s, box-shadow 0.2s",
               }}
@@ -310,7 +383,7 @@ export default function BuyLayout() {
               onMouseDown={e => (e.currentTarget.style.transform = "scale(0.988)")}
               onMouseUp={e => (e.currentTarget.style.transform = "scale(1)")}
             >
-              Create Account
+              {submitting ? "Creating account…" : "Create Account"}
               <ArrowRight />
             </button>
           </form>
