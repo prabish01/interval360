@@ -79,11 +79,20 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
   const isOtpFlow = variant === "user";
 
   const goToDashboard = () => {
-    // Dashboard lives in a separate app (code/frontend-admin) that shares
-    // this auth cookie — it bootstraps its own session from the cookie on
-    // load, so a full navigation (not client-side routing) is enough.
+    // The admin dashboard lives in a separate app (code/frontend-admin) that
+    // shares this auth cookie — it bootstraps its own session from the
+    // cookie on load, so a full navigation (not client-side routing) is
+    // enough.
     const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL || "http://localhost:3001";
     window.location.href = dashboardUrl;
+  };
+
+  const goToUserApp = () => {
+    // Regular users land in a different app entirely (code/frontend-user,
+    // live at user.interval360.com) — not the admin dashboard. It shares
+    // the same auth cookie and bootstraps its own session on load.
+    const userAppUrl = process.env.NEXT_PUBLIC_USER_APP_URL || "http://localhost:3002";
+    window.location.href = userAppUrl;
   };
 
   const handleSendOtp = async () => {
@@ -121,7 +130,7 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
       try {
         const result = await verifyLoginOtp({ email, otp });
         setSuccess(`Welcome back, ${result?.data?.name ?? "there"}.`);
-        goToDashboard();
+        goToUserApp();
       } catch (err) {
         setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
         setSubmitting(false);
