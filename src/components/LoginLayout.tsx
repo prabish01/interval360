@@ -91,8 +91,14 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
     // Regular users land in a different app entirely (code/frontend-user,
     // live at user.interval360.com) — not the admin dashboard. It shares
     // the same auth cookie and bootstraps its own session on load.
-    const userAppUrl = process.env.NEXT_PUBLIC_USER_APP_URL || "http://localhost:3002";
-    window.location.href = userAppUrl;
+    // No localhost fallback: NEXT_PUBLIC_USER_APP_URL must be set wherever
+    // this is built, or this is a no-op rather than a silent wrong redirect.
+    if (!process.env.NEXT_PUBLIC_USER_APP_URL) {
+      setError("Signed in, but the app URL isn't configured. Contact support.");
+      setSubmitting(false);
+      return;
+    }
+    window.location.href = process.env.NEXT_PUBLIC_USER_APP_URL;
   };
 
   const handleSendOtp = async () => {
