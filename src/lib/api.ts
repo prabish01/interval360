@@ -44,6 +44,20 @@ export function login(payload: LoginPayload) {
   return apiFetch("/user/login", payload);
 }
 
+// Regular users have no password — login is email + one-time code, verified
+// in two steps (see code/nodejs sendLoginOTP / verifyLoginOTP controllers).
+export type SendLoginOtpPayload = { email: string };
+
+export function sendLoginOtp(payload: SendLoginOtpPayload) {
+  return apiFetch("/user/sendLoginOTP", payload);
+}
+
+export type VerifyLoginOtpPayload = { email: string; otp: string };
+
+export function verifyLoginOtp(payload: VerifyLoginOtpPayload) {
+  return apiFetch("/user/verifyLoginOTP", payload);
+}
+
 export type SignupPayload = {
   name: string;
   email: string;

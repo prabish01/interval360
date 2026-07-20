@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { login, ApiError } from "@/lib/api";
+import { login, sendLoginOtp, verifyLoginOtp, ApiError } from "@/lib/api";
 
 /* ── SVG icons ─────────────────────────────────────────────────── */
 export const EyeOpen = () => (
@@ -68,24 +68,72 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
+  const [otpSent, setOtpSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const cfg = configs[variant];
+  // Regular users authenticate with email + one-time code (no password ever
+  // set for them); admins still sign in with a password.
+  const isOtpFlow = variant === "user";
+
+  const goToDashboard = () => {
+    // Dashboard lives in a separate app (code/frontend-admin) that shares
+    // this auth cookie — it bootstraps its own session from the cookie on
+    // load, so a full navigation (not client-side routing) is enough.
+    const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL || "http://localhost:3001";
+    window.location.href = dashboardUrl;
+  };
+
+  const handleSendOtp = async () => {
+    setError(null);
+    setSuccess(null);
+    setSubmitting(true);
+    try {
+      await sendLoginOtp({ email });
+      setOtpSent(true);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handleChangeEmail = () => {
+    setOtpSent(false);
+    setOtp("");
+    setError(null);
+    setSuccess(null);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     setSuccess(null);
+
+    if (isOtpFlow) {
+      if (!otpSent) {
+        await handleSendOtp();
+        return;
+      }
+      setSubmitting(true);
+      try {
+        const result = await verifyLoginOtp({ email, otp });
+        setSuccess(`Welcome back, ${result?.data?.name ?? "there"}.`);
+        goToDashboard();
+      } catch (err) {
+        setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
+        setSubmitting(false);
+      }
+      return;
+    }
+
     setSubmitting(true);
     try {
       const result = await login({ email, password });
       setSuccess(`Welcome back, ${result?.data?.name ?? "there"}.`);
-      // Dashboard lives in a separate app (code/frontend-admin) that shares
-      // this auth cookie — it bootstraps its own session from the cookie on
-      // load, so a full navigation (not client-side routing) is enough.
-      const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL || "http://localhost:3001";
-      window.location.href = dashboardUrl;
+      goToDashboard();
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
       setSubmitting(false);
@@ -262,62 +310,113 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
 
             {/* Email field */}
             <div style={{ marginBottom: "1.1rem" }}>
-              <label style={labelStyle}>{cfg.emailLabel}</label>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
+                <label style={{ ...labelStyle, marginBottom: 0 }}>{cfg.emailLabel}</label>
+                {isOtpFlow && otpSent && (
+                  <button
+                    type="button"
+                    onClick={handleChangeEmail}
+                    style={{
+                      fontSize: "var(--text-xs)", color: "rgba(79,110,247,0.75)",
+                      background: "none", border: "none", cursor: "pointer",
+                      letterSpacing: "0.01em", padding: 0,
+                    }}
+                  >
+                    Change email
+                  </button>
+                )}
+              </div>
               <input
                 id="login-email"
                 type="email"
                 placeholder={cfg.emailPlaceholder}
                 value={email}
+                disabled={isOtpFlow && otpSent}
                 onChange={e => setEmail(e.target.value)}
-                style={inputStyle}
+                style={{ ...inputStyle, opacity: isOtpFlow && otpSent ? 0.6 : 1 }}
                 onFocus={e => { e.target.style.borderColor = "rgba(45,108,255,0.6)"; e.target.style.background = "rgba(45,108,255,0.06)"; e.target.style.boxShadow = "0 0 0 3px rgba(45,108,255,0.1)"; }}
                 onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.background = "rgba(255,255,255,0.03)"; e.target.style.boxShadow = "none"; }}
               />
             </div>
 
-            {/* Password field */}
-            <div style={{ marginBottom: "1.75rem" }}>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
-                <label style={{ ...labelStyle, marginBottom: 0 }}>{cfg.passwordLabel}</label>
-                {cfg.forgotPassword && (
-                  <Link href="#" style={{
-                    fontSize: "var(--text-xs)", color: "rgba(79,110,247,0.75)",
-                    textDecoration: "none", letterSpacing: "0.01em",
-                    transition: "color 0.15s",
-                  }}>
-                    Forgot?
-                  </Link>
-                )}
+            {isOtpFlow ? (
+              /* One-time code field — only shown once a code has been sent */
+              otpSent && (
+                <div style={{ marginBottom: "1.75rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
+                    <label style={{ ...labelStyle, marginBottom: 0 }}>One-Time Code</label>
+                    <button
+                      type="button"
+                      onClick={handleSendOtp}
+                      disabled={submitting}
+                      style={{
+                        fontSize: "var(--text-xs)", color: "rgba(79,110,247,0.75)",
+                        background: "none", border: "none", cursor: submitting ? "default" : "pointer",
+                        letterSpacing: "0.01em", padding: 0,
+                      }}
+                    >
+                      Resend code
+                    </button>
+                  </div>
+                  <input
+                    id="login-otp"
+                    type="text"
+                    inputMode="numeric"
+                    autoComplete="one-time-code"
+                    placeholder="Enter 6-digit code"
+                    value={otp}
+                    onChange={e => setOtp(e.target.value)}
+                    style={{ ...inputStyle, marginBottom: 0, letterSpacing: "0.2em" }}
+                    onFocus={e => { e.target.style.borderColor = "rgba(45,108,255,0.6)"; e.target.style.background = "rgba(45,108,255,0.06)"; e.target.style.boxShadow = "0 0 0 3px rgba(45,108,255,0.1)"; }}
+                    onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.background = "rgba(255,255,255,0.03)"; e.target.style.boxShadow = "none"; }}
+                  />
+                </div>
+              )
+            ) : (
+              /* Password field */
+              <div style={{ marginBottom: "1.75rem" }}>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "8px" }}>
+                  <label style={{ ...labelStyle, marginBottom: 0 }}>{cfg.passwordLabel}</label>
+                  {cfg.forgotPassword && (
+                    <Link href="#" style={{
+                      fontSize: "var(--text-xs)", color: "rgba(79,110,247,0.75)",
+                      textDecoration: "none", letterSpacing: "0.01em",
+                      transition: "color 0.15s",
+                    }}>
+                      Forgot?
+                    </Link>
+                  )}
+                </div>
+                <div style={{ position: "relative" }}>
+                  <input
+                    id="login-password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}
+                    style={{ ...inputStyle, marginBottom: 0, paddingRight: "46px" }}
+                    onFocus={e => { e.target.style.borderColor = "rgba(45,108,255,0.6)"; e.target.style.background = "rgba(45,108,255,0.06)"; e.target.style.boxShadow = "0 0 0 3px rgba(45,108,255,0.1)"; }}
+                    onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.background = "rgba(255,255,255,0.03)"; e.target.style.boxShadow = "none"; }}
+                  />
+                  <button
+                    type="button"
+                    id="toggle-password"
+                    onClick={() => setShowPassword(v => !v)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    style={{
+                      position: "absolute", right: "13px", top: "50%", transform: "translateY(-50%)",
+                      background: "none", border: "none", cursor: "pointer",
+                      color: "rgba(234,239,243,0.3)", display: "flex", alignItems: "center", padding: "4px",
+                      transition: "color 0.15s",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "rgba(234,239,243,0.75)")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(234,239,243,0.3)")}
+                  >
+                    {showPassword ? <EyeOff /> : <EyeOpen />}
+                  </button>
+                </div>
               </div>
-              <div style={{ position: "relative" }}>
-                <input
-                  id="login-password"
-                  type={showPassword ? "text" : "password"}
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={e => setPassword(e.target.value)}
-                  style={{ ...inputStyle, marginBottom: 0, paddingRight: "46px" }}
-                  onFocus={e => { e.target.style.borderColor = "rgba(45,108,255,0.6)"; e.target.style.background = "rgba(45,108,255,0.06)"; e.target.style.boxShadow = "0 0 0 3px rgba(45,108,255,0.1)"; }}
-                  onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,0.08)"; e.target.style.background = "rgba(255,255,255,0.03)"; e.target.style.boxShadow = "none"; }}
-                />
-                <button
-                  type="button"
-                  id="toggle-password"
-                  onClick={() => setShowPassword(v => !v)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                  style={{
-                    position: "absolute", right: "13px", top: "50%", transform: "translateY(-50%)",
-                    background: "none", border: "none", cursor: "pointer",
-                    color: "rgba(234,239,243,0.3)", display: "flex", alignItems: "center", padding: "4px",
-                    transition: "color 0.15s",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "rgba(234,239,243,0.75)")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(234,239,243,0.3)")}
-                >
-                  {showPassword ? <EyeOff /> : <EyeOpen />}
-                </button>
-              </div>
-            </div>
+            )}
 
             {/* Error / success messages */}
             {error && (
@@ -348,7 +447,11 @@ export default function LoginLayout({ variant }: { variant: "user" | "admin" }) 
               onMouseDown={e => (e.currentTarget.style.transform = "scale(0.988)")}
               onMouseUp={e => (e.currentTarget.style.transform = "scale(1)")}
             >
-              {submitting ? "Signing in…" : cfg.submitLabel}
+              {isOtpFlow
+                ? submitting
+                  ? (otpSent ? "Verifying…" : "Sending code…")
+                  : (otpSent ? "Verify & Sign In" : "Send Code")
+                : submitting ? "Signing in…" : cfg.submitLabel}
               <ArrowRight />
             </button>
           </form>
